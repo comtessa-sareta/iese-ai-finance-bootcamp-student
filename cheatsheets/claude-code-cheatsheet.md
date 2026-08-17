@@ -3,12 +3,26 @@
 Claude Code is Claude in your terminal/editor with hands: it reads your repo,
 edits files, and runs commands — with your permission.
 
-## Start
+## Start — terminal or VS Code panel, same tool
+
+**Terminal:**
 
 ```bash
 cd <your-project>
 claude
 ```
+
+**VS Code extension** (what the tools pre-course set up): open the repo
+folder (**File → Open Folder**), then click the **✱ Claude icon** (editor
+toolbar top-right, or the status bar bottom-right). Same account, same
+behavior — every prompt in this course works identically in both. Extension
+extras worth using in the labs:
+
+- **Select code → `Option+K` (Mac) / `Alt+K` (Win)** inserts an @-mention of
+  that file+lines into your prompt — the fastest "implement THIS TODO".
+- The **permission-mode indicator** at the bottom of the prompt box shows how
+  much Claude may do without asking — know your setting.
+- Diffs and plans render in the editor; review them there before accepting.
 
 First run in a repo: try `/init` (writes a CLAUDE.md so future sessions know
 the project). This course repo already has one — read it once.

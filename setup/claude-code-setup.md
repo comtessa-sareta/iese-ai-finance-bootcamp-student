@@ -48,10 +48,34 @@ irm https://claude.ai/install.ps1 | iex
 Anthropic.ClaudeCode`, or `npm install -g @anthropic-ai/claude-code`.
 Full options: https://code.claude.com/docs/en/setup)
 
-Then run `claude` and log in. **VS Code users:** the Claude Code extension
-(marketplace: "Claude Code") gives you the same thing inside the editor — the
-first pre-course covered it; the terminal version is equivalent and this
-course's instructions work in either.
+Then run `claude` and log in.
+
+## Using Claude in VS Code instead? Same thing — here's your version
+
+The VS Code extension (Extensions view → search **"Claude Code"** → Install)
+is the same Claude Code with a graphical panel — same paid-account
+requirement, same behavior, and every prompt in this course works identically
+there. If the first pre-course set you up this way, you're set. To verify:
+
+1. Open the course repo folder in VS Code (**File → Open Folder** — Claude
+   reads the repo's `CLAUDE.md` from there).
+2. Open the panel: the **✱ Claude icon** in the editor toolbar (top-right,
+   with a file open) or **✱ Claude Code** in the bottom status bar.
+3. First time: click **Sign in** — use your **Pro** account.
+
+Two extension facts worth knowing:
+
+- **It bundles its own copy of Claude Code**, so the `claude` terminal
+  command may not exist on your machine. That's fine — our environment
+  checker treats it as a non-issue. (You still run the course's *Python
+  scripts* in the integrated terminal as usual.)
+- **The killer feature for our labs:** select code in the editor (e.g. a
+  TODO docstring) and press `Option+K` (Mac) / `Alt+K` (Windows) — it inserts
+  an @-mention of that file and line range into your prompt. Fastest way to
+  say "implement THIS".
+
+Prefer the terminal look inside VS Code? Settings → Extensions → Claude Code
+→ check **Use Terminal**.
 
 ## 3. Create the API key (5 minutes — needed from Session 3)
 

@@ -60,6 +60,9 @@ Read `session-02-coding-copilot/README.md`, then:
    (expect "Clean: 10 companies" + a chart in `outputs/`).
 2. The lab: open Claude Code and implement `lab/comps_starter.py` TODOs 1→4,
    one prompt per TODO (suggested prompts are in the session README).
+   If you have VS Code, do at least one TODO from the **VS Code extension**
+   (select the docstring, `Option/Alt+K`, ask) and one from the terminal —
+   students will use both, so both paths need a test.
 3. **Hand-verify Apple's EV/EBITDA** from the CSV row with a calculator.
 4. Do the git moment: init/commit/push to a scratch private repo of yours
    (or just local commits if you prefer).
