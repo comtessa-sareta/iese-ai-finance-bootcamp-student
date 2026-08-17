@@ -4,44 +4,63 @@
 instructor's live teaching so you can play a real student, solo. It will not
 be in the class repo.)*
 
-**The rules of the game:** you are a MiF student. Use ONLY what's in this repo
-plus Claude (Claude Code and/or the Claude app). There are no solutions in
-your copy — when you're stuck, do what students will do: ask Claude Code.
-If Claude Code can't get you through a TODO, **that is a finding** — write it
+**The rules of the game:** you are a MiF student with the CONFIRMED student
+setup — a **paid Claude Pro plan, signed into the Claude Code extension in
+VS Code** (that's what the tools pre-course leaves them with). Use ONLY
+what's in this repo plus Claude. Drive the labs from the **VS Code panel**,
+run scripts in the **integrated terminal**. There are no solutions in your
+copy — when you're stuck, do what students will do: ask Claude Code. If
+Claude Code can't get you through a TODO, **that is a finding** — write it
 down and move on. Budget ~4–6 hours total; you can split it 2 days like the
 real course.
 
+**Track Pro usage:** after EVERY session, type `/usage` in the Claude panel
+and write down the reading. Whether a whole class stays inside Pro limits at
+lab intensity is one of the most valuable numbers this rehearsal produces.
+
 Report back per session: ⏱ how long it took · ✅/❌ the deliverable check ·
-😕 anything confusing, broken, or slow · 💡 one improvement.
+📊 the /usage reading · 😕 anything confusing, broken, or slow · 💡 one
+improvement.
 
 ---
 
-## Session 0 — Setup (target: 15 min; +10 if you lack Claude Code)
+## Session 0 — Set up as the student (target: 25 min)
 
-One difference from real students: they take a prior tools pre-course that
-installs Claude Code and a Claude **Pro** login. If your laptop doesn't have
-that, follow `setup/claude-code-setup.md` first and time it — you're testing
-that safety-net doc for the students who show up broken. (Note: Claude Code
-needs a paid plan or an API key; the free claude.ai account won't run it.)
+What you need to impersonate the confirmed student profile:
 
-Then follow `setup/SETUP.md` literally. Finish with:
+- **VS Code** with the **Claude Code extension** (Extensions view →
+  search "Claude Code" → Install)
+- a **paid Claude Pro plan** (~$20 for one month — the free account won't run
+  Claude Code; agree reimbursement with the instructor beforehand)
+- an **Anthropic Console** account with **$5** credit (created in step 3 —
+  the whole rehearsal uses well under 1€ of it)
 
-```bash
-python setup/check_setup.py
-```
+Do these in order, timing each — this mirrors the students' pre-Monday email:
 
-**Check:** everything required `[ OK ]`. For the full experience create a
-small Anthropic API key (€5 prepaid is plenty — the whole rehearsal costs
-well under 1€); Sessions 3–5 use it. Without a key, the `--dry-run` paths
-still let you complete most labs.
+1. **Extension + Pro sign-in:** open this repo folder in VS Code
+   (File → Open Folder), click the **✱ Claude** icon, sign in with the Pro
+   account. In the panel, type `/status` and confirm it shows the Pro plan.
+   Anything missing → `setup/claude-code-setup.md` is the students' safety
+   net — you're testing it too, so follow it rather than improvising.
+2. **Repo-context check:** ask the panel *"What is the one rule that always
+   applies in this repo?"* — it should answer from the repo's CLAUDE.md
+   (never present an unverified number). If it doesn't, that's a finding.
+3. **Course setup:** follow `setup/SETUP.md` in the integrated terminal —
+   dependencies, `.env` (your SEC user agent + a fresh API key with $5
+   credit), then `python setup/check_setup.py`. Note: the checker may say
+   the `claude` CLI is not on PATH — with the extension that's expected and
+   explicitly fine.
 
-**Report:** exact time from clone to green check; any step where you hesitated.
+**Report:** total time from clone to green check; whether Pro sign-in and
+plan detection worked first try; the CLAUDE.md context-check result; any
+step where you hesitated.
 
 ## Session 1 — Prompting (target: 45–60 min)
 
 Read `session-01-prompting/README.md`, then:
 
-1. In Claude (app or Claude Code), replay the demo arc yourself on the
+1. In the Claude Code panel in VS Code (or claude.ai chat — students may use
+   either here), replay the demo arc yourself on the
    NVIDIA/AMD/Intel case: naive ask → add role+task → paste
    `data/semis_fact_sheet.md` inside `<context>` tags with the NOT IN CONTEXT
    rule → add the JSON schema from `playbook/company-deep-dive.md`.
@@ -58,11 +77,12 @@ Read `session-02-coding-copilot/README.md`, then:
 
 1. Run the demo end state: `python session-02-coding-copilot/demo/financial_data_pipeline.py`
    (expect "Clean: 10 companies" + a chart in `outputs/`).
-2. The lab: open Claude Code and implement `lab/comps_starter.py` TODOs 1→4,
-   one prompt per TODO (suggested prompts are in the session README).
-   If you have VS Code, do at least one TODO from the **VS Code extension**
-   (select the docstring, `Option/Alt+K`, ask) and one from the terminal —
-   students will use both, so both paths need a test.
+2. The lab: implement `lab/comps_starter.py` TODOs 1→4 **from the VS Code
+   panel**, one prompt per TODO — use the students' power move each time:
+   select the TODO docstring, press `Option+K` (Mac) / `Alt+K` (Windows) to
+   @-mention it, then ask. Watch how edits appear as reviewable diffs.
+   (Bonus, only if you also have the `claude` CLI: do one TODO from the
+   terminal to confirm parity.)
 3. **Hand-verify Apple's EV/EBITDA** from the CSV row with a calculator.
 4. Do the git moment: init/commit/push to a scratch private repo of yours
    (or just local commits if you prefer).
@@ -125,8 +145,15 @@ saving.
 
 ## Final report to the instructor
 
-1. Per-session: time, deliverable checks ✅/❌, confusions, one improvement.
-2. Your `outputs/` folder zipped (memos, charts, reports — the artifacts).
-3. The three moments you most needed Claude Code — and whether it delivered.
-4. Verdict as a pretend student: would the two days feel doable? Where would
+1. Per-session: time, deliverable checks ✅/❌, `/usage` reading, confusions,
+   one improvement.
+2. **The Pro-limits verdict:** across the whole rehearsal, how far did your
+   Pro allowance get drawn down? Did you ever get warned or blocked? (This
+   decides whether 40 students × 5 sessions survives on Pro.)
+3. **The VS Code verdict:** sign-in, repo context pickup, @-mentions, diff
+   review, permission prompts — anything that would confuse a first-time
+   student in the panel UI?
+4. Your `outputs/` folder zipped (memos, charts, reports — the artifacts).
+5. The three moments you most needed Claude Code — and whether it delivered.
+6. Verdict as a pretend student: would the two days feel doable? Where would
    a real cohort pile up?
