@@ -14,6 +14,11 @@ doesn't, and set up the ONE extra credential this course adds.
 A Pro subscription does not include API credits, and API credits don't include
 the Pro app — you need both. Same email for both accounts is fine.
 
+**Is Pro enough for the course?** Yes, comfortably. Its usage limits are sized
+for exactly our lab profile — short coding sprints in small codebases — and
+this course's labs are 30-minute sessions on single-file scripts. If you ever
+hit a limit mid-lab anyway, see "What if" below.
+
 ## 1. Verify Claude Code works (30 seconds)
 
 ```bash
