@@ -74,7 +74,8 @@ def main() -> int:
     report(shutil.which("git") is not None, "git installed")
     claude = shutil.which("claude")
     report(claude is not None, "Claude Code CLI installed",
-           "install: https://docs.anthropic.com/en/docs/claude-code" if not claude else "", required=False)
+           "see setup/claude-code-setup.md (needs a PAID Claude plan — free tier "
+           "doesn't include Claude Code)" if not claude else "", required=False)
     if shutil.which("git"):
         try:
             name = subprocess.run(["git", "config", "user.name"], capture_output=True, text=True).stdout.strip()

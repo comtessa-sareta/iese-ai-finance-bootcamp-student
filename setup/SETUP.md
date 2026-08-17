@@ -34,9 +34,16 @@ Edit `.env`:
 - `SEC_EDGAR_USER_AGENT` — your name and email (the SEC asks automated
   clients to identify themselves; it's polite and required).
 - `ANTHROPIC_API_KEY` — needed from Session 3. Create at
-  https://console.anthropic.com → API Keys, load a small budget (€5 is
-  plenty). If your instructor distributes a workshop key, you'll add it in
-  class instead. **Never commit this file.**
+  https://console.anthropic.com → API Keys, load a small budget ($5 is
+  plenty — expect to use €1–2 all course). **Never commit this file.**
+
+## 3b. Claude Code — verify it, and understand the two credentials
+
+Your Claude **Pro** subscription (the "basic license" from the program email —
+the free claude.ai account is NOT enough) powers Claude Code, the copilot you
+use in every lab. The API key above is a **separate** credential for the
+scripts. Verify both and fix anything missing with
+[claude-code-setup.md](claude-code-setup.md) — 5 minutes.
 
 ## 4. Verify
 

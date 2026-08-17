@@ -16,9 +16,15 @@ Report back per session: ⏱ how long it took · ✅/❌ the deliverable check �
 
 ---
 
-## Session 0 — Setup (target: 15 min)
+## Session 0 — Setup (target: 15 min; +10 if you lack Claude Code)
 
-Follow `setup/SETUP.md` literally, on your normal laptop. Finish with:
+One difference from real students: they take a prior tools pre-course that
+installs Claude Code and a Claude **Pro** login. If your laptop doesn't have
+that, follow `setup/claude-code-setup.md` first and time it — you're testing
+that safety-net doc for the students who show up broken. (Note: Claude Code
+needs a paid plan or an API key; the free claude.ai account won't run it.)
+
+Then follow `setup/SETUP.md` literally. Finish with:
 
 ```bash
 python setup/check_setup.py
