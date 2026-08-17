@@ -1,0 +1,253 @@
+================================================================================
+SYNTHETIC TRANSCRIPT — CREATED FOR TEACHING PURPOSES
+Meridian Semiconductor Holdings, Inc. is a FICTIONAL company. All persons,
+firms, figures and events below are invented. Any resemblance to real companies
+or individuals is coincidental. Written for the IESE course "AI-Augmented
+Productivity for Finance". The company deliberately does not exist so that a
+language model cannot rely on memorized knowledge: every claim in your analysis
+must come from THIS document.
+================================================================================
+
+MERIDIAN SEMICONDUCTOR HOLDINGS (NASDAQ: MSH)
+Second Quarter Fiscal Year 2026 Earnings Conference Call
+July 30, 2026, 5:00 PM ET
+
+PARTICIPANTS
+Company: Adrian Voss, Chief Executive Officer; Ingrid Solheim, Chief Financial
+Officer; Tomas Rivera, VP Investor Relations
+Analysts: Priya Anand (Kestrel Capital), Daniel Okafor (Northgate Securities),
+Sofia Lindqvist (Alba Research), James Whitmore (Riverbend Partners),
+Mei Chen (Coralline Advisors)
+
+--------------------------------------------------------------------------------
+
+OPERATOR: Good afternoon, and welcome to the Meridian Semiconductor Holdings
+second quarter fiscal 2026 earnings conference call. All participants are in a
+listen-only mode. After the prepared remarks there will be a question-and-answer
+session. I would now like to turn the call over to Tomas Rivera, Vice President
+of Investor Relations. Please go ahead.
+
+TOMAS RIVERA: Thank you, operator, and good afternoon everyone. With me today
+are Adrian Voss, our chief executive officer, and Ingrid Solheim, our chief
+financial officer. Before we begin, I'd like to remind you that today's call
+contains forward-looking statements that are subject to risks and
+uncertainties, and actual results may differ materially. We assume no
+obligation to update these statements. We will also reference non-GAAP
+financial measures; reconciliations are available in today's press release on
+our investor relations website. With that, I'll hand the call to Adrian.
+
+ADRIAN VOSS: Thank you, Tomas, and thanks to everyone joining us. The second
+quarter was another record for Meridian. Revenue came in at 2.41 billion
+dollars, up 38 percent year over year and above the high end of our guidance
+range. Demand for our Corvus accelerators continues to outpace our ability to
+supply, and our design-win pipeline is the strongest in the company's history.
+
+Let me put the quarter in context. Eighteen months ago we made the decision to
+concentrate our roadmap on inference-optimized accelerators for data center AI
+workloads. That bet is paying off. Data center revenue was 1.72 billion
+dollars this quarter, up 61 percent year over year, and now represents 71
+percent of total revenue. We added two of the top five hyperscalers as
+customers of our Corvus platform this quarter, and our backlog exiting the
+quarter reached a record 6.8 billion dollars.
+
+The demand environment, frankly, is extraordinary. AI demand is effectively
+infinite over any horizon we can plan for. The constraint is supply, and there
+we are executing well. Our capacity agreement with our lead foundry partner,
+announced in May, secures a doubling of advanced-node wafer allocation through
+calendar 2027. The Corvus-2 ramp remains on schedule for volume shipments in
+the fourth quarter, and early customer feedback on performance per watt has
+been outstanding.
+
+Our embedded and industrial segment grew 9 percent year over year to 690
+million dollars. It's a steadier business, but design activity in automotive
+vision systems gives us confidence in a re-acceleration in fiscal 2027.
+
+We are also scaling the organization deliberately. We ended the quarter with
+just over 11,200 employees, and we continue to hire aggressively in silicon
+engineering and customer enablement. Operating discipline remains a priority:
+even at this pace of investment, we delivered a 32.9 percent GAAP operating
+margin.
+
+Finally, on capital allocation: our first priority is funding the roadmap and
+capacity. Beyond that, our board has authorized a modest anti-dilutive
+repurchase program, which Ingrid will cover. With that, let me hand it to
+Ingrid for the financials.
+
+INGRID SOLHEIM: Thank you, Adrian, and good afternoon everyone. As Adrian
+said, revenue for the second quarter was 2.41 billion dollars, up 38 percent
+year over year and 11 percent sequentially. Data center revenue was 1.72
+billion dollars, and embedded and industrial was 690 million dollars.
+
+Gross margin was 58.3 percent, down 120 basis points year over year. The
+decline reflects ramp-related costs on Corvus-2, which we regard as one-time
+in nature, partially offset by favorable product mix. Operating expenses were
+612 million dollars, up 24 percent year over year, driven by headcount growth
+in R&D. That produced GAAP operating income of 793 million dollars, or a 32.9
+percent operating margin. Diluted earnings per share were 1.42 dollars.
+
+Turning to the balance sheet. We ended the quarter with 650 million dollars of
+cash and equivalents against 1.5 billion dollars of convertible notes issued
+in January to fund capacity prepayments, leaving us in a modest net debt
+position of roughly 850 million dollars. Inventory ended the quarter at 1.98
+billion dollars, up 41 percent year over year, reflecting deliberate wafer and
+substrate purchases ahead of the Corvus-2 ramp. We view this build as a
+competitive asset in a supply-constrained market. Days sales outstanding were
+71 days, compared with 58 a year ago, driven by the timing of large data
+center shipments late in the quarter and the mix shift toward hyperscaler
+customers with longer contractual payment terms.
+
+One additional disclosure on customer mix: our largest customer represented 22
+percent of revenue in the quarter, up from 15 percent a year ago. We are proud
+of that partnership, and we are equally focused on broadening the base — the
+two hyperscaler additions Adrian mentioned are an important step.
+
+On capital returns, we repurchased 150 million dollars of stock during the
+quarter under the anti-dilutive program.
+
+Now to guidance. For the third quarter of fiscal 2026, we expect revenue of
+2.55 to 2.65 billion dollars, representing approximately 34 percent year over
+year growth at the midpoint. We expect gross margin of approximately 58
+percent, plus or minus 50 basis points, and operating expenses of approximately
+650 million dollars. For the full fiscal year we now expect capital
+expenditures of approximately 1.9 billion dollars, up from our prior view of
+1.7 billion, reflecting accelerated capacity investment. I want to be explicit
+that our guidance excludes any impact from the export license review announced
+in June, which remains pending with the Department of Commerce. Roughly 14
+percent of our trailing-twelve-month revenue was shipped to customers in the
+affected region. With that, operator, please open the line for questions.
+
+--------------------------------------------------------------------------------
+QUESTION-AND-ANSWER SESSION
+--------------------------------------------------------------------------------
+
+OPERATOR: Our first question comes from Priya Anand with Kestrel Capital.
+
+PRIYA ANAND (KESTREL CAPITAL): Congratulations on the quarter. Adrian, on the
+supply agreement — a doubling of wafer allocation is significant. How should
+we think about the revenue capacity that unlocks in fiscal 2027, and does the
+inventory build pull any of that forward?
+
+ADRIAN VOSS: Thanks, Priya. The wafer agreement roughly matches the demand
+signal we see from committed backlog, so I'd characterize it as catching up to
+demand rather than building ahead of it. We're not going to guide fiscal 2027
+today, but the capacity supports a revenue level meaningfully above our
+current run rate. On inventory, the build is concentrated in long-lead
+materials for Corvus-2 — substrates and advanced packaging — so it converts as
+the ramp executes.
+
+PRIYA ANAND: And a follow-up for Ingrid: the DSO increase — is that a
+one-quarter effect or the new normal given the hyperscaler mix?
+
+INGRID SOLHEIM: Some of it is timing — shipments were back-half loaded this
+quarter — and some of it is structural, because hyperscaler contracts carry
+longer payment terms. I'd model DSO in the mid-60s going forward rather than
+a return to the 50s.
+
+OPERATOR: Our next question comes from Daniel Okafor with Northgate Securities.
+
+DANIEL OKAFOR (NORTHGATE SECURITIES): Thank you. Ingrid, I want to push on
+gross margin. You've now described ramp costs as one-time in each of the last
+three calls — this is the third consecutive quarter you've described ramp
+costs as one-time. At what point do we accept that ramp costs are simply a
+recurring feature of this business model? And what does the margin bridge back
+to 60 percent actually look like?
+
+INGRID SOLHEIM: It's a fair challenge, Daniel. Each ramp is discrete — last
+year it was Corvus-1, this year it's Corvus-2 — so within any product cycle
+the costs genuinely are one-time. Across cycles, you're right that a company
+ramping a new product every year will carry some structural ramp cost. What I
+can tell you is that Corvus-2 yields are improving ahead of the curve we
+assumed. Beyond the next quarter, we don't guide gross margin beyond the next
+quarter, so I won't put a date on 60 percent.
+
+DANIEL OKAFOR: Understood. And Adrian, earlier you said margins are
+structurally improving — how do we square that with the CFO declining to
+guide a recovery?
+
+ADRIAN VOSS: There's no daylight between us, Daniel. Structurally, mix is
+moving toward data center and software-attached revenue, which carries higher
+margin. The pace of that improvement in any given quarter depends on ramp
+timing, which is Ingrid's point.
+
+OPERATOR: Our next question comes from Sofia Lindqvist with Alba Research.
+
+SOFIA LINDQVIST (ALBA RESEARCH): Good afternoon. On the export license review:
+you said 14 percent of trailing revenue is exposed, but guidance excludes any
+impact. If the review concludes unfavorably during the third quarter, is the
+practical effect that you would cut guidance by up to that amount? And why
+exclude it rather than risk-adjust?
+
+INGRID SOLHEIM: We exclude it because the range of outcomes is too wide to
+model responsibly — from full licenses granted to a subset denied. To be
+precise: the 14 percent is trailing exposure, and roughly half of the affected
+demand could be redirected to non-restricted SKUs over two to three quarters.
+So the worst quarter-one impact would be meaningfully below 14 percent, but it
+would not be zero. We chose transparency about the exclusion over a false
+sense of precision.
+
+SOFIA LINDQVIST: That's helpful. And the backlog — how much of the 6.8 billion
+is from the affected region?
+
+INGRID SOLHEIM: Approximately 900 million dollars, and those orders carry
+standard cancellation protections.
+
+OPERATOR: Our next question comes from James Whitmore with Riverbend Partners.
+
+JAMES WHITMORE (RIVERBEND PARTNERS): Thanks for taking the question. Adrian,
+customer concentration: your largest customer went from 15 to 22 percent of
+revenue in a year. If I add the top three, where does that sit, and what
+contractual protection do you have if that customer in-sources — they have
+their own silicon program, as you know.
+
+ADRIAN VOSS: The top three were approximately 41 percent of revenue this
+quarter. Look, concentration is a feature of the AI buildout — the biggest
+buyers are enormous. Our protection is product leadership, not contracts: we
+win on performance per dollar per watt, and Corvus-2 extends that lead. The
+customer you're referring to has had an internal program for years and
+continues to grow purchases from us. We watch it closely, respect it, and our
+answer is to out-execute.
+
+JAMES WHITMORE: And the buyback — 150 million while carrying net debt and
+raising converts. Why is that the right use of cash?
+
+INGRID SOLHEIM: The program is sized only to offset dilution from employee
+equity, roughly 500 to 600 million dollars annually. The convert funds
+prepayments that secure supply — those are different jobs for different
+dollars, and the convert's cost of capital is well below our return on
+capacity.
+
+OPERATOR: Our final question comes from Mei Chen with Coralline Advisors.
+
+MEI CHEN (CORALLINE ADVISORS): Thank you. Two quick ones. First, pricing:
+with supply this tight, are you taking price on Corvus, and how sustainable is
+that? Second, on software: you mentioned software-attached revenue — how large
+is it today?
+
+ADRIAN VOSS: On pricing, we've been disciplined. Our approach is to price for
+the long-term relationship, not the shortage — we think gouging customers in
+a tight market is how you lose them in a loose one. Where costs have risen,
+we've passed through selectively. On software, our MeridianStack subscription
+revenue is still under 5 percent of total, but it grew over 90 percent year
+over year and it's strategically central: it's how Corvus performance becomes
+switching cost.
+
+MEI CHEN: If I could sneak in one more — the Department of Commerce review,
+do you have a view on timing?
+
+ADRIAN VOSS: We've been advised to expect a determination within the quarter,
+but that timeline isn't ours to control. As Ingrid said, we've excluded it
+from guidance and we'll update you the moment we know more.
+
+OPERATOR: This concludes the question-and-answer session. I would like to turn
+the call back to Adrian Voss for closing remarks.
+
+ADRIAN VOSS: Thank you all for joining. The second quarter showed what this
+team can do: record revenue, record backlog, and a product ramp on schedule in
+the most demanding market our industry has ever seen. We're focused on
+execution — supply, yields, and customer success — and we look forward to
+updating you in October. Thank you.
+
+OPERATOR: The conference has now concluded. Thank you for attending today's
+presentation. You may now disconnect.
+
+[END OF TRANSCRIPT]

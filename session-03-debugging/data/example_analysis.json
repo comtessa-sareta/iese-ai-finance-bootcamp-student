@@ -1,0 +1,95 @@
+{
+  "_note": "Canned output used by --dry-run so the pipeline runs without an API key. One evidence quote (gross margins returning to 62 percent) is DELIBERATELY FABRICATED: the verification step must catch it and mark it UNVERIFIED. That is the lesson.",
+  "overall_sentiment": "cautiously_positive",
+  "sentiment_rationale": "Record revenue, backlog and hyperscaler wins argue for strength, but margin pressure framed as one-time for a third straight quarter, rising customer concentration, an inventory and DSO build, and an unquantified export-license overhang all temper the print.",
+  "key_themes": [
+    {
+      "theme": "Supply-constrained AI accelerator demand",
+      "evidence_quote": "Demand for our Corvus accelerators continues to outpace our ability to supply"
+    },
+    {
+      "theme": "Data center now dominates the mix (71% of revenue, +61% y/y)",
+      "evidence_quote": "Data center revenue was 1.72 billion dollars this quarter, up 61 percent year over year"
+    },
+    {
+      "theme": "Capacity secured through 2027 via foundry agreement",
+      "evidence_quote": "secures a doubling of advanced-node wafer allocation through calendar 2027"
+    },
+    {
+      "theme": "Margin recovery promised",
+      "evidence_quote": "we expect gross margins to return to 62 percent by year end"
+    }
+  ],
+  "management_priorities": [
+    "Executing the Corvus-2 ramp on schedule for Q4 volume shipments",
+    "Securing wafer and packaging supply ahead of demand",
+    "Broadening the customer base beyond the largest hyperscaler",
+    "Growing MeridianStack software attach as a switching cost"
+  ],
+  "guidance": {
+    "next_quarter": "Q3 FY2026 revenue of $2.55-2.65bn (~34% y/y at midpoint), gross margin ~58% +/-50bps, opex ~$650m; FY26 capex raised to ~$1.9bn from $1.7bn.",
+    "notable_exclusions": "Guidance excludes any impact from the pending export license review; ~14% of trailing-twelve-month revenue shipped to the affected region and ~$900m of backlog is exposed."
+  },
+  "risks": [
+    {
+      "risk": "Export license review could remove up to a low-teens share of revenue",
+      "severity": "high",
+      "evidence_quote": "our guidance excludes any impact from the export license review announced in June"
+    },
+    {
+      "risk": "Customer concentration rising sharply",
+      "severity": "high",
+      "evidence_quote": "our largest customer represented 22 percent of revenue in the quarter, up from 15 percent a year ago"
+    },
+    {
+      "risk": "Inventory build ahead of an unproven product ramp",
+      "severity": "medium",
+      "evidence_quote": "Inventory ended the quarter at 1.98 billion dollars, up 41 percent year over year"
+    },
+    {
+      "risk": "Working-capital quality deteriorating as payment terms lengthen",
+      "severity": "medium",
+      "evidence_quote": "Days sales outstanding were 71 days, compared with 58 a year ago"
+    }
+  ],
+  "red_flags": [
+    {
+      "flag": "Recurring 'one-time' ramp costs",
+      "why_it_matters": "Costs described as one-time in three consecutive quarters behave like structural costs; normalized margin may be lower than management framing implies.",
+      "evidence_quote": "this is the third consecutive quarter you've described ramp costs as one-time"
+    },
+    {
+      "flag": "CEO/CFO margin-message gap",
+      "why_it_matters": "The CEO frames margins as structurally improving while the CFO declines to guide any recovery — one of them is over- or under-promising.",
+      "evidence_quote": "we don't guide gross margin beyond the next quarter"
+    },
+    {
+      "flag": "Unfalsifiable demand claim",
+      "why_it_matters": "Superlatives like infinite demand are not evidence; they signal promotional tone at a cyclical peak.",
+      "evidence_quote": "AI demand is effectively infinite over any horizon we can plan for"
+    }
+  ],
+  "qa_assessment": [
+    {
+      "topic": "Gross margin trajectory (Northgate)",
+      "answer_quality": "partial",
+      "note": "CFO conceded structural ramp costs across cycles but refused any margin-recovery timeline."
+    },
+    {
+      "topic": "Export exposure quantification (Alba)",
+      "answer_quality": "direct",
+      "note": "Gave trailing exposure (14%), backlog at risk (~$900m) and a redirection estimate (~half over 2-3 quarters)."
+    },
+    {
+      "topic": "Customer concentration / in-sourcing (Riverbend)",
+      "answer_quality": "partial",
+      "note": "Disclosed top-3 concentration (41%) but the moat argument is product leadership, not contractual protection."
+    },
+    {
+      "topic": "DSO normalization (Kestrel)",
+      "answer_quality": "direct",
+      "note": "CFO reset expectations to mid-60s DSO — a structural, not temporary, shift."
+    }
+  ],
+  "summary": "Meridian delivered a record quarter (revenue $2.41bn, +38% y/y; backlog $6.8bn) on genuine supply-constrained AI demand, and secured capacity through 2027. Quality of the print is weaker than the headline: gross margin fell 120bps on ramp costs labeled one-time for a third straight quarter, the largest customer is now 22% of revenue, inventory (+41%) and DSO (71 days) are building, and guidance explicitly excludes a pending export-license review covering ~14% of trailing revenue. Constructive on execution, but the memo should underwrite margins below management's framing and treat the export review as the swing factor for the next two quarters."
+}

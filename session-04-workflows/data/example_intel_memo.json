@@ -1,0 +1,34 @@
+{
+  "_note": "Canned memo used by --dry-run (no API key needed). Figures match the NVDA/AMD/INTC EDGAR data as of Aug 2026 so the numeric validator passes; if a company restates, rerun live instead.",
+  "executive_summary": "The target extended an extraordinary run: revenue reached 215.9 billion in the latest fiscal year, up 65.5 percent, while operating margin held around 60.4 percent. The nearest challenger grew 34.3 percent from a base roughly six times smaller and is still climbing the margin curve at 10.7 percent, while the third player's revenue slipped 0.5 percent with a negative operating margin of 4.2 percent. The data supports a picture of one firm capturing the economics of the AI buildout, one credible fast-follower, and one incumbent in turnaround.",
+  "kpi_read": [
+    {
+      "metric": "Revenue growth (latest FY)",
+      "reading": "Target 65.5 percent versus 34.3 percent for the fast-follower and negative 0.5 percent for the incumbent — the growth gap is narrowing at the second player but remains enormous in absolute dollars."
+    },
+    {
+      "metric": "Operating margin (latest FY)",
+      "reading": "Target 60.4 percent, fast-follower 10.7 percent, incumbent negative 4.2 percent. The margin spread implies the target monetizes scarcity while peers price to win share."
+    },
+    {
+      "metric": "Scale",
+      "reading": "At 215.9 billion in revenue the target is now larger than both peers combined by a wide multiple, which compounds its R&D and supply-chain advantages."
+    }
+  ],
+  "competitive_position": "On this data the target holds both the growth and the profitability crown simultaneously, which is rare late in a product cycle. The fast-follower's improving margin trend (from 7.4 percent to 10.7 percent) is the metric to watch: if it sustains growth near the current 34.3 percent pace while margins expand, the duopoly scenario strengthens. The incumbent's negative operating margin two years running suggests its challenge is now financial capacity to fund a comeback, not just product.",
+  "risks": [
+    "Concentration: growth of this magnitude usually depends on a small number of very large buyers whose capex plans can change faster than supply chains.",
+    "The margin gap itself is a risk: 60.4 percent operating margins invite customer in-sourcing, competitor pricing aggression and regulatory attention.",
+    "The incumbent's losses may trigger strategic moves (subsidies, partnerships, capacity deals) that change industry pricing in ways backward-looking filings cannot show."
+  ],
+  "questions_for_management": [
+    "How much of the latest fiscal year's 65.5 percent growth is unit volume versus pricing, and what does the order book imply for the coming year?",
+    "What share of revenue comes from the top three customers, and how has it moved over the three fiscal years shown?",
+    "At a 60.4 percent operating margin, where is the reinvestment going — capacity commitments, software, or buybacks?"
+  ],
+  "data_gaps": [
+    "No segment or geographic split in the data block — cannot attribute growth to data center versus other lines.",
+    "No balance-sheet or cash-flow items — leverage and capex intensity are not assessable here.",
+    "No market prices — nothing here supports a valuation judgment, only an operating one."
+  ]
+}

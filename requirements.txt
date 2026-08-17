@@ -1,0 +1,11 @@
+# AI-Augmented Productivity for Finance — IESE MiF
+# Install:  pip install -r requirements.txt
+pandas>=2.0
+requests>=2.31
+matplotlib>=3.8
+seaborn>=0.13
+anthropic>=0.40
+python-dotenv>=1.0
+pytest>=8.0
+tabulate>=0.9
+openpyxl>=3.1
