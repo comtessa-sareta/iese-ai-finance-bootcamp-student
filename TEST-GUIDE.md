@@ -65,8 +65,13 @@ Read `session-01-prompting/README.md`, then:
 
 1. **Use claude.ai in the browser for this arc, NOT the Claude Code panel** —
    the panel has already read this repo's CLAUDE.md grounding rule, so it's
-   pre-vaccinated against the naive failure you're here to witness. Replay
-   the demo arc on the
+   pre-vaccinated against the naive failure you're here to witness.
+   **If claude.ai web-searches and cites sources on the naive ask** (default):
+   first interrogate it — which fiscal year is each figure? how old is the
+   source? does one number match the SEC-filed fact sheet? ("sourced" is not
+   "verified") — then toggle web search OFF (tools icon in the input box) and
+   rerun to see pure-memory mode. Keep search off for the rest of the arc.
+   Replay the demo arc on the
    NVIDIA/AMD/Intel case: naive ask → add role+task → paste
    `data/semis_fact_sheet.md` inside `<context>` tags with the NOT IN CONTEXT
    rule → add the JSON schema from `playbook/company-deep-dive.md`.
