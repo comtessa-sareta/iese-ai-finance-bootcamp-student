@@ -44,9 +44,11 @@ class EdgarError(RuntimeError):
 
 def _user_agent() -> str:
     ua = os.environ.get("SEC_EDGAR_USER_AGENT", "").strip()
-    if not ua or "example.com" in ua:
-        # Works, but be a good citizen: set your real name/email in .env
-        ua = "IESE AI-Finance Bootcamp student (set SEC_EDGAR_USER_AGENT in .env)"
+    if not ua or ua.startswith("Your Name"):
+        # SEC's edge rejects (HTTP 403) any User-Agent without an email-format
+        # contact, so the fallback must contain one. Still: be a good citizen
+        # and set your real name/email in .env.
+        ua = "IESE AI-Finance Bootcamp unconfigured-student@example.com (set SEC_EDGAR_USER_AGENT in .env)"
     return ua
 
 

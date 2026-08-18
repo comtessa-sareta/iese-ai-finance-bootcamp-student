@@ -58,15 +58,24 @@ def main() -> int:
     report(bool(ua) and "example.com" not in ua, "SEC_EDGAR_USER_AGENT set to your name/email",
            detail="" if ua else "set it in .env", required=False)
 
-    # 4. Network: SEC EDGAR
+    # 4. Network: SEC EDGAR — the User-Agent MUST contain an email-format
+    # contact or SEC's edge returns 403 (looks like a network error, isn't).
     try:
         import requests
+        good_ua = ua if (ua and "@" in ua) else \
+            "IESE AI-Finance Bootcamp setup-check contact@example.com"
         r = requests.get(
             "https://www.sec.gov/files/company_tickers.json",
-            headers={"User-Agent": ua or "IESE bootcamp setup check"},
+            headers={"User-Agent": good_ua},
             timeout=15,
         )
-        report(r.status_code == 200, "SEC EDGAR reachable", f"HTTP {r.status_code}")
+        hint = "" if r.status_code == 200 else (
+            f"HTTP {r.status_code}"
+            + (" — 403 means SEC rejected the request (User-Agent needs a "
+               "'Name email' contact; set SEC_EDGAR_USER_AGENT in .env), or a "
+               "corporate proxy is interfering" if r.status_code == 403 else "")
+        )
+        report(r.status_code == 200, "SEC EDGAR reachable", hint)
     except Exception as exc:  # noqa: BLE001 — any network failure reads the same to a student
         report(False, "SEC EDGAR reachable", str(exc))
 
