@@ -63,8 +63,10 @@ step where you hesitated.
 
 Read `session-01-prompting/README.md`, then:
 
-1. In the Claude Code panel in VS Code (or claude.ai chat — students may use
-   either here), replay the demo arc yourself on the
+1. **Use claude.ai in the browser for this arc, NOT the Claude Code panel** —
+   the panel has already read this repo's CLAUDE.md grounding rule, so it's
+   pre-vaccinated against the naive failure you're here to witness. Replay
+   the demo arc on the
    NVIDIA/AMD/Intel case: naive ask → add role+task → paste
    `data/semis_fact_sheet.md` inside `<context>` tags with the NOT IN CONTEXT
    rule → add the JSON schema from `playbook/company-deep-dive.md`.
@@ -73,7 +75,10 @@ Read `session-01-prompting/README.md`, then:
    into the template's failure-modes table.
 
 **Check:** you made the model answer NOT IN CONTEXT at least once; injection
-(exercise 5) did NOT flip your prompt into "STRONG BUY".
+(exercise 5) did NOT flip your prompt into "STRONG BUY". Closing beat: repeat
+the naive v1 ask in the Claude Code panel and notice it behaves better than
+claude.ai did — CLAUDE.md was silently prompt-engineering for it. That
+contrast IS the session's lesson.
 
 ## Session 2 — Coding copilot (target: 60 min)
 
