@@ -35,6 +35,12 @@ pip install -r requirements.txt
 # (or plain venv:  python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt)
 ```
 
+**If you see `command not found: conda`:** either your terminal was never
+initialized for Anaconda — run `conda init zsh` from the Anaconda prompt/app,
+or on Windows pick the *Anaconda Prompt* terminal profile, then open a NEW
+terminal — or Anaconda isn't installed on this machine, in which case just
+use the plain-venv line above instead; the course doesn't care which.
+
 Then tell VS Code to use this environment: `Cmd+Shift+P` (Mac) /
 `Ctrl+Shift+P` (Windows) → **Python: Select Interpreter** → pick
 **aifinance**. From now on, new terminals in this folder activate it for you;
