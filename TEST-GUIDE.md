@@ -43,8 +43,12 @@ Do these in order, timing each — this mirrors the students' pre-Monday email:
    Anything missing → `setup/claude-code-setup.md` is the students' safety
    net — you're testing it too, so follow it rather than improvising.
 2. **Repo-context check:** ask the panel *"What is the one rule that always
-   applies in this repo?"* — it should answer from the repo's CLAUDE.md
-   (never present an unverified number). If it doesn't, that's a finding.
+   applies in this repo?"* — **without selecting or attaching anything** — it
+   should answer from the repo's CLAUDE.md (never present an unverified
+   number). If it doesn't, that's a finding. And check you're in the RIGHT
+   panel: if your chat shows GPT/Gemini model names or a "credits" counter,
+   that's Copilot or another extension, not Claude Code — a mistake real
+   students WILL make, so note how easy it was to land in the wrong one.
 3. **Course setup:** follow `setup/SETUP.md` in the integrated terminal —
    dependencies, `.env` (your SEC user agent + a fresh API key with $5
    credit), then `python setup/check_setup.py`. Note: the checker may say

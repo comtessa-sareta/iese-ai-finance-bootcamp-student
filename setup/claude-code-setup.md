@@ -68,6 +68,15 @@ there. If the first pre-course set you up this way, you're set. To verify:
    with a file open) or **✱ Claude Code** in the bottom status bar.
 3. First time: click **Sign in** — use your **Pro** account.
 
+**⚠️ Are you in the RIGHT chat?** Most VS Code setups have several AI panels
+(GitHub Copilot, Gemini, others). If your chat shows model names like GPT or
+Gemini, or a "credits" counter, you are in a **different extension** — the
+course labs won't behave as described there. The Claude Code panel is the one
+opened by the **✱** icon where `/status` shows your Claude account. Quick
+self-test: with nothing selected or attached, ask *"What is the one rule that
+always applies in this repo?"* — Claude Code answers from the repo's
+CLAUDE.md by itself (never present an unverified number).
+
 Two extension facts worth knowing:
 
 - **It bundles its own copy of Claude Code**, so the `claude` terminal
