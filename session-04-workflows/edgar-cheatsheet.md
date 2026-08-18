@@ -16,8 +16,9 @@ Everything is public and key-less. Two rules from the SEC's fair-access policy
 
 Also useful: one concept across ALL companies for a period ("frames"):
 `https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2025.json`
-and human-friendly full-text search at `https://efts.sec.gov/LATEST/search-index?q=...`
-(or just https://www.sec.gov/cgi-srv/srqsb?text= via the EDGAR UI).
+Full-text search across filings — browse it at https://www.sec.gov/edgar/search/
+or query the same index programmatically:
+`https://efts.sec.gov/LATEST/search-index?q=%22your+phrase%22&forms=10-K`
 
 ## Form types you'll actually use
 
