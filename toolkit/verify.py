@@ -11,11 +11,17 @@ import re
 # Small counts and years read as narrative, not data — don't flag them.
 _IGNORE_INTS = set(range(0, 11)) | set(range(1990, 2041))
 
+# Dates and fiscal-year labels are context, not financial claims — strip them
+# before extraction so '2024-01-28' doesn't flag as 28 and 'FY25' as 25.
+_ISO_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
+_FY_LABEL = re.compile(r"\bFY\s?\d{2,4}\b", re.IGNORECASE)
+
 
 def numbers_in_text(text: str) -> list[float]:
-    """Every numeric literal in a piece of prose ('58.3%', '2,410', '1.9bn')."""
+    """Every numeric literal in a piece of prose ('58.3%', '-11.7bn', '2,410')."""
+    text = _FY_LABEL.sub(" ", _ISO_DATE.sub(" ", text))
     out = []
-    for m in re.findall(r"\d[\d,]*(?:\.\d+)?", text):
+    for m in re.findall(r"-?\d[\d,]*(?:\.\d+)?", text):
         try:
             out.append(float(m.replace(",", "")))
         except ValueError:
@@ -25,15 +31,17 @@ def numbers_in_text(text: str) -> list[float]:
 
 def allowed_set(values: list[float]) -> list[float]:
     """Expand source values into the representations prose legitimately uses:
-    raw, thousands/millions/billions rescalings, percentage form, and rounded."""
+    raw, thousands/millions/billions rescalings, percentage form, either sign
+    (prose may quote a loss as 11.7 or -11.7), and rounded."""
     allowed: set[float] = set()
     for v in values:
         if v is None:
             continue
-        for scaled in (v, v / 1e3, v / 1e6, v / 1e9, v * 100, abs(v), abs(v) * 100):
-            allowed.add(round(scaled, 2))
-            allowed.add(round(scaled, 1))
-            allowed.add(round(scaled))
+        for base in (v, v / 1e3, v / 1e6, v / 1e9, v * 100):
+            for scaled in (base, -base):
+                allowed.add(round(scaled, 2))
+                allowed.add(round(scaled, 1))
+                allowed.add(round(scaled))
     return sorted(allowed)
 
 

@@ -170,6 +170,8 @@ def tool_compare_metrics(args: dict) -> str:
             f"UNITS DIFFER ({', '.join(sorted(units))}): absolute amounts are NOT "
             "comparable. Compare growth and margins only, or convert currency first."
         )
+        print(f"⚠️  compare_metrics: UNITS DIFFER ({', '.join(sorted(units))}) — "
+              "flagged to the agent")
     return json.dumps(out, indent=1)
 
 
@@ -216,6 +218,20 @@ def run_agent(task: str, max_steps: int = MAX_STEPS) -> tuple[dict | None, list[
             print(f"🔧 step {step}: {call.name}({json.dumps(call.input)[:120]})")
             trace.append(f"step {step}: {call.name}({json.dumps(call.input)})")
             if call.name == "record_recommendation":
+                # Trust the schema; verify anyway — malformed tool inputs are
+                # rejected and sent back for correction, never rendered.
+                errors = llm.validate(call.input, RECOMMENDATION_SCHEMA)
+                if errors:
+                    print(f"⚠️  step {step}: recommendation failed validation "
+                          f"({len(errors)} error(s)) — sent back for correction")
+                    trace.append(f"step {step}: record_recommendation REJECTED ({errors[:2]})")
+                    results.append({
+                        "type": "tool_result", "tool_use_id": call.id,
+                        "content": "Validation failed:\n- " + "\n- ".join(errors)
+                        + "\nCall record_recommendation again with input matching "
+                        "the schema EXACTLY (key_points and risks are JSON arrays of strings).",
+                    })
+                    continue
                 recommendation = call.input
                 results.append({"type": "tool_result", "tool_use_id": call.id,
                                 "content": "Recommendation recorded. You are done."})

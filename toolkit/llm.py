@@ -67,13 +67,16 @@ def ask(
     system: str | None = None,
     model: str | None = None,
     max_tokens: int = 2048,
-    temperature: float = 0.2,
 ) -> str:
-    """Single-turn text completion. Low temperature: analysis, not poetry."""
+    """Single-turn text completion.
+
+    Note: no `temperature` knob — Claude 5-generation models reject the
+    parameter (HTTP 400, 'temperature is deprecated for this model').
+    Output discipline comes from schemas and verification, not sampling.
+    """
     kwargs: dict = {
         "model": model or default_model(),
         "max_tokens": max_tokens,
-        "temperature": temperature,
         "messages": [{"role": "user", "content": prompt}],
     }
     if system:
@@ -163,7 +166,6 @@ def ask_json(
         call: dict = {
             "model": kwargs.get("model") or default_model(),
             "max_tokens": kwargs.get("max_tokens", 4096),
-            "temperature": kwargs.get("temperature", 0.0),
             "messages": messages,
         }
         if system:
@@ -199,25 +201,52 @@ def ask_structured(
     system: str | None = None,
     model: str | None = None,
     max_tokens: int = 4096,
+    retries: int = 2,
 ) -> dict:
-    """Tool-forced structured output — the API guarantees arguments match the schema.
+    """Tool-forced structured output, VERIFIED and self-repairing.
 
-    We define one tool whose input schema IS our desired output schema, then force
-    the model to 'call' it. This is the reliable production pattern for
-    machine-readable LLM output.
+    We define one tool whose input schema IS our desired output schema, then
+    force the model to 'call' it. Tool-forcing makes conforming output very
+    likely — but not certain (models occasionally return an array of strings
+    where objects were required). So we validate the input against the schema
+    ourselves and, on failure, send the errors back as the tool result and let
+    the model correct itself. Trust the schema; verify anyway.
     """
-    kwargs: dict = {
-        "model": model or default_model(),
-        "max_tokens": max_tokens,
-        "messages": [{"role": "user", "content": prompt}],
-        "tools": [{"name": name, "description": description, "input_schema": schema}],
-        "tool_choice": {"type": "tool", "name": name},
-    }
-    if system:
-        kwargs["system"] = system
-    resp = client().messages.create(**kwargs)
-    _record_usage(resp)
-    for block in resp.content:
-        if block.type == "tool_use" and block.name == name:
-            return block.input
-    raise LLMError("Model did not return the forced tool call")
+    messages: list[dict] = [{"role": "user", "content": prompt}]
+    errors: list[str] = []
+    for _attempt in range(retries + 1):
+        kwargs: dict = {
+            "model": model or default_model(),
+            "max_tokens": max_tokens,
+            "messages": messages,
+            "tools": [{"name": name, "description": description, "input_schema": schema}],
+            "tool_choice": {"type": "tool", "name": name},
+        }
+        if system:
+            kwargs["system"] = system
+        resp = client().messages.create(**kwargs)
+        _record_usage(resp)
+        blocks = [b for b in resp.content if b.type == "tool_use"]
+        if not blocks:
+            raise LLMError("Model did not return the forced tool call")
+        for block in blocks:  # the model may call more than once — take any valid one
+            if block.name == name:
+                errors = validate(block.input, schema)
+                if not errors:
+                    return block.input
+        # None valid: the API requires a tool_result for EVERY tool_use block
+        # in the assistant turn, so answer each of them with the errors.
+        feedback = (
+            "Your tool input failed validation:\n- " + "\n- ".join(errors)
+            + "\nCall the tool again ONCE, with input matching the schema EXACTLY "
+            "(arrays must be real JSON arrays of the specified item type)."
+        )
+        messages.append({"role": "assistant", "content": resp.content})
+        messages.append({
+            "role": "user",
+            "content": [
+                {"type": "tool_result", "tool_use_id": b.id, "content": feedback}
+                for b in blocks
+            ],
+        })
+    raise LLMError(f"Structured output failed validation after {retries + 1} attempts: {errors}")

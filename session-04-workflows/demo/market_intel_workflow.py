@@ -139,6 +139,8 @@ def validate(memo: dict, data: dict) -> list[float]:
     offenders = verify.novel_numbers(prose, source_values(data))
     if offenders:
         print(f"      ⚠️  numbers NOT traceable to source data: {offenders}")
+        print("      (derived ratios the model computed — 'a 3.5x increase' — "
+              "land here too: the checker can't derive, so a human judges them)")
     else:
         print("      all figures trace back to the data block ✅")
     return offenders

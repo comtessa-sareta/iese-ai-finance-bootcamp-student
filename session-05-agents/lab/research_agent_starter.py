@@ -120,7 +120,8 @@ def tool_get_financials(args: dict) -> str:
 def tool_compare_metrics(args: dict) -> str:
     """TODO 2 — build [_metrics_row(t) for t in args['tickers']]; if the
     companies' units differ, add a loud 'warning' key telling the model that
-    absolute amounts are not comparable. Return JSON string."""
+    absolute amounts are not comparable — and print() the warning too, so the
+    human watching the trace sees the trap being caught. Return JSON string."""
     raise NotImplementedError("TODO 2")
 
 
@@ -159,6 +160,18 @@ def run_agent(task: str, max_steps: int = MAX_STEPS) -> tuple[dict | None, list[
             print(f"🔧 step {step}: {call.name}({json.dumps(call.input)[:120]})")
             trace.append(f"step {step}: {call.name}({json.dumps(call.input)})")
             if call.name == "record_recommendation":
+                # Trust the schema; verify anyway — malformed tool inputs go
+                # back to the model for correction, never into your memo.
+                errors = llm.validate(call.input, RECOMMENDATION_SCHEMA)
+                if errors:
+                    print(f"⚠️  step {step}: recommendation failed validation — sent back")
+                    results.append({
+                        "type": "tool_result", "tool_use_id": call.id,
+                        "content": "Validation failed:\n- " + "\n- ".join(errors)
+                        + "\nCall record_recommendation again with input matching "
+                        "the schema EXACTLY (key_points and risks are JSON arrays of strings).",
+                    })
+                    continue
                 recommendation = call.input
                 results.append({"type": "tool_result", "tool_use_id": call.id,
                                 "content": "Recommendation recorded. You are done."})
