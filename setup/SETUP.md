@@ -3,16 +3,28 @@
 You come from the Data Analytics Bootcamp, so Python (Anaconda), VS Code, Git
 and Claude Code are already installed. This adds the course kit.
 
+**Where do I type all these commands?** In VS Code's built-in terminal:
+**Terminal → New Terminal** (it opens at the bottom of the window). Every
+command in this guide — and in the whole course — runs there. (Windows: if
+your terminal is PowerShell and a command misbehaves, switch the terminal
+dropdown to *Command Prompt* or *Git Bash*.)
+
 ## 1. Get the course repo
+
+In the VS Code terminal:
 
 ```bash
 git clone https://github.com/comtessa-sareta/iese-ai-finance-bootcamp-student.git
-cd iese-ai-finance-bootcamp-student
 ```
 
-(You need a GitHub account with access — the invite link is on MyIese.)
+Then **File → Open Folder** → choose the `iese-ai-finance-bootcamp-student`
+folder you just cloned. Opening the folder matters twice: the terminal now
+starts in the right place, and the Claude panel reads the course's context
+file from it.
 
 ## 2. Install the Python dependencies
+
+In the terminal (now inside the course folder):
 
 ```bash
 # Anaconda users (recommended — matches your bootcamp setup):
@@ -22,6 +34,12 @@ pip install -r requirements.txt
 
 # (or plain venv:  python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt)
 ```
+
+Then tell VS Code to use this environment: `Cmd+Shift+P` (Mac) /
+`Ctrl+Shift+P` (Windows) → **Python: Select Interpreter** → pick
+**aifinance**. From now on, new terminals in this folder activate it for you;
+if a terminal ever shows the wrong environment, run `conda activate aifinance`
+in it.
 
 ## 3. Configure your environment
 
