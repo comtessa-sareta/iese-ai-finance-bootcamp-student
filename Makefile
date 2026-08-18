@@ -26,8 +26,18 @@ student-repo:     ## Build the student copy (strips instructor/ and solutions/) 
 		&& bash devtools/build_student_repo.sh \
 		|| echo "student-repo tooling ships in the instructor repo, not the student copy"
 
+publish-student:  ## THE sync command: rebuild student repo, commit, push, refresh zip (rehearsal mode)
+	@test -f devtools/publish_student_repo.sh \
+		&& bash devtools/publish_student_repo.sh \
+		|| echo "publish tooling ships in the instructor repo, not the student copy"
+
+publish-student-class: ## Same, for CLASS: drops the rehearsal TEST-GUIDE.md
+	@test -f devtools/publish_student_repo.sh \
+		&& bash devtools/publish_student_repo.sh --class \
+		|| echo "publish tooling ships in the instructor repo, not the student copy"
+
 clean:            ## Remove generated outputs and caches
 	rm -rf outputs .cache .pytest_cache
 	find . -name __pycache__ -type d -exec rm -rf {} +
 
-.PHONY: setup check test verify dataset student-repo clean
+.PHONY: setup check test verify dataset student-repo publish-student publish-student-class clean
