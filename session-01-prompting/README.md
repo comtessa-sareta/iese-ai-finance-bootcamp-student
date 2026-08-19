@@ -26,7 +26,7 @@ NVIDIA / AMD / Intel case (real figures: `data/semis_fact_sheet.md`):
 
 | Version | Change | What you'll observe |
 |---|---|---|
-| v1 | naive ask | fluent and confident; with web search on, cited but unverified (check a figure against the filings — periods rarely match); with search off, numbers from memory |
+| v1 | naive ask (raw API — a clean room: no search, no context) | fluent and confident; numbers from memory, unverifiable, fiscal years unlabeled |
 | v2 | + role & task decomposition | sharper, still unverifiable |
 | v3 | + context injection (fact sheet) + "NOT IN CONTEXT" rule | grounded, gaps admitted |
 | v4 | + fixed JSON schema + self-check | reusable machine-readable output |

@@ -9,7 +9,7 @@ doesn't, and set up the ONE extra credential this course adds.
 | Credential | What it powers | Where it comes from | Cost |
 |---|---|---|---|
 | **Claude account (Pro plan)** | Claude Code — the interactive copilot you use in every lab | claude.ai subscription (the "basic license" from the program email) | ~$20 for one month — **the free claude.ai account does NOT include Claude Code** ([Anthropic docs](https://code.claude.com/docs/en/setup#authenticate)) |
-| **Anthropic Console API key** | Sessions 3–5 scripts, where YOUR Python code calls Claude (earnings engine, workflows, the agent) | console.anthropic.com — separate account, pay-as-you-go | load **$5** of credit; the whole course typically uses **€1–2** |
+| **Anthropic Console API key** | The notebook cells where YOUR Python code calls Claude — used from **Session 1** (grounding tests, earnings engine, workflows, the agent) | console.anthropic.com — separate account, pay-as-you-go | load **$5** of credit; the whole course typically uses **€1–2** |
 
 A Pro subscription does not include API credits, and API credits don't include
 the Pro app — you need both. Same email for both accounts is fine.
@@ -91,7 +91,7 @@ Two extension facts worth knowing:
 Prefer the terminal look inside VS Code? Settings → Extensions → Claude Code
 → check **Use Terminal**.
 
-## 3. Create the API key (5 minutes — needed from Session 3)
+## 3. Create the API key (5 minutes — needed from Day 1)
 
 1. Go to https://console.anthropic.com and sign up (your normal email is fine).
 2. **Billing** → add **$5** of prepaid credit.

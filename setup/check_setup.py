@@ -53,7 +53,7 @@ def main() -> int:
     report(env_file.exists(), ".env file exists", "copy .env.example to .env" if not env_file.exists() else "")
     key = os.environ.get("ANTHROPIC_API_KEY", "")
     report(bool(key), "ANTHROPIC_API_KEY set",
-           "needed from Session 3 — add it to .env" if not key else "value hidden", required=False)
+           "needed from Session 1 — add it to .env" if not key else "value hidden", required=False)
     ua = os.environ.get("SEC_EDGAR_USER_AGENT", "")
     report(bool(ua) and "example.com" not in ua, "SEC_EDGAR_USER_AGENT set to your name/email",
            detail="" if ua else "set it in .env", required=False)

@@ -70,27 +70,18 @@ step where you hesitated.
 everything below (Part A sends you to claude.ai; Parts B/C are the coding lab
 with self-checks). The notes that follow are what to pay attention to:
 
-1. **Use claude.ai in the browser for this arc, NOT the Claude Code panel** —
-   the panel has already read this repo's CLAUDE.md grounding rule, so it's
-   pre-vaccinated against the naive failure you're here to witness.
-   **If claude.ai web-searches and cites sources on the naive ask** (default):
-   first interrogate it — which fiscal year is each figure? how old is the
-   source? does one number match the SEC-filed fact sheet? ("sourced" is not
-   "verified") — then toggle web search OFF (tools icon in the input box) and
-   rerun to see pure-memory mode. Keep search off for the rest of the arc.
-   Replay the demo arc on the
-   NVIDIA/AMD/Intel case: naive ask → add role+task → paste
-   `data/semis_fact_sheet.md` inside `<context>` tags with the NOT IN CONTEXT
-   rule → add the JSON schema from `playbook/company-deep-dive.md`.
-2. Complete ONE playbook template end to end (company deep-dive suggested).
-3. Run red-team exercises **1, 2 and 5** against it and write what happened
-   into the template's failure-modes table.
+1. Everything runs **in the notebook** (the API cells are the "clean room" —
+   no web search, no repo context; note the key is needed from THIS session).
+2. Part A: naive → role+task → grounded (your RULES + `NOT IN CONTEXT`
+   refusal) → schema run twice. Part C: the three red-team attack cells.
+3. Write ≥2 failure-mode rows into
+   `session-01-prompting/playbook/company-deep-dive.md` — check the table
+   format makes sense to a first-timer.
 
-**Check:** you made the model answer NOT IN CONTEXT at least once; injection
-(exercise 5) did NOT flip your prompt into "STRONG BUY". Closing beat: repeat
-the naive v1 ask in the Claude Code panel and notice it behaves better than
-claude.ai did — CLAUDE.md was silently prompt-engineering for it. That
-contrast IS the session's lesson.
+**Check:** you made the model answer NOT IN CONTEXT with your own rules; the
+injection cell did NOT flip the output to "STRONG BUY". Optional closing
+beat: paste the naive ask into the ✱ Claude Code panel — it behaves better
+than the raw API because CLAUDE.md was silently prompt-engineering for it.
 
 ## Session 2 — Coding copilot (target: 60 min)
 

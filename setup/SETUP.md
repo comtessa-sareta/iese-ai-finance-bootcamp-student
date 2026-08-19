@@ -57,9 +57,10 @@ Edit `.env`:
 
 - `SEC_EDGAR_USER_AGENT` — your name and email (the SEC asks automated
   clients to identify themselves; it's polite and required).
-- `ANTHROPIC_API_KEY` — needed from Session 3. Create at
-  https://console.anthropic.com → API Keys, load a small budget ($5 is
-  plenty — expect to use €1–2 all course). **Never commit this file.**
+- `ANTHROPIC_API_KEY` — needed from **Session 1** (the course notebooks call
+  Claude from your own code). Create at https://console.anthropic.com →
+  API Keys, load a small budget ($5 is plenty — expect to use €1–2 all
+  course). **Never commit this file.**
 
 ## 3b. Claude Code — verify it, and understand the two credentials
 
