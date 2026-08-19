@@ -1,5 +1,7 @@
 # Session 2 — Claude Code I: AI as a Coding Copilot
 
+> 🎓 **Work in [`notebooks/02-coding-copilot.ipynb`](../notebooks/02-coding-copilot.ipynb)** — it contains this session's full teaching and lab. This README is the session brief and reference.
+
 **You leave with:** your first complete finance Python project — a Comparable
 Company Analysis tool — committed and pushed to your own GitHub repository.
 

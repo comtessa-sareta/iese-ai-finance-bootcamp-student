@@ -1,5 +1,7 @@
 # Session 5 — AI Agents for Finance
 
+> 🎓 **Work in [`notebooks/05-agents.ipynb`](../notebooks/05-agents.ipynb)** — it contains this session's full teaching and lab. This README is the session brief and reference.
+
 **You leave with:** a functioning mini finance agent, plus your capstone
 presentation of "My AI-Native Finance Workflow".
 

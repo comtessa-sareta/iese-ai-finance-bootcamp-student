@@ -1,5 +1,7 @@
 # Session 1 — LLM Systems, Prompt Engineering & Financial Reasoning
 
+> 🎓 **Work in [`notebooks/01-prompting.ipynb`](../notebooks/01-prompting.ipynb)** — it contains this session's full teaching and lab. This README is the session brief and reference.
+
 **You leave with:** a personal *Finance Prompt Playbook* — reusable, validated
 prompt templates you'll use all week and after the course.
 

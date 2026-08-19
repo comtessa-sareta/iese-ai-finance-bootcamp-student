@@ -1,5 +1,7 @@
 # Session 3 — Claude Code II: Debugging, Testing & Financial Analytics
 
+> 🎓 **Work in [`notebooks/03-debugging-earnings.ipynb`](../notebooks/03-debugging-earnings.ipynb)** — it contains this session's full teaching and lab. This README is the session brief and reference.
+
 **You leave with:** an AI-generated investment-memo draft produced by your own
 Earnings Analysis Engine — with a verification layer that catches fabricated
 evidence automatically.

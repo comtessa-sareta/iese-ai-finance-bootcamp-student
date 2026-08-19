@@ -54,6 +54,11 @@ Do these in order, timing each — this mirrors the students' pre-Monday email:
    credit), then `python setup/check_setup.py`. Note: the checker may say
    the `claude` CLI is not on PATH — with the extension that's expected and
    explicitly fine.
+4. **Open `notebooks/00-setup.ipynb`** in VS Code (select the course kernel
+   when prompted) and run it top to bottom. From here on, THE COURSE IS THE
+   NOTEBOOKS — one per session, teaching first, then labs where you fill in
+   code between `### START CODE HERE ###` markers and run the ✅ self-check
+   cell under each exercise. Session folders' READMEs are reference.
 
 **Report:** total time from clone to green check; whether Pro sign-in and
 plan detection worked first try; the CLAUDE.md context-check result; any
@@ -61,7 +66,9 @@ step where you hesitated.
 
 ## Session 1 — Prompting (target: 45–60 min)
 
-Read `session-01-prompting/README.md`, then:
+**Open `notebooks/01-prompting.ipynb`** and work top to bottom — it contains
+everything below (Part A sends you to claude.ai; Parts B/C are the coding lab
+with self-checks). The notes that follow are what to pay attention to:
 
 1. **Use claude.ai in the browser for this arc, NOT the Claude Code panel** —
    the panel has already read this repo's CLAUDE.md grounding rule, so it's
@@ -87,7 +94,9 @@ contrast IS the session's lesson.
 
 ## Session 2 — Coding copilot (target: 60 min)
 
-Read `session-02-coding-copilot/README.md`, then:
+**Open `notebooks/02-coding-copilot.ipynb`** and work top to bottom (the
+messy-data demo runs; the comps lab has three fill-in exercises with
+self-checks). Notes:
 
 1. Run the demo end state: `python session-02-coding-copilot/demo/financial_data_pipeline.py`
    (expect "Clean: 10 companies" + a chart in `outputs/`).
@@ -107,7 +116,9 @@ hand-check matches the table.
 
 ## Session 3 — Debugging & earnings engine (target: 60–75 min)
 
-Read `session-03-debugging/README.md`, then:
+**Open `notebooks/03-debugging-earnings.ipynb`** — you build the DCF function
+by function (each with its test below, ending at $75.61 vs $62), then the
+earnings engine's trust layer. Notes:
 
 1. `python session-03-debugging/demo/broken_dcf.py` → crash. Paste the
    traceback into Claude Code, ask for diagnosis BEFORE fix. Fix it.
@@ -125,7 +136,8 @@ margin gap, guidance exclusion, DSO jump.
 
 ## Session 4 — Workflows & EDGAR (target: 60 min)
 
-Read `session-04-workflows/README.md`, then:
+**Open `notebooks/04-workflows-edgar.ipynb`** — live EDGAR teaching cells,
+then the screening lab (three fill-ins). Notes:
 
 1. Demo (keyless): `python session-04-workflows/demo/market_intel_workflow.py NVDA --peers AMD INTC --dry-run`
    — watch the 5 steps, approve at the gate. With key: run it live too.
@@ -141,7 +153,9 @@ you can answer: why net margin instead of operating margin?
 
 ## Session 5 — Agent + capstone taste (target: 45–60 min)
 
-Read `session-05-agents/README.md`, then:
+**Open `notebooks/05-agents.ipynb`** — inspect the agent's spec, build the
+currency-trap tool and the operating rules (self-checked without a key), then
+run your agent live and pass the human gate. Notes:
 
 1. `python session-05-agents/demo/mini_analyst_agent.py --preflight` (keyless),
    then run it live on the default Novo Nordisk vs Eli Lilly task.

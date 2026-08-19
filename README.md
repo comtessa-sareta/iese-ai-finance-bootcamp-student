@@ -22,12 +22,17 @@ Across five sessions you assemble **"Your AI Financial Analyst"**:
 ## Start here
 
 - **Students:** [setup/SETUP.md](setup/SETUP.md) (15 min, before Day 1), then
-  `python setup/check_setup.py`. Each session folder's README is your lab guide.
+  **open `notebooks/00-setup.ipynb` in VS Code and work through the notebooks
+  in order** — one per session, self-contained: teaching first, then a lab
+  where you fill in code between `### START CODE HERE ###` markers and run the
+  ✅ self-check cell below each exercise. The session folders hold the data,
+  reference scripts and briefs the notebooks draw on.
   checklist, minute-by-minute guides, contingencies.
 
 ## Repo map
 
 ```
+notebooks/                  THE COURSE: 00-setup + one notebook per session (work in order)
 setup/                      environment setup + checker
 toolkit/                    shared package: edgar.py (SEC client), llm.py (Claude helpers), verify.py (grounding checks)
 cheatsheets/                git, Claude Code, prompt patterns — pocket cards

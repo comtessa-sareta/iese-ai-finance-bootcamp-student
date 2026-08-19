@@ -1,5 +1,7 @@
 # Session 4 — AI Workflows & System Design for Finance
 
+> 🎓 **Work in [`notebooks/04-workflows-edgar.ipynb`](../notebooks/04-workflows-edgar.ipynb)** — it contains this session's full teaching and lab. This README is the session brief and reference.
+
 **You leave with:** a Company Screening Engine that combines live SEC/EDGAR
 data, deterministic filtering and validated LLM reasoning.
 
