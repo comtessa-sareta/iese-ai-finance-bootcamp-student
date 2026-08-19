@@ -30,9 +30,9 @@ In the terminal (now inside the course folder):
 # Anaconda users (recommended — matches your bootcamp setup):
 conda create -n aifinance python=3.12 -y
 conda activate aifinance
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
-# (or plain venv:  python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt)
+# (or plain venv:  python3 -m venv .venv && source .venv/bin/activate && python -m pip install -r requirements.txt)
 ```
 
 **If you see `command not found: conda`:** either your terminal was never
@@ -44,6 +44,13 @@ use the plain-venv line above instead; the course doesn't care which.
 **If conda demands Terms-of-Service acceptance** (fresh installs do): run the
 two `conda tos accept ...` commands it prints (Anaconda's repo ToS — free for
 individual/educational use), then rerun the create command.
+
+**If a check later fails with `No module named 'requests'`** (or pandas,
+etc.): your packages landed in a different environment than the one running.
+Fix: `conda activate aifinance`, then `python -m pip install -r
+requirements.txt` — the `python -m pip` form always installs into the Python
+that's active. In notebooks, also confirm the kernel picker says
+**aifinance**.
 
 Then tell VS Code to use this environment: `Cmd+Shift+P` (Mac) /
 `Ctrl+Shift+P` (Windows) → **Python: Select Interpreter** → pick
