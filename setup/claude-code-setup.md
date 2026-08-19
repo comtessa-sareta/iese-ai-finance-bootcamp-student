@@ -77,6 +77,12 @@ self-test: with nothing selected or attached, ask *"What is the one rule that
 always applies in this repo?"* — Claude Code answers from the repo's
 CLAUDE.md by itself (never present an unverified number).
 
+**Recommended: mute Copilot for the course folder.** `Cmd+Shift+X` →
+search "copilot" → gear ⚙️ on *GitHub Copilot* (and *Copilot Chat*) →
+**Disable (Workspace)** → reload. It stays available in your other projects
+but can't ambush you here. Then drag the Claude panel to the right sidebar —
+where the Copilot chat used to sit — so old habits land in the right place.
+
 Two extension facts worth knowing:
 
 - **It bundles its own copy of Claude Code**, so the `claude` terminal
