@@ -56,9 +56,11 @@ Do these in order, timing each — this mirrors the students' pre-Monday email:
    explicitly fine.
 4. **Open `notebooks/00-setup.ipynb`** in VS Code (select the course kernel
    when prompted) and run it top to bottom. From here on, THE COURSE IS THE
-   NOTEBOOKS — one per session, teaching first, then labs where you fill in
-   code between `### START CODE HERE ###` markers and run the ✅ self-check
-   cell under each exercise. Session folders' READMEs are reference.
+   NOTEBOOKS — one per session, teaching first, then fill-the-gaps labs
+   between `### START CODE HERE ###` markers (structure given; replace every
+   `None` and `[BLANK]`), each with a ✅ self-check cell under it. Session
+   folders' READMEs are reference. Judge the gap difficulty as a
+   finance-not-CS student — too easy and too hard are both findings.
 
 **Report:** total time from clone to green check; whether Pro sign-in and
 plan detection worked first try; the CLAUDE.md context-check result; any

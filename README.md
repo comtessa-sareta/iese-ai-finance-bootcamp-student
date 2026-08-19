@@ -23,9 +23,10 @@ Across five sessions you assemble **"Your AI Financial Analyst"**:
 
 - **Students:** [setup/SETUP.md](setup/SETUP.md) (15 min, before Day 1), then
   **open `notebooks/00-setup.ipynb` in VS Code and work through the notebooks
-  in order** — one per session, self-contained: teaching first, then a lab
-  where you fill in code between `### START CODE HERE ###` markers and run the
-  ✅ self-check cell below each exercise. The session folders hold the data,
+  in order** — one per session, self-contained: teaching first, then a lab of
+  fill-the-gaps exercises between `### START CODE HERE ###` markers (the
+  Python structure is given; every `None` and `[BLANK]` is yours), each with a
+  ✅ self-check cell below it. The session folders hold the data,
   reference scripts and briefs the notebooks draw on.
   checklist, minute-by-minute guides, contingencies.
 
