@@ -77,11 +77,22 @@ self-test: with nothing selected or attached, ask *"What is the one rule that
 always applies in this repo?"* — Claude Code answers from the repo's
 CLAUDE.md by itself (never present an unverified number).
 
-**Recommended: mute Copilot for the course folder.** `Cmd+Shift+X` →
-search "copilot" → gear ⚙️ on *GitHub Copilot* (and *Copilot Chat*) →
-**Disable (Workspace)** → reload. It stays available in your other projects
-but can't ambush you here. Then drag the Claude panel to the right sidebar —
-where the Copilot chat used to sit — so old habits land in the right place.
+**Recommended: mute Copilot for the course.** Two cases:
+
+- *Copilot installed as an extension:* `Cmd+Shift+X` → search "copilot" →
+  gear ⚙️ → **Disable (Workspace)** → reload. Stays available elsewhere.
+- *No Copilot extension but the GPT chat is still there:* that's VS Code's
+  **built-in** Copilot chat (on by default in current VS Code). Hide it:
+  click the chat icon in the top title bar → **Hide Copilot**, or Settings
+  (`Cmd+,`) → search `chat.commandCenter` → untick.
+
+Then drag the Claude panel to the right sidebar — where that chat used to
+sit — so old habits land in the right place.
+
+**No ✱ icon anywhere?** The Claude Code extension simply isn't installed —
+don't assume the pre-course did it: `Cmd+Shift+X` → search **"Claude Code"**
+(publisher: Anthropic) → Install → click the ✱ → Sign in with your Pro
+account → `/status` shows Pro. Two minutes.
 
 Two extension facts worth knowing:
 
