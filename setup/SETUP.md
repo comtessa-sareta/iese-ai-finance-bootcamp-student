@@ -41,6 +41,10 @@ or on Windows pick the *Anaconda Prompt* terminal profile, then open a NEW
 terminal — or Anaconda isn't installed on this machine, in which case just
 use the plain-venv line above instead; the course doesn't care which.
 
+**If conda demands Terms-of-Service acceptance** (fresh installs do): run the
+two `conda tos accept ...` commands it prints (Anaconda's repo ToS — free for
+individual/educational use), then rerun the create command.
+
 Then tell VS Code to use this environment: `Cmd+Shift+P` (Mac) /
 `Ctrl+Shift+P` (Windows) → **Python: Select Interpreter** → pick
 **aifinance**. From now on, new terminals in this folder activate it for you;
