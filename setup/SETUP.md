@@ -11,6 +11,16 @@ the fix.
 | **Claude Pro plan** (~$20, one month is enough) | The ✱ Claude panel in VS Code — your copilot in every lab | claude.ai → upgrade to Pro. ⚠️ The free account does NOT work |
 | **Anthropic API key** with **$5** credit (you'll use €1–2) | The notebook cells where YOUR code calls Claude | console.anthropic.com (separate from Pro; same email fine) → Billing → add $5 → API Keys → Create Key → **copy it now** (shown only once) |
 
+## Step 0b — the three tools (skip what you already have)
+
+If you took the Python/tools pre-course, you have all three — skip ahead.
+
+| Tool | Check you have it | If not, install |
+|---|---|---|
+| **VS Code** | it opens | code.visualstudio.com |
+| **Git** | `git --version` in a terminal | git-scm.com (Mac: running that check offers the install) |
+| **Python** | `python3 --version` shows 3.10+ | Anaconda: anaconda.com/download (or any Python 3.10+) |
+
 ## Where do I type the commands?
 
 In VS Code's built-in terminal: **Terminal → New Terminal** (opens at the
