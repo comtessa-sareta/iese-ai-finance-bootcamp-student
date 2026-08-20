@@ -1,0 +1,7 @@
+{
+  // Open markdown files rendered (not as raw source) — friendlier for the course docs.
+  // To edit one: right-click its tab → "Reopen Editor With…" → Text Editor.
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  }
+}

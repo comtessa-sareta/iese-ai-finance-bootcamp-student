@@ -20,5 +20,6 @@ student-repo/
 
 # OS / editor
 .DS_Store
-.vscode/
+.vscode/*
+!.vscode/settings.json
 *.swp
