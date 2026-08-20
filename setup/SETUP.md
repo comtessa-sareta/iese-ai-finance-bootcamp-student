@@ -1,5 +1,9 @@
 # Setup — do this BEFORE Day 1 (~30 minutes)
 
+> **Already set up?** (accounts, environment, keys, ✱ panel) — skip this page:
+> open **`notebooks/00-setup.ipynb`**, run it, and if it's all green go
+> straight to notebook 01. This page is only for getting a bare laptop ready.
+
 Follow this page top to bottom. When you finish step 6, you are ready for the
 course. If anything fails, the **Troubleshooting** section at the bottom has
 the fix.
