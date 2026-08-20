@@ -108,8 +108,10 @@ well *is* the course.
   run, and the kernel snapshots your environment at start. After installing
   anything: **Restart → Run All**.
 - **After a `git pull`, an open notebook looks unchanged** — VS Code kept the
-  old version in its editor tab. Close the tab (choose **Don't Save**) and
-  reopen the file from the Explorer.
+  old version in its editor tab (a ● dot on the tab means an unsaved buffer,
+  which even survives closing and reopening). The reliable fix: focus the
+  tab → `Cmd+Shift+P` (Win: `Ctrl+Shift+P`) → **Revert File** → Enter.
+  Repeat for every tab with a dot, then **Restart → Run All**.
 - **No ✱ icon anywhere / sign-in trouble / hitting Pro limits** — see
   [claude-code-setup.md](claude-code-setup.md).
 - **The checker says the `claude` CLI is not on PATH** — fine if you use the
