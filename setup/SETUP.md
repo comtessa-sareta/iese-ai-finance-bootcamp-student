@@ -1,105 +1,103 @@
-# Setup — do this BEFORE Day 1 (15 minutes)
+# Setup — do this BEFORE Day 1 (~30 minutes)
 
-You come from the Data Analytics Bootcamp, so Python (Anaconda), VS Code, Git
-and Claude Code are already installed. This adds the course kit.
+Follow this page top to bottom. When you finish step 6, you are ready for the
+course. If anything fails, the **Troubleshooting** section at the bottom has
+the fix.
 
-**Where do I type all these commands?** In VS Code's built-in terminal:
-**Terminal → New Terminal** (it opens at the bottom of the window). Every
-command in this guide — and in the whole course — runs there. (Windows: if
-your terminal is PowerShell and a command misbehaves, switch the terminal
-dropdown to *Command Prompt* or *Git Bash*.)
+## Step 0 — the two accounts you need (~$25 total)
 
-## 1. Get the course repo
+| Account | What for | Get it |
+|---|---|---|
+| **Claude Pro plan** (~$20, one month is enough) | The ✱ Claude panel in VS Code — your copilot in every lab | claude.ai → upgrade to Pro. ⚠️ The free account does NOT work |
+| **Anthropic API key** with **$5** credit (you'll use €1–2) | The notebook cells where YOUR code calls Claude | console.anthropic.com (separate from Pro; same email fine) → Billing → add $5 → API Keys → Create Key → **copy it now** (shown only once) |
 
-In the VS Code terminal:
+## Where do I type the commands?
+
+In VS Code's built-in terminal: **Terminal → New Terminal** (opens at the
+bottom). Every command below goes there.
+
+## Step 1 — get the course
 
 ```bash
 git clone https://github.com/comtessa-sareta/iese-ai-finance-bootcamp-student.git
 ```
 
 Then **File → Open Folder** → choose the `iese-ai-finance-bootcamp-student`
-folder you just cloned. Opening the folder matters twice: the terminal now
-starts in the right place, and the Claude panel reads the course's context
-file from it.
+folder, and open a **new** terminal (so it starts inside the folder).
 
-(The repo is public — no GitHub account needed to clone. You WILL want a free
-github.com account for Session 2, when you publish your own first project.)
-
-## 2. Install the Python dependencies
-
-In the terminal (now inside the course folder):
+## Step 2 — create the Python environment
 
 ```bash
-# Anaconda users (recommended — matches your bootcamp setup):
 conda create -n aifinance python=3.12 -y
 conda activate aifinance
 python -m pip install -r requirements.txt
-
-# (or plain venv:  python3 -m venv .venv && source .venv/bin/activate && python -m pip install -r requirements.txt)
 ```
 
-**If you see `command not found: conda`:** either your terminal was never
-initialized for Anaconda — run `conda init zsh` from the Anaconda prompt/app,
-or on Windows pick the *Anaconda Prompt* terminal profile, then open a NEW
-terminal — or Anaconda isn't installed on this machine, in which case just
-use the plain-venv line above instead; the course doesn't care which.
+Then tell VS Code to use it: `Cmd+Shift+P` (Windows: `Ctrl+Shift+P`) →
+**Python: Select Interpreter** → pick **aifinance**.
 
-**If conda demands Terms-of-Service acceptance** (fresh installs do): run the
-two `conda tos accept ...` commands it prints (Anaconda's repo ToS — free for
-individual/educational use), then rerun the create command.
-
-**If a check later fails with `No module named 'requests'`** (or pandas,
-etc.): your packages landed in a different environment than the one running.
-Fix: `conda activate aifinance`, then `python -m pip install -r
-requirements.txt` — the `python -m pip` form always installs into the Python
-that's active. In notebooks, also confirm the kernel picker says
-**aifinance**.
-
-Then tell VS Code to use this environment: `Cmd+Shift+P` (Mac) /
-`Ctrl+Shift+P` (Windows) → **Python: Select Interpreter** → pick
-**aifinance**. From now on, new terminals in this folder activate it for you;
-if a terminal ever shows the wrong environment, run `conda activate aifinance`
-in it.
-
-## 3. Configure your environment
+## Step 3 — your keys
 
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env`:
+Open the new `.env` file in VS Code and fill in two lines:
+your name+email in `SEC_EDGAR_USER_AGENT`, and your API key from Step 0 in
+`ANTHROPIC_API_KEY`. **Never share or commit this file.**
 
-- `SEC_EDGAR_USER_AGENT` — your name and email (the SEC asks automated
-  clients to identify themselves; it's polite and required).
-- `ANTHROPIC_API_KEY` — needed from **Session 1** (the course notebooks call
-  Claude from your own code). Create at https://console.anthropic.com →
-  API Keys, load a small budget ($5 is plenty — expect to use €1–2 all
-  course). **Never commit this file.**
+## Step 4 — the Claude panel
 
-## 3b. Claude Code — verify it, and understand the two credentials
+1. `Cmd+Shift+X` (Windows: `Ctrl+Shift+X`) → search **"Claude Code"**
+   (publisher: Anthropic) → **Install**.
+2. Click the **✱ icon** (top-right of the editor, or the bottom status bar)
+   → **Sign in** with your **Pro** account.
+3. In the panel, type `/status` — it should show your Pro plan.
 
-Your Claude **Pro** subscription (the "basic license" from the program email —
-the free claude.ai account is NOT enough) powers Claude Code, the copilot you
-use in every lab. The API key above is a **separate** credential for the
-scripts. Verify both and fix anything missing with
-[claude-code-setup.md](claude-code-setup.md) — 5 minutes.
+⚠️ **Wrong-chat warning:** if a chat panel mentions GPT, Gemini or "credits",
+that's VS Code's built-in Copilot — NOT the course tool. The course tool is
+always the **✱** panel. (More detail: [claude-code-setup.md](claude-code-setup.md).)
 
-## 4. Verify
+## Step 5 — verify
 
 ```bash
 python setup/check_setup.py
 ```
 
-Everything required should show `[ OK ]` (the API key may show `[warn]` until
-Session 3 — that's fine). If something fails, the message tells you the fix;
-bring stubborn cases to 15 minutes before Session 1.
+Everything required shows `[ OK ]` → you're set. Any failure message includes
+its own fix; stubborn cases → Troubleshooting below, or bring your laptop at
+8:45 on Day 1.
 
-## 5. Smoke test (optional but satisfying)
+## Step 6 — start the course
 
-```bash
-python session-02-coding-copilot/demo/financial_data_pipeline.py
-```
+Open **`notebooks/00-setup.ipynb`** → top-right **Select Kernel →
+aifinance** → **Run All**. All green? Done. From here the course is the
+notebooks, **in order 01 → 05**: each teaches first, then a lab where you fill
+every `None` and `[BLANK]` between the `### START CODE HERE ###` markers and
+run the ✅ self-check under each exercise. Stuck? Ask the ✱ panel — using it
+well *is* the course.
 
-You should see a cleaned table of real big-tech financials and a chart in
-`outputs/`. That data came from SEC filings — you'll learn to fetch it
-yourself on Day 2.
+---
+
+## Troubleshooting
+
+- **`command not found: conda`** — either run `conda init zsh` (Mac) from the
+  Anaconda app / use the *Anaconda Prompt* profile (Windows) and open a NEW
+  terminal, or Anaconda isn't installed: use the no-conda line instead —
+  `python3 -m venv .venv && source .venv/bin/activate && python -m pip install -r requirements.txt`
+  — the course is equally happy with it (pick the `.venv` kernel in Step 6).
+- **conda demands Terms-of-Service acceptance** (fresh installs): run the two
+  `conda tos accept ...` commands it prints, then retry.
+- **`No module named 'requests'` (or pandas...)** — your packages landed in a
+  different environment than the one running. `conda activate aifinance`,
+  then `python -m pip install -r requirements.txt` (`python -m pip` always
+  installs into the active Python). In notebooks, confirm the kernel says
+  **aifinance** — or just run the **rescue cell** in `00-setup.ipynb`, which
+  installs into whatever kernel you selected.
+- **Notebook disagrees with the terminal** — notebook outputs show the LAST
+  run, and the kernel snapshots your environment at start. After installing
+  anything: **Restart → Run All**.
+- **No ✱ icon anywhere / sign-in trouble / hitting Pro limits** — see
+  [claude-code-setup.md](claude-code-setup.md).
+- **The checker says the `claude` CLI is not on PATH** — fine if you use the
+  VS Code extension (it bundles its own copy).
