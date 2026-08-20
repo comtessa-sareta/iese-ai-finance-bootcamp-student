@@ -107,6 +107,9 @@ well *is* the course.
 - **Notebook disagrees with the terminal** — notebook outputs show the LAST
   run, and the kernel snapshots your environment at start. After installing
   anything: **Restart → Run All**.
+- **After a `git pull`, an open notebook looks unchanged** — VS Code kept the
+  old version in its editor tab. Close the tab (choose **Don't Save**) and
+  reopen the file from the Explorer.
 - **No ✱ icon anywhere / sign-in trouble / hitting Pro limits** — see
   [claude-code-setup.md](claude-code-setup.md).
 - **The checker says the `claude` CLI is not on PATH** — fine if you use the
