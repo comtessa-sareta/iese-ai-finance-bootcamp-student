@@ -42,10 +42,14 @@ folder, and open a **new** terminal (so it starts inside the folder).
 ## Step 2 — create the Python environment
 
 ```bash
-conda create -n aifinance python=3.12 -y
+conda create -n aifinance python=3.12 -y --override-channels -c conda-forge
 conda activate aifinance
 python -m pip install -r requirements.txt
 ```
+
+(The `--override-channels -c conda-forge` part installs from the community
+channel — without it, fresh Anaconda installs are blocked cold by a
+Terms-of-Service prompt. Copy the line exactly.)
 
 Then tell VS Code to use it: `Cmd+Shift+P` (Windows: `Ctrl+Shift+P`) →
 **Python: Select Interpreter** → pick **aifinance**.
@@ -99,9 +103,15 @@ well *is* the course.
   Anaconda app / use the *Anaconda Prompt* profile (Windows) and open a NEW
   terminal, or Anaconda isn't installed: use the no-conda line instead —
   `python3 -m venv .venv && source .venv/bin/activate && python -m pip install -r requirements.txt`
-  — the course is equally happy with it (pick the `.venv` kernel in Step 6).
-- **conda demands Terms-of-Service acceptance** (fresh installs): run the two
-  `conda tos accept ...` commands it prints, then retry.
+  — the course is equally happy with it. **Note:** on this path your
+  environment shows up in VS Code as **`.venv`**, not `aifinance` — same
+  thing; pick `.venv` wherever this guide says `aifinance`.
+- **conda demands Terms-of-Service acceptance** — this happens when
+  `conda create` is run WITHOUT the `--override-channels -c conda-forge`
+  flags from Step 2. Rerun with the flags exactly as written. (Alternative:
+  accept Anaconda's repo ToS with the two `conda tos accept ...` commands it
+  prints — note their terms restrict commercial use at larger organizations,
+  which is why the course defaults to conda-forge instead.)
 - **`No module named 'requests'` (or pandas...)** — your packages landed in a
   different environment than the one running. `conda activate aifinance`,
   then `python -m pip install -r requirements.txt` (`python -m pip` always
