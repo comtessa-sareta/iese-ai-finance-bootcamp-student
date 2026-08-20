@@ -22,6 +22,9 @@ folder you just cloned. Opening the folder matters twice: the terminal now
 starts in the right place, and the Claude panel reads the course's context
 file from it.
 
+(The repo is public — no GitHub account needed to clone. You WILL want a free
+github.com account for Session 2, when you publish your own first project.)
+
 ## 2. Install the Python dependencies
 
 In the terminal (now inside the course folder):
