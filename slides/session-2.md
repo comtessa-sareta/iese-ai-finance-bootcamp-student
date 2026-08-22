@@ -51,7 +51,8 @@ df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
 
 Today's file: **10 real companies** from real SEC filings + **8 planted defects**
 
-- Text where numbers should be · a duplicate row · missing values · a junk TOTAL row
+- Text where numbers should be
+- A duplicate row, missing values, a junk TOTAL row
 - **The dangerous defect**: a single company reported in **billions**
 
 ```
@@ -107,7 +108,7 @@ and ask the ✱ panel.
 
 - **Exercise 1**: growth and margins
 - **Exercise 2**: market cap, EV, the three multiples
-- **Exercise 3**: summary table with a MEDIAN row
+- **Exercise 3**: summary table with a MEDIAN row, then an interactive chart
 - **Verification**: confirm Apple's EV/EBITDA on a calculator, from the raw file
 - **To finish**: publish the tool to your own GitHub repository
 
