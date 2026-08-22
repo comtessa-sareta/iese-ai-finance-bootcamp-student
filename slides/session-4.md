@@ -8,7 +8,7 @@ theme: default
 
 **Yesterday you pasted data by hand. Today your code fetches it from the SEC.**
 
-Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
+Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 

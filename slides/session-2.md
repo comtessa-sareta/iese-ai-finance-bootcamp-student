@@ -8,7 +8,7 @@ theme: default
 
 **Objective: build and publish your first finance tool to GitHub within this session.**
 
-Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
+Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 

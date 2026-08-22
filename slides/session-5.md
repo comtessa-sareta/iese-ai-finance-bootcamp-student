@@ -8,7 +8,7 @@ theme: default
 
 **Until now you wrote every plan. Now the model plans its own steps, within limits you define.**
 
-Plan: idea 10' · demo 18' · lab 22' · capstones 20' · close 5'
+Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 
 ---
 

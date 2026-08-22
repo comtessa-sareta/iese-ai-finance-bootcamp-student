@@ -22,7 +22,7 @@ protocol you'll practice:
    worth $100+. Green tests AND a plausible number — you need both.
 
 The most important test is `test_matches_hand_calculation`: a case simple
-enough for a napkin. If your model can't reproduce a hand-checkable case, you
+enough to verify by hand. If your model can't reproduce a hand-checkable case, you
 don't have a model — you have a rumour.
 
 ## Part 2 (lab, 30 min) — Earnings Analysis Engine

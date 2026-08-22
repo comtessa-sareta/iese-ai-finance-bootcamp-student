@@ -8,15 +8,15 @@ theme: default
 
 **An error that stops execution is visible. An error that returns a wrong number is costly.**
 
-Plan: idea 12' · live demo 22' · your lab 30' · debrief 8'
+Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 
 # By the end of Session 3 you can
 
-1. **Read** a traceback and make Claude diagnose before it fixes
-2. **Write** a financial rule as a test, including one checkable on a napkin
-3. **Build** a DCF that survives its own test suite: 75.61
+1. **Read** a traceback and have Claude diagnose the cause before it proposes a fix
+2. **Write** a financial rule as an automated test, including one simple enough to verify by hand
+3. **Build** a discounted cash flow (DCF) valuation that passes its full test suite
 4. **Catch** a fabricated quote automatically, with code you wrote
 
 ---
@@ -41,9 +41,9 @@ def test_equity_value_subtracts_net_debt():
 ```
 
 - **One test encodes one financial rule**, checked automatically on every change
-- **The napkin test**: flat cash flows and round rates make the answer
-  computable by hand. If the model disagrees with the algebra, **the model
-  is wrong.**
+- **The hand-check**: choose flat cash flows and round rates, so the correct
+  answer is computable by hand. If the model disagrees with the algebra,
+  **the model is wrong.**
 
 ---
 
@@ -102,8 +102,8 @@ and ask the ✱ panel.
 
 # Your lab · notebook 03 · 30 minutes
 
-- **Exercises 1 to 4**: build the four DCF functions, a test under each
-- **Milestone A**: the final cell says **75.61**
+- **Exercises 1 to 4**: build the four functions of the DCF, a test under each
+- **Milestone A**: the final cell values the company at **$75.61 per share**
 - **Exercise 5**: build the quote checker
 - **Milestone B**: the engine flags **exactly one** fabricated quote
 
