@@ -4,91 +4,89 @@ paginate: true
 theme: default
 ---
 
-# Session 3 — Claude Code II: Debugging, Testing & Financial Analytics
+# Session 3 · Debugging, Testing and Earnings
 
-**Deliverable: an investment-memo draft from YOUR earnings engine — with a
-fabrication detector.**
+**A model that crashes is annoying. A model that lies is expensive.**
+
+Agenda: idea (12') · demo (22') · your lab (30') · debrief (8')
 
 ---
 
 # The debugging protocol
 
-1. **Read the traceback bottom-up** — last line = what; marked line = where
-2. Reproduce it
-3. **Diagnose before fixing** — make Claude explain the cause first
-4. One change at a time; re-run after each
+1. Read the traceback bottom up. Last line says what. Marked line says where.
+2. Diagnose before you fix. Make Claude explain the cause first.
+3. One change at a time. Re-run after each.
 
-> Crashes are the *friendly* bugs. They announce themselves.
-> The dangerous ones return a number.
+Crashes are the friendly bugs. They announce themselves.
+
+The dangerous ones return a number.
 
 ---
 
-# Tests = financial logic, written down
+# Tests are financial logic, written down
 
 ```python
 def test_equity_value_subtracts_net_debt():
-    """Debt holders get paid first: equity = EV - net debt."""
+    """Debt holders get paid first."""
 ```
 
-- Each sanity test names one piece of finance the code must respect
-- The **napkin test**: one case simple enough to compute by hand
-- If your model can't reproduce a hand-checkable case, you don't have a
-  model — you have a rumour
+Each test states one piece of finance the code must respect.
+
+The best one: a case simple enough for a napkin. If your model cannot
+reproduce a hand calculation, you have a rumor, not a model.
 
 ---
 
-# Live demo — Fix a Broken Valuation Model
+# Demo: the broken DCF
 
-Meridian Semiconductor (fictional), trades at **$62**
+Meridian Semiconductor. Fictional. Trades at $62.
 
-1. Run → **crash** → traceback → fix
-2. Runs → says **$115+** → would you sign?
-3. `pytest` → six failures, each a finance error
-4. Fix by test: discounting off-by-one · WACC tax shield ·
-   **undiscounted terminal value** · net-debt sign · missing g<r guard
-5. Green + plausible: **$75.61**
+The model I give you crashes. After the crash fix, it says $115+.
 
----
+Would you sign that memo?
 
-# Evals, in one slide
-
-- Tests check **code**. Evals check **model outputs**.
-- Cheapest useful eval in finance: **evidence verification** —
-  every claim carries a verbatim quote; code checks the quote exists
-- You build exactly that in the next 30 minutes
+Then: tests. Six failures. Each names a finance error. We fix by test.
 
 ---
 
-# Lab (30 min) — Earnings Analysis Engine
+# The six errors, in finance words
 
-`lab/earnings_starter.py` (+ synthetic Meridian call transcript — fictional
-company, so the model can't lean on memorized knowledge)
+- First year cash flow not discounted
+- WACC forgot the tax shield
+- Terminal value taken at face value. It sits 5 years away.
+- Net debt ADDED to enterprise value
+- Growth above the discount rate accepted. Infinite value.
+- A horizon hardcoded to 5
 
-1. **Grounding rules** (system prompt)
-2. **verify_evidence()** — quote checker: the trust layer
-3. Finish the memo renderer
-
-The dry-run analysis hides **one fabricated quote**. Your code will catch it.
-
----
-
-# What a good engine finds in this transcript
-
-- "One-time" ramp costs… for the **third consecutive quarter**
-- CEO says margins "structurally improving"; CFO **won't guide** a recovery
-- Guidance **excludes** the pending export-license review (~14% of revenue)
-- Inventory **+41%**, DSO **71 vs 58** days
-- Largest customer **15% → 22%** of revenue
-
-<!-- Different runs will find different subsets — that's the non-determinism conversation. -->
+Correct answer: $75.61. Market: $62. Now the conversation starts.
 
 ---
 
-# Reflection
+# Part 2: the earnings engine
 
-1. How do you now *know* a number is right?
-2. The quote-checker caught what your eyes missed. Where else does that generalize?
-3. Would you sign your engine's memo? What's still missing?
+You get a call transcript. Fictional company. The model cannot rely on memory.
 
-**Tomorrow 9:00:** we stop pasting context and start **fetching** it —
-live SEC filings at scale.
+Your engine extracts: sentiment, themes, risks, guidance, red flags.
+
+Every claim must carry a **verbatim quote**. Then YOUR code checks each
+quote against the document.
+
+One quote in today's data is fabricated. Your code will catch it.
+
+---
+
+# Your lab · notebook 03 · 30 minutes
+
+- Exercises 1 to 4: build the DCF right. Test below each function.
+- Final cell: value Meridian. Expect $75.61.
+- Exercise 5: the trust layer. Verify every quote.
+- Run the engine: it must flag exactly one fabrication.
+
+---
+
+# Remember
+
+Green tests AND a plausible number. You need both.
+
+Tomorrow: we stop pasting data and start pulling it. Live SEC filings.

@@ -4,10 +4,11 @@ paginate: true
 theme: default
 ---
 
-# Session 4 — AI Workflows & System Design for Finance
+# Session 4 · Workflows on Live SEC Data
 
-**Deliverable: a screening engine on live SEC data — code filters, model
-explains, everything validated.**
+**Yesterday you pasted data. Today your code fetches it.**
+
+Agenda: idea (15') · demo (22') · your lab (30') · debrief (8')
 
 ---
 
@@ -15,84 +16,64 @@ explains, everything validated.**
 
 ```
 INPUT → RETRIEVE → STRUCTURE → REASON → VALIDATE → HUMAN
-         (code)     (code)     (model)    (code)    (you)
+         (code)     (code)     (model)   (code)    (you)
 ```
 
-**Workflow** = a fixed plan written by you; the model fills designated steps.
+A workflow is a fixed plan, written by you. The model fills one step.
 
-Use for anything **repeatable**: screens, reconciliations, report drafts,
-monitoring.
+Use it for anything repeatable: screens, reconciliations, reports.
 
 ---
 
 # Three design rules
 
-1. **Code does math; the model does judgment**
-   (growth rates in pandas; prose about them from Claude)
-2. **Validate at the boundary**
-   schema-forced output + numeric audit: every figure must trace to an input
-3. **The human gate is the exit**
-   nothing saved or sent without approval
+1. **Code does math. The model does judgment.**
+2. **Validate at the boundary.** Schema forced. Numbers audited.
+3. **The human gate is the exit.** Nothing ships without a yes.
+
+Break rule 1 and you get confident arithmetic errors at scale.
 
 ---
 
-# Tool calling = schemas with teeth
+# SEC EDGAR: free, legal, current
 
-- Yesterday you *asked* for JSON and repaired failures
-- Today the API **forces** it: define a tool whose input schema IS your output
-  schema → the model must comply
-- `toolkit/llm.py: ask_structured()` — you already used it without knowing
+Every filing. Every registrant's financials. No key. No cost.
 
----
+Not there: market prices, estimates. Filings are fundamentals, not quotes.
 
-# SEC EDGAR — free, legal, current
-
-**There:** every filing (10-K, 10-Q, 8-K, 20-F…), XBRL fundamentals for every
-registrant, filing full text · **Not there:** market prices, estimates
-
-Gotchas we hit building this course:
-- **tag drift** (NVIDIA changed revenue tags; AMD's last standard D&A tag: 2019)
-- **IFRS filers** report in local currency (Novo Nordisk → DKK)
-- most pharma tags **no operating income** (no subtotal presented!)
+Three traps we hit building this course:
+tags drift across years · foreign filers report in **local currency** ·
+most pharma tags no operating income at all
 
 ---
 
-# Live demo — Market Intelligence Workflow
+# Demo: market intelligence, five steps
 
-```bash
-python session-04-workflows/demo/market_intel_workflow.py NVDA --peers AMD INTC
-```
+NVIDIA versus AMD versus Intel. Live.
 
-Watch for: the **data_gaps** section (a system that says what it doesn't
-know)… and the sabotage test — we plant a fake number, the validator flags it.
+Watch two things:
 
----
+The memo's **data gaps** section. A system that says what it does NOT know.
 
-# Lab (30 min) — Company Screening Engine
-
-16 industrials & pharma names, live EDGAR:
-
-1. `fetch_metrics()` — defensive retrieval (one bad ticker ≠ dead screen)
-2. `apply_screen()` — **pandas decides**: growth ≥ X, net margin ≥ Y, improving
-3. `write_rationales()` — one schema-forced call, then **numeric audit**
-
-Then move the criteria and watch the shortlist move.
+The numeric audit. Every figure in the prose must trace to an input.
+I will plant a fake number. The audit flags it.
 
 ---
 
-# Question you must be able to answer after the lab
+# Your lab: the screening engine
 
-**Why did we screen on NET margin instead of operating margin?**
+16 industrials and pharma names. Live filings. Your criteria.
 
-(Hint: try `OperatingIncomeLoss` on the pharma names. Data coverage is an
-analytical decision — make it in the open.)
+- Exercise 1: fetch three years of fundamentals per ticker
+- Exercise 2: the filter. **Pandas decides, not Claude.**
+- Exercise 3: grounded rationales, then audit the model's own prose
+
+Question you must answer today: why net margin, not operating margin?
 
 ---
 
-# Reflection
+# Remember
 
-1. Could you swap the model out and keep the system? (Good architecture: yes)
-2. What's missing before a real IC sees this screen?
-3. Schema vs numeric audit — what does each protect against?
+A workflow you can rerun is worth ten analyses you did once.
 
-**Next (10:30):** the model makes the plan. Agents — with a leash.
+Next session: the model makes the plan. Agents. With a leash.

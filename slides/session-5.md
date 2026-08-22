@@ -4,111 +4,95 @@ paginate: true
 theme: default
 ---
 
-# Session 5 — AI Agents for Finance
+# Session 5 · Agents, Governance, and Your Capstone
 
-**Deliverable: a working mini finance agent + your capstone.**
+**So far you wrote the plan. Now the model plans. We hold the leash.**
+
+Agenda: idea (10') · demo (18') · your lab (22') · capstones (20') · close (5')
 
 ---
 
-# Workflow vs agent
+# Workflow versus agent
 
-| | Workflow | Agent |
+| | Workflow (yesterday) | Agent (today) |
 |---|---|---|
-| Plan | fixed, yours | **chosen by the model**, step by step |
-| Tools | called by your code | **requested** by model, executed by your code |
-| Stops | script ends | model judges done — or hits **your limits** |
-| Failure | a step errors loudly | wanders, loops, or is confidently wrong |
+| Plan | fixed, yours | chosen by the model |
+| Tools | your code calls them | the model requests, your code executes |
+| Stops | script ends | model decides. Or hits YOUR limits. |
 
-Autonomy is a **dial**, not a switch.
+Autonomy is a dial. Not a switch.
 
 ---
 
-# An agent is a loop (really)
+# An agent is a loop. Really.
 
 ```python
 while steps < MAX_STEPS:
     response = claude(messages, tools=TOOLS)
     if response.wants_tool:
-        result = run_tool(response.tool, response.args)   # your code
-        messages += [response, result]                    # memory
+        result = run_tool(...)        # your code
+        messages += [response, result]
     else:
         break
 ```
 
-`run_agent()` in the demo is ~40 lines. Read it once; own the concept forever.
+Forty lines. Read them once. Own the concept forever.
 
 ---
 
 # Governance lives in the code
 
-- `MAX_STEPS` — no infinite loops
-- `TOKEN_BUDGET` — *"an agent without a budget is an incident report"*
-- **tool whitelist** — the model never touches EDGAR or disk directly
-- `record_recommendation` — forced structure, exactly once
-- **human gate** — nothing saved without approval
-- **audit trail** — every tool call logged into the memo
+- `MAX_STEPS`: no infinite loops
+- `TOKEN_BUDGET`: an agent without a budget is an incident report
+- Tool whitelist: the model never touches data or disk directly
+- Forced structured output: one recommendation, machine readable
+- Human gate: nothing saved without your yes
+- Audit trail: every tool call, logged
+
+When compliance asks "why did it do that", this list is the answer.
 
 ---
 
-# Live demo — Mini Investment Analyst Agent
+# Demo: the trap
 
-*"Analyze Novo Nordisk (NVO) and compare it with Eli Lilly (LLY)."*
+Task: compare Novo Nordisk and Eli Lilly.
 
-Watch the trap: **Novo files in Danish kroner.**
-A naive agent: "Novo is 5× bigger." Ours: forbidden from cross-currency
-absolutes — compares growth and margins, and says why.
+Novo files in **Danish kroner**. A naive agent says Novo is 5x bigger.
 
-<!-- Also the real story: LLY ~+45% growth vs NVO ~+6% in FY2025. Ask the room what they'd diligence. -->
-
----
-
-# Memory & autonomy levels — the 90-second tour
-
-- **Short-term memory** = the messages list (dies with the run)
-- **Long-term memory** = `save_note` → a file that survives runs
-- Levels: assistant (you drive) → workflow (fixed plan) →
-  **supervised agent (today)** → autonomous fleets (not today, maybe not ever
-  for an IC)
+Ours is forbidden from comparing across currencies.
+Watch the warning fire, and the agent adapt.
 
 ---
 
-# Lab (22 min) — your research agent
+# Your lab, then your stage
 
-`lab/research_agent_starter.py` — loop given, you build:
+Lab (22'): build the currency tool and the agent's rules. Run it on YOUR
+company pair. Pass the human gate.
 
-1. the two tools (financials, compare-with-currency-warning)
-2. the system rules (currency! grounding! exactly-once recommendation!)
-3. the human gate
+Capstone (5 minutes, hard stop):
+the job · the live run · **the trust story** · one number · next step
 
-Run it on **your** pair (pharma / banking / tech — two SEC filers).
-
----
-
-# Capstone — 5 minutes, hard stop
-
-1. The **job** (30") · 2. The **run** (2') · 3. The **trust story** (1'30) ·
-4. **One number** (30") · 5. **Next step** (30")
-
-The trust story wins the grade: one failure you caught + the check that
-caught it + what stays human.
+The trust story wins: one failure you caught, and the check that caught it.
 
 ---
 
-# When NOT to use an agent (exam-grade answer)
+# When NOT to use an agent
 
-Repeatable? → **workflow** (cheaper, testable, auditable).
-Open-ended, data-dependent path? → agent, **with the leash**.
-If a regulator asks *"why did it do that?"* — you want the workflow's answer,
+Repeatable task? Workflow. Cheaper, testable, auditable.
+
+Open-ended research, path depends on the data? Agent. With the leash.
+
+If a regulator will ask why, you want the workflow's answer
 or the agent's audit trail.
 
 ---
 
 # You leave with
 
-Prompt playbook · comps tool · broken-DCF discipline · earnings engine ·
-EDGAR workflow · screening engine · **a governed agent** · a capstone story
+Prompts that refuse · a comps tool · a tested DCF · an earnings engine
+with a lie detector · a live SEC screener · **an agent with a leash**
 
-**One challenge for next week:** pick ONE recurring task at work.
+One challenge for next week: pick one recurring task at work.
 Make it a workflow. Show a colleague.
 
-*Never ship a number you haven't verified.*
+## Never ship a number you haven't verified.
