@@ -21,12 +21,12 @@ Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 
-# You are the analyst in charge. Four habits.
+# You are the analyst in charge: four habits
 
-- **Ask small**: one function per request → a diff you can actually review
+- **Ask small**: request one function at a time, so every change is reviewable
 - **Read before you run**: code you cannot explain is code you cannot defend
-- **Verify one number by hand**: one cell per table, calculator, forever
-- **Commit at every green moment**: each commit is an undo button
+- **Verify one number by hand**: for every table, confirm one cell on a calculator
+- **Commit at every green moment**: small commits make each step reversible
 
 Claude generates quickly. **The judgment remains yours.**
 
@@ -40,8 +40,10 @@ DataFrame  =  your spreadsheet, driven by commands
 df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
 ```
 
-- **Columns operate on whole columns**: that is why the lab has no loops
-- **Nobody memorizes pandas**: you specify, the panel writes, you verify
+- **Operations apply to entire columns at once**, which is why the lab
+  needs no loops
+- **No one is expected to memorize pandas**: you specify, the panel writes,
+  you verify
 
 ---
 
@@ -49,28 +51,35 @@ df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
 
 Today's file: **10 real companies** from real SEC filings + **8 planted defects**
 
-- Text where numbers should be · duplicate row · missing values · junk TOTAL row
-- **The dangerous one**: a single company reported in **billions**
+- Text where numbers should be · a duplicate row · missing values · a junk TOTAL row
+- **The dangerous defect**: a single company reported in **billions**
 
 ```
-missed unit trap  →  every ratio off by 1000x  →  NO error raised
+missed unit trap  →  every ratio off by 1000x  →  no error raised
 ```
 
-**Silence is the enemy**: every cleaning step we write prints what it did.
+**Silent corrections are the danger**: every cleaning step we write
+therefore prints what it changed.
 
 ---
 
 # The vocabulary of comps
 
+**Comparable-company analysis**: value a company by pricing it against its peers.
+A **multiple** divides what you pay by what you get.
+
 ```
-EBITDA  =  operating income + D&A
-Mkt cap =  shares × price
-EV      =  market cap + debt − cash        (the whole business, not just shares)
+EBITDA      = operating income + D&A     what the operations earn, before
+                                         financing and accounting choices
+Market cap  = shares × share price       the price of the equity alone
+EV          = market cap + debt − cash   the price of the whole business,
+                                         debt included
 ```
 
-- **EV/EBITDA, EV/Sales, P/E**: price per unit of performance
-- **Negative earnings** → the multiple is meaningless → write **n.m.**
-- A negative multiple in a published table is a well-known professional error
+- **EV/EBITDA** is the standard pairing: the whole business over what the
+  whole business earns. **P/E** prices the equity per unit of net profit.
+- When earnings are **negative**, price-per-unit-of-earnings has no meaning:
+  professionals write **n.m.** (not meaningful) instead of a negative multiple.
 
 ---
 
@@ -99,8 +108,8 @@ and ask the ✱ panel.
 - **Exercise 1**: growth and margins
 - **Exercise 2**: market cap, EV, the three multiples
 - **Exercise 3**: summary table with a MEDIAN row
-- **Then the habit**: verify Apple's EV/EBITDA on a calculator, from the raw file
-- **Finish**: push to your own GitHub. First shipped project.
+- **Verification**: confirm Apple's EV/EBITDA on a calculator, from the raw file
+- **To finish**: publish the tool to your own GitHub repository
 
 ---
 

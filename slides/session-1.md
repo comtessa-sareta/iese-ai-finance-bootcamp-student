@@ -47,7 +47,7 @@ YOUR LAPTOP · VS Code
 
 - **One mechanism**: predict the next word. Analysis is that, repeated.
 - **No fact database inside**: it read everything once, remembers it *approximately*
-- **It cannot stop**: when a fact is missing, it composes something that *sounds* like the fact
+- **It does not stop at a missing fact**: it composes something that *sounds* like the fact
 - **Tone carries no information**: confident and correct sound identical
 
 ```
@@ -120,8 +120,8 @@ Modern models are **hard to trick**. Verified on this course's model:
 - A colleague asserting a wrong number → **holds its ground**
 - Hidden instruction in a document → **names it and refuses**
 
-**So where is the risk?** Not invention. **Obsolescence.** The model answers
-what looks answerable, with two-year-old data and no warning label.
+**The residual risk is therefore not invention but obsolescence**: the model
+answers what looks answerable, with two-year-old data and no warning label.
 
 ---
 
@@ -152,9 +152,11 @@ and ask the ✱ panel.
 - **Exercise 1**: write the safety rules
 - **Exercise 2**: assemble the grounded prompt
 - **Exercise 3**: the refusal test — memory answers, **your system declines**
-- **Closer**: assert a wrong figure; watch the grounded system hold
+- **Final test**: assert a wrong figure and confirm the grounded system
+  retains the sourced one
 
-✅ under each exercise. Green = continue. **Homework**: `red-team-exercises.md`.
+A ✅ check sits under each exercise; green means continue.
+**Homework**: `red-team-exercises.md`.
 
 ---
 

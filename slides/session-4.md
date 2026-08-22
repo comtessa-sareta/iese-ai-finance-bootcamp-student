@@ -28,16 +28,19 @@ INPUT → RETRIEVE → STRUCTURE → REASON → VALIDATE → HUMAN
          (code)     (code)     (model)   (code)    (you)
 ```
 
-- **Code does math**: pandas does not hallucinate. Models do, confidently.
+- **Code does the arithmetic**: pandas is deterministic; the model is not
 - **The model reasons once**, in the middle, about a table it is *given*
-- **Code audits the prose**, then a human approves. Nothing ships without a yes.
+- **Code audits the prose**, and a human approves: nothing is published
+  without explicit sign-off
 
 ---
 
 # EDGAR: every filing, free, no key
 
-- **What is there**: every 10-K, 10-Q, 8-K since the nineties, machine readable
-- **What is NOT**: market prices, analyst estimates. Filings ≠ quotes.
+- **What it contains**: every 10-K, 10-Q and 8-K since the nineties,
+  machine readable
+- **What it does not contain**: market prices and analyst estimates —
+  filings are not market data
 
 Three traps you will meet, because **companies tag their own accounts**:
 
@@ -47,16 +50,18 @@ Three traps you will meet, because **companies tag their own accounts**:
 
 ---
 
-# Demo: a memo with two special moments
+# Demo: a memo with two moments to watch
 
 **NVIDIA vs AMD vs Intel, live from the filings.**
 
-- **Moment 1, data gaps**: the memo lists what it could *not* know
-  from the inputs. Blind spots, declared.
-- **Moment 2, the sabotage**: I plant one fake number in the memo
+- **First, the data gaps**: the memo lists what it could *not* know from
+  its inputs — the blind spots are declared, not hidden
+- **Second, a planted error**: one figure in the memo is altered by hand,
+  and the audit finds it
 
 ```
-audit: every figure in the prose  →  traced to inputs  →  intruder flagged ⚠️
+audit: every figure in the prose  →  checked against inputs  →  the altered
+                                                                figure is flagged
 ```
 
 ---
@@ -85,8 +90,9 @@ and ask the ✱ panel.
 
 **A screening engine: 16 real industrials and pharma, live from EDGAR**
 
-- **Exercise 1**: fetch 3 years of fundamentals, survive failing tickers
-- **Exercise 2**: the filter. **Pandas decides who passes. Never the model.**
+- **Exercise 1**: fetch 3 years of fundamentals, tolerating failed tickers
+- **Exercise 2**: the filter — **pandas decides which companies pass, never
+  the model**
 - **Exercise 3**: one grounded rationale per survivor + numeric audit
 
 **Question to answer before the debrief**: why net margin, not operating margin?

@@ -25,16 +25,16 @@ Plan: idea 10' · demo 18' · lab 22' · capstones 20' · close 5'
 
 | | **Workflow** (yesterday) | **Agent** (today) |
 |---|---|---|
-| The plan | fixed, yours | **chosen by the model**, step by step |
-| Tools | your code calls them | model requests, **your code executes** |
-| Stops when | the script ends | it decides. Or hits **YOUR limits**. |
+| The plan | fixed, written by you | **chosen by the model**, step by step |
+| Tools | your code calls them | the model requests, **your code executes** |
+| Stops when | the script ends | when it decides, or at **the limits you set** |
 | Use for | repeatable work | paths that **depend on the data** |
 
 **Autonomy is a dial, not a switch.**
 
 ---
 
-# The whole mystery is a loop
+# The agent mechanism is a loop
 
 ```python
 while steps < MAX_STEPS:
@@ -46,7 +46,8 @@ while steps < MAX_STEPS:
         break
 ```
 
-**Forty lines.** Once you have read them, no vendor terminology will be opaque to you.
+**About forty lines.** Once you have read them, you can evaluate any
+vendor's agent claims from first principles.
 
 ---
 
@@ -63,7 +64,7 @@ while steps < MAX_STEPS:
 
 ---
 
-# The demo contains a trap
+# The demonstration: a currency trap
 
 **Task: compare Novo Nordisk with Eli Lilly.**
 
@@ -110,7 +111,8 @@ and ask the ✱ panel.
 4. One honest **number**
 5. The **next step**
 
-**The trust story carries the grade.** A documented, caught failure is stronger evidence than an unexamined success.
+**The trust story carries the most weight in grading.** A documented,
+caught failure is stronger evidence than an unexamined success.
 
 ---
 
@@ -119,7 +121,7 @@ and ask the ✱ panel.
 **Grounded prompts · a comps tool · a tested DCF · an earnings engine with
 fabrication detection · a live SEC screener · a governed agent**
 
-- **Challenge for next week**: one recurring task at your desk → make it a
-  workflow → show one colleague
+- **A challenge for the coming week**: choose one recurring task at your
+  desk, build it as a workflow, and show a colleague
 
 ## Never ship a number you haven't verified.

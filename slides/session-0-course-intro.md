@@ -8,9 +8,9 @@ theme: default
 
 IESE MiF · Prof. Sara Bisbe
 
-- **Two days, one goal**: you build a working AI financial analyst
-- **On your laptop, with your hands**: not slides about one
-- **A portfolio, not notes**: everything you build leaves with you
+- **The goal of the two days**: a working AI financial analyst, built by you
+- **Format**: you build it on your own laptop, session by session
+- **The result is a portfolio**: everything you build leaves with you
 
 ---
 
@@ -29,18 +29,20 @@ IESE MiF · Prof. Sara Bisbe
 # How every session works
 
 ```
-  I explain  →  we run it  →  YOU build  →  ✅ check tells you it's right
-   (short)      (live)      (fill gaps)      (green = move on)
+  I explain  →  we run it  →  you build  →  a check confirms it is right
+   (short)      (live)       (fill gaps)     (green means continue)
 ```
 
 - **The gaps**: code between `START CODE HERE` and `END CODE HERE`, with
   `None` and `[BLANKS]` for you to fill
-- **The check**: a cell under each exercise. Green means correct. No waiting.
-- **Stuck?** Ask the **✱ Claude panel**. Using it well IS the course.
+- **The check**: a cell under each exercise; green means correct, and you
+  continue at your own pace
+- **When you are stuck**: ask the **✱ Claude panel** — using it well is part
+  of what this course teaches
 
 ---
 
-# Your two AI tools. Never confuse them.
+# Your two AI tools, and how to tell them apart
 
 | | **✱ Claude panel** | **API key in `.env`** |
 |---|---|---|
@@ -48,7 +50,8 @@ IESE MiF · Prof. Sara Bisbe
 | Paid by | Pro subscription | Your $5 credit |
 | Used for | Help while building | The tools you build |
 
-⚠️ Chat says **GPT, Gemini or "credits"**? Wrong tool. Find the **✱**.
+If a chat panel mentions GPT, Gemini or credits, it is VS Code's built-in
+assistant, not the course tool. The course tool is always the **✱** panel.
 
 ---
 

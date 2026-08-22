@@ -13,9 +13,9 @@ junior. The loop that works:
 1. **Ask small.** One function, one fix, one chart at a time.
 2. **Read before you run.** If you can't explain a line, ask Claude to explain it.
 3. **Verify one number by hand.** Every table you produce, pick one cell and
-   check it on a calculator. Every time. Forever.
+   confirm it on a calculator.
 4. **Commit at every green moment.** `git add -A && git commit -m "..."` —
-   small commits are your undo button (`git revert` beats panic).
+   small commits keep every step reversible (`git revert` beats panic).
 
 ## Live demo — Financial Data Pipeline in 30 minutes
 
