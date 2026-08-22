@@ -40,4 +40,8 @@ clean:            ## Remove generated outputs and caches
 	rm -rf outputs .cache .pytest_cache
 	find . -name __pycache__ -type d -exec rm -rf {} +
 
-.PHONY: setup check test verify dataset student-repo publish-student publish-student-class clean
+
+solutions-key:    ## Regenerate instructor/SOLUTIONS-KEY.md from the notebooks
+	$(PY) devtools/make_solutions_key.py
+
+.PHONY: setup check test verify dataset student-repo publish-student publish-student-class solutions-key clean
