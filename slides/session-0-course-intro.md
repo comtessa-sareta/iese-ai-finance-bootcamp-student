@@ -8,49 +8,47 @@ theme: default
 
 IESE MiF · Prof. Sara Bisbe
 
-In two days you build a working AI financial analyst. On your laptop, with
-your hands. Not slides about one.
+- **Two days, one goal**: you build a working AI financial analyst
+- **On your laptop, with your hands**: not slides about one
+- **A portfolio, not notes**: everything you build leaves with you
 
 ---
 
 # What you leave with
 
-A portfolio on your GitHub. Not notes.
-
 | Session | You build |
 |---|---|
-| 1 | Prompts that refuse to guess |
-| 2 | A comparable company analysis tool |
-| 3 | A tested DCF and an earnings engine that detects fabrication |
-| 4 | A company screener on live SEC filings |
-| 5 | Your own AI analyst agent, with limits you control |
+| 1 | **Prompts that refuse to guess** |
+| 2 | **A comps tool** on your own GitHub |
+| 3 | **A tested DCF** + an earnings engine that **detects fabrication** |
+| 4 | **A company screener** on live SEC filings |
+| 5 | **Your own AI agent**, with limits you control |
 
 ---
 
 # How every session works
 
-Each session is one notebook. The rhythm never changes.
+```
+  I explain  →  we run it  →  YOU build  →  ✅ check tells you it's right
+   (short)      (live)      (fill gaps)      (green = move on)
+```
 
-First I explain the idea and we run it together. Then you build: the
-notebook gives you working code with gaps, and you fill the gaps. Under
-every exercise there is a check cell. When it prints green, you are right
-and you move on. Nobody waits for me to correct anything.
-
-When you are stuck, ask the ✱ Claude panel. Learning to use it well is not
-cheating. It is the subject of this course.
+- **The gaps**: code between `START CODE HERE` and `END CODE HERE`, with
+  `None` and `[BLANKS]` for you to fill
+- **The check**: a cell under each exercise. Green means correct. No waiting.
+- **Stuck?** Ask the **✱ Claude panel**. Using it well IS the course.
 
 ---
 
-# You have two AI tools. They are not the same one.
+# Your two AI tools. Never confuse them.
 
-| | The ✱ Claude panel | Your API key in `.env` |
+| | **✱ Claude panel** | **API key in `.env`** |
 |---|---|---|
-| What it is | Your copilot inside VS Code | Claude answering YOUR code |
-| Paid by | Your Pro subscription | Your five dollars of credit |
-| You use it to | Get help while building | Power the tools you build |
+| What | Your copilot in VS Code | Claude answering **your code** |
+| Paid by | Pro subscription | Your $5 credit |
+| Used for | Help while building | The tools you build |
 
-If a chat panel mentions GPT, Gemini or credits, you are in the wrong tool.
-The right one always shows the ✱.
+⚠️ Chat says **GPT, Gemini or "credits"**? Wrong tool. Find the **✱**.
 
 ---
 
@@ -58,19 +56,21 @@ The right one always shows the ✱.
 
 | | Monday | Tuesday |
 |---|---|---|
-| 9:00 | 1 · Prompting and financial reasoning | 4 · Workflows on live SEC data |
-| 10:30 | 2 · Claude Code as coding copilot | 5 · Agents, then your capstone |
-| 12:00 | 3 · Debugging, testing, earnings | |
+| 9:00 | **1 · Prompting** and financial reasoning | **4 · Workflows** on live SEC data |
+| 10:30 | **2 · Claude Code** as coding copilot | **5 · Agents** + your capstone |
+| 12:00 | **3 · Debugging**, testing, earnings | |
 
-The capstone is five minutes on Tuesday: your own AI workflow, running, on
-screen.
+- **Capstone**: 5 minutes, Tuesday. Your workflow, running, on screen.
 
 ---
 
 # The one rule of this course
 
+<br>
+
 ## Never ship a number you haven't verified.
 
-In finance, a wrong number delivered with confidence is a career event.
-Everything we build this week exists to make verification cheap, fast and
-automatic.
+<br>
+
+- In finance, a **wrong number with confidence** is a career event
+- Everything we build makes verification **cheap, fast, automatic**

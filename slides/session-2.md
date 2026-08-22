@@ -6,88 +6,86 @@ theme: default
 
 # Session 2 · Claude Code as Your Coding Copilot
 
-Goal today: ship your first finance tool to GitHub. Before lunch.
+**Goal: ship your first finance tool to GitHub. Before lunch.**
 
-Plan: idea 15 min · live demo 22 min · your lab 30 min · debrief 8 min.
+Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 
 # By 11:45 you can
 
-1. Drive Claude Code the professional way: one function at a time, reviewed
-   before it runs.
-2. Clean a messy financial dataset explicitly, so every fix is visible.
-3. Compute growth, margins and the three valuation multiples in pandas.
-4. Verify a multiple by hand, then ship the tool to your own GitHub.
+1. **Drive** Claude Code professionally: one function at a time, reviewed
+2. **Clean** a messy financial dataset with every fix visible
+3. **Compute** growth, margins and the three multiples in pandas
+4. **Verify** a multiple by hand, then **ship** to your own GitHub
 
 ---
 
-# You are the analyst in charge
+# You are the analyst in charge. Four habits.
 
-Claude writes code fast. Speed is not the skill. The skill is staying in
-charge, and it has four habits.
+- **Ask small**: one function per request → a diff you can actually review
+- **Read before you run**: code you cannot explain is code you cannot defend
+- **Verify one number by hand**: one cell per table, calculator, forever
+- **Commit at every green moment**: each commit is an undo button
 
-Ask small: one function per request, so you can review what comes back.
-Read before you run: code you cannot explain is code you cannot defend.
-Verify one number by hand: pick one cell of every table and check it on a
-calculator, every time, forever.
-Commit at every green moment: each commit is an undo button.
+Claude is a very fast junior. Speed is its job. **Judgment is yours.**
 
 ---
 
-# Pandas in one idea
+# Pandas in one schema
 
-A DataFrame is your spreadsheet, controlled by commands instead of clicks.
+```
+DataFrame  =  your spreadsheet, driven by commands
 
-Columns operate on whole columns: revenue divided by shares gives you every
-company's number at once. That single idea covers most of what analysts do
-in pandas. The rest you ask the panel for. Nobody memorizes pandas.
+df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
+```
+
+- **Columns operate on whole columns**: that is why the lab has no loops
+- **Nobody memorizes pandas**: you specify, the panel writes, you verify
 
 ---
 
 # Why we clean data explicitly
 
-Today's file holds ten real companies from real SEC filings, plus eight
-defects I planted from real life: text where numbers should be, a duplicate
-row, missing values, a junk total row.
+Today's file: **10 real companies** from real SEC filings + **8 planted defects**
 
-The dangerous one: a single company reported in billions while the rest are
-in millions. Miss it and every ratio for that company is wrong by a factor
-of one thousand. Python raises no error. Silence is why every cleaning step
-we write announces itself with a print.
+- Text where numbers should be · duplicate row · missing values · junk TOTAL row
+- **The dangerous one**: a single company reported in **billions**
+
+```
+missed unit trap  →  every ratio off by 1000x  →  NO error raised
+```
+
+**Silence is the enemy**: every cleaning step we write prints what it did.
 
 ---
 
 # The vocabulary of comps
 
-EBITDA is operating income plus depreciation and amortization: profit
-before financing choices and accounting age.
+```
+EBITDA  =  operating income + D&A
+Mkt cap =  shares × price
+EV      =  market cap + debt − cash        (the whole business, not just shares)
+```
 
-Enterprise value is market cap plus debt minus cash: the price of the whole
-business, not just the shares.
-
-EV to EBITDA, EV to Sales, and P E answer the same question: how much am I
-paying per unit of performance? When earnings are negative the answer is
-meaningless, so professionals write n.m. instead. A negative multiple in a
-table marks you as an amateur.
+- **EV/EBITDA, EV/Sales, P/E**: price per unit of performance
+- **Negative earnings** → the multiple is meaningless → write **n.m.**
+- A negative P/E in a table marks you as an amateur
 
 ---
 
 # Your lab · notebook 02 · 30 minutes
 
-Exercise 1: growth and margins.
-Exercise 2: market cap, enterprise value, the three multiples.
-Exercise 3: the summary table with a median row.
-
-Then the habit that outlives this course: verify Apple's EV to EBITDA on a
-calculator, from the raw file. Only then trust the rest of the table.
-
-Finish by pushing the tool to your own GitHub. Your first shipped project.
+- **Exercise 1**: growth and margins
+- **Exercise 2**: market cap, EV, the three multiples
+- **Exercise 3**: summary table with a MEDIAN row
+- **Then the habit**: verify Apple's EV/EBITDA on a calculator, from the raw file
+- **Finish**: push to your own GitHub. First shipped project.
 
 ---
 
 # Remember this one
 
-Intel shows n.m. today. That is your code being right, not broken.
+**Intel shows n.m. today. That is your code being right.**
 
-At 12:00 I hand you a valuation model that is wrong on purpose.
+Next, 12:00: a valuation model that is wrong on purpose.

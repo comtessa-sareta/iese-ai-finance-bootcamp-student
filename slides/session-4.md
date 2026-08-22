@@ -6,19 +6,18 @@ theme: default
 
 # Session 4 · Workflows on Live SEC Data
 
-Yesterday you pasted data by hand. Today your code fetches it from the SEC.
+**Yesterday you pasted data by hand. Today your code fetches it from the SEC.**
 
-Plan: idea 15 min · live demo 22 min · your lab 30 min · debrief 8 min.
+Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 
 # By 10:15 you can
 
-1. Draw the workflow pattern and defend why code does math while the model
-   writes prose.
-2. Pull real fundamentals from SEC filings with one function call.
-3. Build a screen you can rerun tomorrow, with criteria as dials.
-4. Audit the model's own writing: every number traced to an input.
+1. **Draw** the workflow pattern and defend the code-vs-model split
+2. **Pull** real fundamentals from SEC filings with one function call
+3. **Build** a screen you can rerun tomorrow, criteria as dials
+4. **Audit** the model's own prose: every number traced to an input
 
 ---
 
@@ -26,64 +25,56 @@ Plan: idea 15 min · live demo 22 min · your lab 30 min · debrief 8 min.
 
 ```
 INPUT → RETRIEVE → STRUCTURE → REASON → VALIDATE → HUMAN
+         (code)     (code)     (model)   (code)    (you)
 ```
 
-Code retrieves the filings. Code computes the numbers. The model reasons
-once, in the middle, about a table it is given. Code then audits what the
-model wrote. You approve before anything is saved.
-
-Why this division? Because language models make arithmetic mistakes with
-total confidence, and pandas does not. Code does math. The model does
-judgment. The human owns the decision.
+- **Code does math**: pandas does not hallucinate. Models do, confidently.
+- **The model reasons once**, in the middle, about a table it is *given*
+- **Code audits the prose**, then a human approves. Nothing ships without a yes.
 
 ---
 
 # EDGAR: every filing, free, no key
 
-EDGAR is the SEC's public database. Every annual report, every quarterly,
-every company, since the nineties. Your code can read it directly.
+- **What is there**: every 10-K, 10-Q, 8-K since the nineties, machine readable
+- **What is NOT**: market prices, analyst estimates. Filings ≠ quotes.
 
-What it does not contain: market prices and analyst estimates. Filings are
-fundamentals, not quotes.
+Three traps you will meet, because **companies tag their own accounts**:
 
-Three traps you will meet, because companies tag their own accounts:
-the same item changes names across years, foreign companies report in their
-home currency, and most pharma companies never report an operating income
-line at all. Real data has footnotes. Yours will too.
+1. The same item **changes names** across years
+2. Foreign filers report in **local currency**
+3. Most pharma reports **no operating income line at all**
 
 ---
 
-# Demo: a market intelligence memo, five steps
+# Demo: a memo with two special moments
 
-NVIDIA against AMD and Intel, live from the filings.
+**NVIDIA vs AMD vs Intel, live from the filings.**
 
-Watch for two moments. The finished memo lists its own data gaps, meaning
-what it could not know from the inputs. An analysis that declares its blind
-spots is worth ten that sound complete.
+- **Moment 1, data gaps**: the memo lists what it could *not* know
+  from the inputs. Blind spots, declared.
+- **Moment 2, the sabotage**: I plant one fake number in the memo
 
-Then I sabotage it: one invented number goes into the memo, and the audit
-step traces every figure back to the inputs and flags the intruder.
+```
+audit: every figure in the prose  →  traced to inputs  →  intruder flagged ⚠️
+```
 
 ---
 
 # Your lab · notebook 04 · 30 minutes
 
-You build a screening engine over sixteen real industrial and pharma
-companies, live from EDGAR.
+**A screening engine: 16 real industrials and pharma, live from EDGAR**
 
-Exercise 1: fetch three years of fundamentals per company, and survive the
-companies that fail.
-Exercise 2: the filter. Pandas decides who passes, never the model.
-Exercise 3: the model writes one short rationale per survivor, and your
-audit checks every number in its prose.
+- **Exercise 1**: fetch 3 years of fundamentals, survive failing tickers
+- **Exercise 2**: the filter. **Pandas decides who passes. Never the model.**
+- **Exercise 3**: one grounded rationale per survivor + numeric audit
 
-One question to answer before the debrief: why did we screen on net margin
-instead of operating margin? Exercise 1 will show you.
+**Question to answer before the debrief**: why net margin, not operating margin?
 
 ---
 
 # Remember this one
 
-A screen you can rerun tomorrow is worth ten analyses you did once.
+**A screen you can rerun tomorrow beats ten analyses you did once.**
 
-At 10:30 the model starts making its own plan. We hold the leash.
+Next, 10:30: the model starts making its own plan. We hold the leash.

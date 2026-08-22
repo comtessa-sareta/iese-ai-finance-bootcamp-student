@@ -6,32 +6,31 @@ theme: default
 
 # Session 5 · Agents, Governance, Your Capstone
 
-So far you wrote every plan. Now the model plans for itself. Under limits
-you set.
+**So far you wrote every plan. Now the model plans. Under your limits.**
 
-Plan: idea 10 min · demo 18 min · lab 22 min · capstones 20 min · close 5.
+Plan: idea 10' · demo 18' · lab 22' · capstones 20' · close 5'
 
 ---
 
 # By 11:45 you can
 
-1. Explain precisely what separates an agent from a workflow, and when each
-   is the right tool.
-2. Read an agent loop and point at every governance lever in the code.
-3. Run a governed agent on a company pair you chose, and pass its human gate.
-4. Present your own AI workflow in five minutes, with a trust story.
+1. **Explain** what separates an agent from a workflow, and when each wins
+2. **Read** an agent loop and point at every governance lever in the code
+3. **Run** a governed agent on your own company pair, and pass its human gate
+4. **Present** your AI workflow in five minutes, with a trust story
 
 ---
 
-# What makes an agent different
+# Workflow vs agent
 
-In a workflow, you fix the steps and the model fills one of them. In an
-agent, you give a goal and a set of tools, and the model decides which tool
-to use next, looks at the result, and decides again.
+| | **Workflow** (yesterday) | **Agent** (today) |
+|---|---|---|
+| The plan | fixed, yours | **chosen by the model**, step by step |
+| Tools | your code calls them | model requests, **your code executes** |
+| Stops when | the script ends | it decides. Or hits **YOUR limits**. |
+| Use for | repeatable work | paths that **depend on the data** |
 
-That freedom is useful when the path depends on what the data says. It is
-also exactly what must be governed, because an agent can wander, loop, or
-be confidently wrong at scale. Autonomy is a dial you set, not a switch.
+**Autonomy is a dial, not a switch.**
 
 ---
 
@@ -41,63 +40,66 @@ be confidently wrong at scale. Autonomy is a dial you set, not a switch.
 while steps < MAX_STEPS:
     response = claude(messages, tools=TOOLS)
     if response.wants_tool:
-        result = run_tool(...)        # your code executes
-        messages += [response, result]
+        result = run_tool(...)        # YOUR code executes
+        messages += [response, result]  # the conversation IS the memory
     else:
         break
 ```
 
-The model proposes. Your code disposes. The conversation is the memory.
-Forty lines. Read them once today and no vendor will ever mystify you
-again.
+**Forty lines.** Read them once today. No vendor mystifies you again.
 
 ---
 
-# Governance is code you can point at
+# Governance: six levers, all in code
 
-A step limit, so it cannot loop forever. A token budget, because an agent
-without a budget is an incident report. A tool whitelist, so the model
-never touches data or disk directly. A forced final format, so the
-recommendation is machine readable. A human gate, so nothing is saved
-without your yes. An audit trail of every tool call.
-
-When compliance asks why the agent did something, this list is the answer.
+| Lever | Failure it prevents |
+|---|---|
+| **MAX_STEPS** | looping forever |
+| **TOKEN_BUDGET** | unbounded spend |
+| **Tool whitelist** | doing anything you gave no tool for |
+| **Forced output schema** | an essay instead of a decision |
+| **Human gate** | anything saved without your yes |
+| **Audit trail** | "why did it do that?" with no answer |
 
 ---
 
 # The demo contains a trap
 
-The task: compare Novo Nordisk with Eli Lilly.
+**Task: compare Novo Nordisk with Eli Lilly.**
 
-Novo Nordisk reports in Danish kroner. A naive agent compares 300 billion
-kroner with 65 billion dollars and concludes Novo is five times bigger.
+```
+naive agent:  DKK 300bn  vs  USD 65bn  →  "Novo is 5x bigger"  ✗
+our agent:    tool detects mixed units → warning → compares
+              growth and margins only                           ✓
+```
 
-Our compare tool refuses to mix currencies, and the agent's rules force it
-to compare growth and margins instead. You will build both protections
-yourself, then run your agent on a company pair you choose.
+- **Defense in depth**: a rule in the prompt AND a check in the tool
+- You build both protections yourself, then run your own pair
 
 ---
 
 # Your lab, then your five minutes
 
-Lab: build the currency tool and the agent's rules, run your agent on your
-own pair, pass the human gate.
+**Lab (22')**: build the currency tool + the agent's rules → run YOUR pair → pass the gate
 
-Capstone, five minutes, hard stop: the job your workflow does, the live
-run, the trust story, one honest number, the next step.
+**Capstone (5', hard stop)**:
 
-The trust story decides the grade: one failure you caught, and the check
-that caught it. A caught failure beats a suspicious success.
+1. The **job** your workflow does
+2. The **live run**
+3. The **trust story**: one failure you caught + the check that caught it
+4. One honest **number**
+5. The **next step**
+
+**The trust story decides the grade.** A caught failure beats a suspicious success.
 
 ---
 
 # What you own now
 
-Prompts that refuse to guess. A comps tool on your GitHub. A DCF with
-tests. An earnings engine with a lie detector. A live SEC screener. An
-agent with a leash.
+**Prompts that refuse · a comps tool · a tested DCF · an earnings engine
+with a lie detector · a live SEC screener · an agent with a leash**
 
-One challenge for next week: pick one recurring task at your desk and turn
-it into a workflow. Show one colleague.
+- **Challenge for next week**: one recurring task at your desk → make it a
+  workflow → show one colleague
 
 ## Never ship a number you haven't verified.
