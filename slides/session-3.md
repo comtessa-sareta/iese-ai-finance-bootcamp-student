@@ -77,6 +77,26 @@ transcript → model extracts claims → EVERY claim carries a verbatim quote
 
 ---
 
+# How the labs work
+
+Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**
+
+```python
+### START CODE HERE ###
+return equity_weight * None + debt_weight * None * (1 - None)
+### END CODE HERE ###
+```
+
+- **`None`** → replace with the correct column, value or variable
+- **`[QUESTION IN CAPITALS]`** → replace with the text the bracket asks for
+- **Everything else is given.** Do not rewrite it.
+- Then run the **✅ check cell** directly below. Green means correct: continue.
+
+Stuck for two minutes? Select the lines, press `Option+K` (`Alt+K` on Windows),
+and ask the ✱ panel.
+
+---
+
 # Your lab · notebook 03 · 30 minutes
 
 - **Exercises 1 to 4**: build the four DCF functions, a test under each

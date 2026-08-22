@@ -78,6 +78,26 @@ our agent:    tool detects mixed units → warning → compares
 
 ---
 
+# How the labs work
+
+Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**
+
+```python
+### START CODE HERE ###
+"3. ALWAYS check the [WHICH FIELD?] field before comparing figures."
+### END CODE HERE ###
+```
+
+- **`None`** → replace with the correct column, value or variable
+- **`[QUESTION IN CAPITALS]`** → replace with the text the bracket asks for
+- **Everything else is given.** Do not rewrite it.
+- Then run the **✅ check cell** directly below. Green means correct: continue.
+
+Stuck for two minutes? Select the lines, press `Option+K` (`Alt+K` on Windows),
+and ask the ✱ panel.
+
+---
+
 # Your lab, then your five minutes
 
 **Lab (22')**: build the currency tool + the agent's rules → run YOUR pair → pass the gate

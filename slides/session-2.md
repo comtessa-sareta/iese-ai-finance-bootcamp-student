@@ -74,6 +74,26 @@ EV      =  market cap + debt − cash        (the whole business, not just share
 
 ---
 
+# How the labs work
+
+Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**
+
+```python
+### START CODE HERE ###
+df["revenue_growth_1y"] = df[None] / df[None] - 1
+### END CODE HERE ###
+```
+
+- **`None`** → replace with the correct column, value or variable
+- **`[QUESTION IN CAPITALS]`** → replace with the text the bracket asks for
+- **Everything else is given.** Do not rewrite it.
+- Then run the **✅ check cell** directly below. Green means correct: continue.
+
+Stuck for two minutes? Select the lines, press `Option+K` (`Alt+K` on Windows),
+and ask the ✱ panel.
+
+---
+
 # Your lab · notebook 02 · 30 minutes
 
 - **Exercise 1**: growth and margins
