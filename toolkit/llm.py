@@ -83,7 +83,15 @@ def ask(
         kwargs["system"] = system
     resp = client().messages.create(**kwargs)
     _record_usage(resp)
-    return "".join(b.text for b in resp.content if b.type == "text")
+    text = "".join(b.text for b in resp.content if b.type == "text")
+    if not text.strip():
+        # Current models reason before answering; that reasoning counts against
+        # max_tokens. A tight cap can therefore be spent entirely on reasoning,
+        # leaving no visible answer. Say so plainly instead of returning "".
+        return (f"[no visible answer: the response reached max_tokens={max_tokens} "
+                f"before producing text (stop_reason={resp.stop_reason}). "
+                "Raise max_tokens and run the cell again.]")
+    return text
 
 
 # ------------------------------------------------------------ JSON handling

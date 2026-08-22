@@ -4,6 +4,18 @@ Run at least two of these against each playbook template. The goal is to see
 the failure WITH YOUR OWN EYES once, so you never again ship an output you
 didn't check. Record what happened in the template's *Failure modes* table.
 
+> **Verified 20 August 2026.** These exercises were written when models
+> invented freely. Against the current course model, exercises 1, 2 and 5
+> below all *fail to produce a failure*: it declines fabricated metrics and
+> nonexistent companies, and it detects injected instructions unaided. Run
+> them anyway, for two reasons. First, knowing precisely where a tool is
+> reliable is as professional as knowing where it breaks. Second, the
+> reliability is model-dependent and version-dependent: the same prompt on a
+> smaller or older model, or inside a longer document, behaves differently.
+> The exercise that still bites every time is number 3, the arithmetic and
+> period-count check, and the failure mode that dominates real work is
+> staleness, which notebook 01 Part A demonstrates with exact figures.
+
 ## 1. The fake metric
 
 Ask (without context): *"What was NVIDIA's adjusted pre-synergy EBITDAR margin
