@@ -123,6 +123,10 @@ well *is* the course.
   installs into the active Python). In notebooks, confirm the kernel says
   **aifinance** — or just run the **rescue cell** in `00-setup.ipynb`, which
   installs into whatever kernel you selected.
+- **`AttributeError: module 'toolkit.llm' has no attribute ...`** — your kernel
+  is running code from before the last update. **Restart** the kernel and run
+  from the top. (The first cell of each notebook also reloads the toolkit, so
+  re-running it usually suffices.)
 - **Notebook disagrees with the terminal** — notebook outputs show the LAST
   run, and the kernel snapshots your environment at start. After installing
   anything: **Restart → Run All**.
