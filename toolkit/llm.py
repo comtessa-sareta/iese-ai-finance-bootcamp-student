@@ -31,6 +31,37 @@ def default_model() -> str:
     return os.environ.get("ANTHROPIC_MODEL", DEFAULT_MODEL_FALLBACK)
 
 
+def _in_notebook() -> bool:
+    try:
+        from IPython import get_ipython
+
+        shell = get_ipython()
+        return shell is not None and shell.__class__.__name__ == "ZMQInteractiveShell"
+    except Exception:  # noqa: BLE001 — IPython absent or not running
+        return False
+
+
+def show(text: str, title: str | None = None, width: int = 100) -> None:
+    """Display model output in full, readably.
+
+    Never truncate model output when a human is meant to judge it. In a notebook
+    this renders the model's markdown (headings, tables, bullets) wrapped to the
+    cell width; in a plain terminal it wraps to `width` characters. Either way you
+    see the whole answer without scrolling sideways.
+    """
+    if _in_notebook():
+        from IPython.display import Markdown, display
+
+        display(Markdown(f"**{title}**\n\n{text}" if title else text))
+        return
+    import textwrap
+
+    if title:
+        print(f"\n=== {title} ===")
+    for para in text.split("\n"):
+        print(textwrap.fill(para, width=width) if para.strip() else "")
+
+
 def client():
     """Lazy Anthropic client with a friendly error if the key is missing."""
     global _client
