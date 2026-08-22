@@ -18,6 +18,7 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 2. **Pull** real fundamentals from SEC filings with one function call
 3. **Build** a screen you can rerun tomorrow, criteria as dials
 4. **Audit** the model's own prose: every number traced to an input
+5. **Train** a forecasting model and measure its error before trusting it
 
 ---
 
@@ -94,6 +95,7 @@ and ask the ✱ panel.
 - **Exercise 2**: the filter — **pandas decides which companies pass, never
   the model**
 - **Exercise 3**: one grounded rationale per survivor + numeric audit
+- **Exercise 4**: train a revenue forecaster; the measured error is the product
 
 **Question to answer before the debrief**: why net margin, not operating margin?
 

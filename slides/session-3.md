@@ -15,8 +15,8 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 # By the end of Session 3 you can
 
 1. **Read** a traceback and have Claude diagnose the cause before it proposes a fix
-2. **Write** a financial rule as an automated test, including one simple enough to verify by hand
-3. **Build** a discounted cash flow (DCF) valuation that passes its full test suite
+2. **Direct** Claude to repair a broken valuation, one failing test at a time
+3. **Use** tests as the contract that lets you trust AI-written code
 4. **Catch** a fabricated quote automatically, with code you wrote
 
 ---
@@ -61,7 +61,8 @@ The six planted errors, all real ones:
 5. **Impossible growth accepted** (g above r means infinite value)
 6. Horizon **hardcoded**
 
-Corrected, the model gives **$75.61**, and the investment discussion can begin.
+**Claude makes every fix; you review every diff.** Corrected, the model gives
+**$75.61**, and the investment discussion can begin.
 
 ---
 
@@ -86,7 +87,7 @@ Every exercise sits between two markers. **You fill the gaps. Nothing else chang
 
 ```python
 ### START CODE HERE ###
-return equity_weight * None + debt_weight * None * (1 - None)
+item["verified"] = bool(quote) and None in haystack   # the NORMALIZED quote
 ### END CODE HERE ###
 ```
 
@@ -102,9 +103,10 @@ and ask the ✱ panel.
 
 # Your lab · notebook 03 · 30 minutes
 
-- **Exercises 1 to 4**: build the four functions of the DCF, a test under each
-- **Milestone A**: the final cell values the company at **$75.61 per share**
-- **Exercise 5**: build the quote checker
+- **Lab 1**: direct the ✱ panel to repair `broken_dcf.py`, one failing test
+  at a time, reading every diff before accepting
+- **Milestone A**: all 7 tests pass; Meridian is valued at **$75.61 per share**
+- **Lab 2**: build `verify_evidence`, the fabrication detector
 - **Milestone B**: the engine flags **exactly one** fabricated quote
 
 ---
