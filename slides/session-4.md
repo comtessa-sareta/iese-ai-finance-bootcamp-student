@@ -12,6 +12,16 @@ Plan: idea 15 min · live demo 22 min · your lab 30 min · debrief 8 min.
 
 ---
 
+# By 10:15 you can
+
+1. Draw the workflow pattern and defend why code does math while the model
+   writes prose.
+2. Pull real fundamentals from SEC filings with one function call.
+3. Build a screen you can rerun tomorrow, with criteria as dials.
+4. Audit the model's own writing: every number traced to an input.
+
+---
+
 # A workflow is a plan the model cannot change
 
 ```

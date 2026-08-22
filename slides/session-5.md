@@ -13,6 +13,16 @@ Plan: idea 10 min · demo 18 min · lab 22 min · capstones 20 min · close 5.
 
 ---
 
+# By 11:45 you can
+
+1. Explain precisely what separates an agent from a workflow, and when each
+   is the right tool.
+2. Read an agent loop and point at every governance lever in the code.
+3. Run a governed agent on a company pair you chose, and pass its human gate.
+4. Present your own AI workflow in five minutes, with a trust story.
+
+---
+
 # What makes an agent different
 
 In a workflow, you fix the steps and the model fills one of them. In an

@@ -12,6 +12,16 @@ Plan: idea 15 min · live demo 22 min · your lab 30 min · debrief 8 min.
 
 ---
 
+# By 11:45 you can
+
+1. Drive Claude Code the professional way: one function at a time, reviewed
+   before it runs.
+2. Clean a messy financial dataset explicitly, so every fix is visible.
+3. Compute growth, margins and the three valuation multiples in pandas.
+4. Verify a multiple by hand, then ship the tool to your own GitHub.
+
+---
+
 # You are the analyst in charge
 
 Claude writes code fast. Speed is not the skill. The skill is staying in

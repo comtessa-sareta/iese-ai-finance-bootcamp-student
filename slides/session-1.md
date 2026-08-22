@@ -12,6 +12,16 @@ Plan: idea 10 min · live demo 15 min · your lab 25 min · debrief 5 min.
 
 ---
 
+# By 10:15 you can
+
+1. Explain why a language model invents numbers, and why it sounds confident
+   while doing it.
+2. Write the two safety rules that stop guessing and stop hijacking.
+3. Make a model answer NOT IN CONTEXT on command.
+4. Recognize a prompt injection, because you will have performed one.
+
+---
+
 # The model predicts. It does not know.
 
 A language model writes the most plausible next word. That is its entire

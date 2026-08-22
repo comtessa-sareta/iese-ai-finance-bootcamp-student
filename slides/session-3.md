@@ -12,6 +12,15 @@ Plan: idea 12 min · live demo 22 min · your lab 30 min · debrief 8 min.
 
 ---
 
+# By 13:15 you can
+
+1. Read a traceback and make Claude diagnose before it fixes.
+2. Write a financial rule as a test, including one you can check on a napkin.
+3. Build a DCF that survives its own test suite and lands on 75.61.
+4. Catch a fabricated quote automatically, with code you wrote.
+
+---
+
 # Crashes are the friendly bugs
 
 A crash announces itself: the last line of the error says what broke, the
