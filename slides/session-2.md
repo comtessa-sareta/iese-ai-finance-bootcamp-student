@@ -6,7 +6,7 @@ theme: default
 
 # Session 2 · Claude Code as Your Coding Copilot
 
-**Goal: ship your first finance tool to GitHub. Before lunch.**
+**Objective: build and publish your first finance tool to GitHub within this session.**
 
 Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -28,7 +28,7 @@ Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
 - **Verify one number by hand**: one cell per table, calculator, forever
 - **Commit at every green moment**: each commit is an undo button
 
-Claude is a very fast junior. Speed is its job. **Judgment is yours.**
+Claude generates quickly. **The judgment remains yours.**
 
 ---
 
@@ -70,7 +70,7 @@ EV      =  market cap + debt − cash        (the whole business, not just share
 
 - **EV/EBITDA, EV/Sales, P/E**: price per unit of performance
 - **Negative earnings** → the multiple is meaningless → write **n.m.**
-- A negative P/E in a table marks you as an amateur
+- A negative multiple in a published table is a well-known professional error
 
 ---
 
@@ -84,8 +84,8 @@ EV      =  market cap + debt − cash        (the whole business, not just share
 
 ---
 
-# Remember this one
+# Key takeaway
 
-**Intel shows n.m. today. That is your code being right.**
+**Intel shows n.m. today. That is correct behavior, not a defect.**
 
-Next, 12:00: a valuation model that is wrong on purpose.
+Next session, 12:00: debugging a valuation model with deliberate errors.

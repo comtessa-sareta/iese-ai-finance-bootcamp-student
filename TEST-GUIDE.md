@@ -69,13 +69,13 @@ step where you hesitated.
 ## Session 1 — Prompting (target: 45–60 min)
 
 **Open `notebooks/01-prompting.ipynb`** and work top to bottom — it contains
-everything below (Part A sends you to claude.ai; Parts B/C are the coding lab
+everything below (Parts A to C run in the notebook
 with self-checks). The notes that follow are what to pay attention to:
 
 1. Everything runs **in the notebook** (the API cells are the "clean room" —
    no web search, no repo context; note the key is needed from THIS session).
 2. Part A: naive → role+task → grounded (your RULES + `NOT IN CONTEXT`
-   refusal) → schema run twice. Part C: the three red-team attack cells.
+   refusal) → schema run twice. Part C: the three adversarial test cells.
 3. Write ≥2 failure-mode rows into
    `session-01-prompting/playbook/company-deep-dive.md` — check the table
    format makes sense to a first-timer.

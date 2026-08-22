@@ -18,11 +18,11 @@ IESE MiF · Prof. Sara Bisbe
 
 | Session | You build |
 |---|---|
-| 1 | **Prompts that refuse to guess** |
+| 1 | **Reliably grounded prompts** with verifiable answers |
 | 2 | **A comps tool** on your own GitHub |
-| 3 | **A tested DCF** + an earnings engine that **detects fabrication** |
+| 3 | **A tested DCF** and an earnings engine with **fabrication detection** |
 | 4 | **A company screener** on live SEC filings |
-| 5 | **Your own AI agent**, with limits you control |
+| 5 | **A governed AI agent**, with limits you define |
 
 ---
 
@@ -72,5 +72,5 @@ IESE MiF · Prof. Sara Bisbe
 
 <br>
 
-- In finance, a **wrong number with confidence** is a career event
+- In finance, a confidently delivered wrong number carries serious professional consequences
 - Everything we build makes verification **cheap, fast, automatic**

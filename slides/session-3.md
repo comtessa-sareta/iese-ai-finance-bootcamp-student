@@ -6,7 +6,7 @@ theme: default
 
 # Session 3 · Debugging, Testing and Earnings
 
-**A model that crashes is annoying. A model that lies is expensive.**
+**An error that stops execution is visible. An error that returns a wrong number is costly.**
 
 Plan: idea 12' · live demo 22' · your lab 30' · debrief 8'
 
@@ -26,7 +26,7 @@ Plan: idea 12' · live demo 22' · your lab 30' · debrief 8'
 | | **The crash** | **The lie** |
 |---|---|---|
 | Announces itself | Yes, with a traceback | No. Returns a number. |
-| Danger | Low: you must fix it | High: it can reach a client |
+| Risk | Low: it forces a fix | High: it can reach a client |
 | Today | Fix in 2 minutes | The rest of the session |
 
 **Protocol**: read bottom up → diagnose before fixing → one change at a time
@@ -86,8 +86,8 @@ transcript → model extracts claims → EVERY claim carries a verbatim quote
 
 ---
 
-# Remember this one
+# Key takeaway
 
-**Green tests AND a plausible number. You need both. Always.**
+**A correct model requires both: green tests and a plausible result.**
 
-Tomorrow, 9:00: your code pulls live SEC filings by itself.
+Tomorrow, 9:00: retrieving live SEC filings programmatically.

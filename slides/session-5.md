@@ -6,7 +6,7 @@ theme: default
 
 # Session 5 · Agents, Governance, Your Capstone
 
-**So far you wrote every plan. Now the model plans. Under your limits.**
+**Until now you wrote every plan. Now the model plans its own steps, within limits you define.**
 
 Plan: idea 10' · demo 18' · lab 22' · capstones 20' · close 5'
 
@@ -46,7 +46,7 @@ while steps < MAX_STEPS:
         break
 ```
 
-**Forty lines.** Read them once today. No vendor mystifies you again.
+**Forty lines.** Once you have read them, no vendor terminology will be opaque to you.
 
 ---
 
@@ -90,14 +90,14 @@ our agent:    tool detects mixed units → warning → compares
 4. One honest **number**
 5. The **next step**
 
-**The trust story decides the grade.** A caught failure beats a suspicious success.
+**The trust story carries the grade.** A documented, caught failure is stronger evidence than an unexamined success.
 
 ---
 
 # What you own now
 
-**Prompts that refuse · a comps tool · a tested DCF · an earnings engine
-with a lie detector · a live SEC screener · an agent with a leash**
+**Grounded prompts · a comps tool · a tested DCF · an earnings engine with
+fabrication detection · a live SEC screener · a governed agent**
 
 - **Challenge for next week**: one recurring task at your desk → make it a
   workflow → show one colleague

@@ -73,8 +73,8 @@ audit: every figure in the prose  →  traced to inputs  →  intruder flagged �
 
 ---
 
-# Remember this one
+# Key takeaway
 
-**A screen you can rerun tomorrow beats ten analyses you did once.**
+**A screen you can rerun tomorrow is worth more than ten analyses performed once.**
 
-Next, 10:30: the model starts making its own plan. We hold the leash.
+Next session, 10:30: the model plans its own steps, under controls you define.
