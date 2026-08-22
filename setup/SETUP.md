@@ -15,6 +15,11 @@ the fix.
 | **Claude Pro plan** (~$20, one month is enough) | The ✱ Claude panel in VS Code — your copilot in every lab | claude.ai → upgrade to Pro. ⚠️ The free account does NOT work |
 | **Anthropic API key** with **$5** credit (you'll use €1–2) | The notebook cells where YOUR code calls Claude | console.anthropic.com (separate from Pro; same email fine) → Billing → add $5 → API Keys → Create Key → **copy it now** (shown only once) |
 
+Already have a Console account but didn't save your key? **Just create a new
+key** — keys are free and take 30 seconds; your credit stays on the account.
+Check **Billing** shows some credit (≥$2 is fine for this course; top up $5
+if empty).
+
 ## Step 0b — the three tools (skip what you already have)
 
 If you took the Python/tools pre-course, you have all three — skip ahead.
