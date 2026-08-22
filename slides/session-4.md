@@ -97,4 +97,4 @@ and ask the ✱ panel.
 
 **A screen you can rerun tomorrow is worth more than ten analyses performed once.**
 
-Next session, 10:30: the model plans its own steps, under controls you define.
+Next session: the model plans its own steps, under controls you define.

@@ -150,4 +150,4 @@ and ask the ✱ panel.
 **A system that states the limits of its knowledge is more valuable than
 one that always produces an answer.**
 
-Next session, 10:30: implementing these prompts in Python.
+Next session: implementing these prompts in Python.

@@ -108,4 +108,4 @@ and ask the ✱ panel.
 
 **Intel shows n.m. today. That is correct behavior, not a defect.**
 
-Next session, 12:00: debugging a valuation model with deliberate errors.
+Next session: debugging a valuation model with deliberate errors.

@@ -110,4 +110,4 @@ and ask the ✱ panel.
 
 **A correct model requires both: green tests and a plausible result.**
 
-Tomorrow, 9:00: retrieving live SEC filings programmatically.
+Next session: retrieving live SEC filings programmatically.
