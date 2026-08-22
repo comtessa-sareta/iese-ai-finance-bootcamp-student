@@ -6,74 +6,74 @@ theme: default
 
 # Session 4 · Workflows on Live SEC Data
 
-**Yesterday you pasted data. Today your code fetches it.**
+Yesterday you pasted data by hand. Today your code fetches it from the SEC.
 
-Agenda: idea (15') · demo (22') · your lab (30') · debrief (8')
+Plan: idea 15 min · live demo 22 min · your lab 30 min · debrief 8 min.
 
 ---
 
-# The pattern of the day
+# A workflow is a plan the model cannot change
 
 ```
 INPUT → RETRIEVE → STRUCTURE → REASON → VALIDATE → HUMAN
-         (code)     (code)     (model)   (code)    (you)
 ```
 
-A workflow is a fixed plan, written by you. The model fills one step.
+Code retrieves the filings. Code computes the numbers. The model reasons
+once, in the middle, about a table it is given. Code then audits what the
+model wrote. You approve before anything is saved.
 
-Use it for anything repeatable: screens, reconciliations, reports.
-
----
-
-# Three design rules
-
-1. **Code does math. The model does judgment.**
-2. **Validate at the boundary.** Schema forced. Numbers audited.
-3. **The human gate is the exit.** Nothing ships without a yes.
-
-Break rule 1 and you get confident arithmetic errors at scale.
+Why this division? Because language models make arithmetic mistakes with
+total confidence, and pandas does not. Code does math. The model does
+judgment. The human owns the decision.
 
 ---
 
-# SEC EDGAR: free, legal, current
+# EDGAR: every filing, free, no key
 
-Every filing. Every registrant's financials. No key. No cost.
+EDGAR is the SEC's public database. Every annual report, every quarterly,
+every company, since the nineties. Your code can read it directly.
 
-Not there: market prices, estimates. Filings are fundamentals, not quotes.
+What it does not contain: market prices and analyst estimates. Filings are
+fundamentals, not quotes.
 
-Three traps we hit building this course:
-tags drift across years · foreign filers report in **local currency** ·
-most pharma tags no operating income at all
-
----
-
-# Demo: market intelligence, five steps
-
-NVIDIA versus AMD versus Intel. Live.
-
-Watch two things:
-
-The memo's **data gaps** section. A system that says what it does NOT know.
-
-The numeric audit. Every figure in the prose must trace to an input.
-I will plant a fake number. The audit flags it.
+Three traps you will meet, because companies tag their own accounts:
+the same item changes names across years, foreign companies report in their
+home currency, and most pharma companies never report an operating income
+line at all. Real data has footnotes. Yours will too.
 
 ---
 
-# Your lab: the screening engine
+# Demo: a market intelligence memo, five steps
 
-16 industrials and pharma names. Live filings. Your criteria.
+NVIDIA against AMD and Intel, live from the filings.
 
-- Exercise 1: fetch three years of fundamentals per ticker
-- Exercise 2: the filter. **Pandas decides, not Claude.**
-- Exercise 3: grounded rationales, then audit the model's own prose
+Watch for two moments. The finished memo lists its own data gaps, meaning
+what it could not know from the inputs. An analysis that declares its blind
+spots is worth ten that sound complete.
 
-Question you must answer today: why net margin, not operating margin?
+Then I sabotage it: one invented number goes into the memo, and the audit
+step traces every figure back to the inputs and flags the intruder.
 
 ---
 
-# Remember
+# Your lab · notebook 04 · 30 minutes
 
-A workflow you can rerun is worth ten analyses you did once.
+You build a screening engine over sixteen real industrial and pharma
+companies, live from EDGAR.
 
-Next session: the model makes the plan. Agents. With a leash.
+Exercise 1: fetch three years of fundamentals per company, and survive the
+companies that fail.
+Exercise 2: the filter. Pandas decides who passes, never the model.
+Exercise 3: the model writes one short rationale per survivor, and your
+audit checks every number in its prose.
+
+One question to answer before the debrief: why did we screen on net margin
+instead of operating margin? Exercise 1 will show you.
+
+---
+
+# Remember this one
+
+A screen you can rerun tomorrow is worth ten analyses you did once.
+
+At 10:30 the model starts making its own plan. We hold the leash.

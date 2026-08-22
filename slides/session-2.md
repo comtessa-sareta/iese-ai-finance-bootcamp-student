@@ -6,81 +6,78 @@ theme: default
 
 # Session 2 · Claude Code as Your Coding Copilot
 
-**Today you ship your first finance tool. To GitHub. Before lunch.**
+Goal today: ship your first finance tool to GitHub. Before lunch.
 
-Agenda: idea (15') · live demo (22') · your lab (30') · debrief (8')
-
----
-
-# The working rhythm. This is the skill.
-
-1. Ask small. One function at a time.
-2. Read before you run.
-3. **Verify one number by hand. Every table. Forever.**
-4. Commit at every green moment.
-
-You are the analyst in charge. Claude is a very fast junior.
+Plan: idea 15 min · live demo 22 min · your lab 30 min · debrief 8 min.
 
 ---
 
-# Pandas in one slide
+# You are the analyst in charge
 
-A DataFrame is the analyst's table.
+Claude writes code fast. Speed is not the skill. The skill is staying in
+charge, and it has four habits.
 
-Columns are vectors: `df["a"] / df["b"]` divides whole columns at once.
-
-You do not memorize pandas. You specify what you want. Then you verify.
+Ask small: one function per request, so you can review what comes back.
+Read before you run: code you cannot explain is code you cannot defend.
+Verify one number by hand: pick one cell of every table and check it on a
+calculator, every time, forever.
+Commit at every green moment: each commit is an undo button.
 
 ---
 
-# Real data is messy. Ours is real.
+# Pandas in one idea
 
-Today's file: 10 tech companies, from actual SEC filings, with 8 defects:
+A DataFrame is your spreadsheet, controlled by commands instead of clicks.
 
-ugly headers · numbers stored as text · **one company in billions** ·
-a duplicated row · a dirty ticker · missing values · a junk TOTAL row
+Columns operate on whole columns: revenue divided by shares gives you every
+company's number at once. That single idea covers most of what analysts do
+in pandas. The rest you ask the panel for. Nobody memorizes pandas.
 
-Question: what happens if we miss the billions one?
+---
+
+# Why we clean data explicitly
+
+Today's file holds ten real companies from real SEC filings, plus eight
+defects I planted from real life: text where numbers should be, a duplicate
+row, missing values, a junk total row.
+
+The dangerous one: a single company reported in billions while the rest are
+in millions. Miss it and every ratio for that company is wrong by a factor
+of one thousand. Python raises no error. Silence is why every cleaning step
+we write announces itself with a print.
 
 ---
 
 # The vocabulary of comps
 
-EBITDA = operating income + D&A
-Market cap = shares × price
-**EV = market cap + debt − cash**
+EBITDA is operating income plus depreciation and amortization: profit
+before financing choices and accounting age.
 
-EV/EBITDA, EV/Sales, P/E: what you pay per unit of performance.
+Enterprise value is market cap plus debt minus cash: the price of the whole
+business, not just the shares.
 
-Negative earnings? The multiple is meaningless. We write **n.m.**, never a negative.
-
----
-
-# Demo: pipeline in 20 minutes
-
-Load the messy file. Inspect first. Fix every defect, explicitly.
-
-Watch for the trap: one company reported in billions. Miss it and every
-ratio is off by 1000x. Silently.
-
-Intel has negative margins. Good code survives that without special cases.
+EV to EBITDA, EV to Sales, and P E answer the same question: how much am I
+paying per unit of performance? When earnings are negative the answer is
+meaningless, so professionals write n.m. instead. A negative multiple in a
+table marks you as an amateur.
 
 ---
 
 # Your lab · notebook 02 · 30 minutes
 
-- Exercise 1: growth and margins
-- Exercise 2: market cap, EV, the three multiples
-- Exercise 3: the summary table with a MEDIAN row
+Exercise 1: growth and margins.
+Exercise 2: market cap, enterprise value, the three multiples.
+Exercise 3: the summary table with a median row.
 
-Then the rule: **verify Apple's EV/EBITDA on a calculator.** From the raw CSV.
+Then the habit that outlives this course: verify Apple's EV to EBITDA on a
+calculator, from the raw file. Only then trust the rest of the table.
 
-Finish: commit and push to your own GitHub repo. Your first shipped tool.
+Finish by pushing the tool to your own GitHub. Your first shipped project.
 
 ---
 
-# Remember
+# Remember this one
 
-Intel shows n.m. on P/E. That is correct behavior, not a bug.
+Intel shows n.m. today. That is your code being right, not broken.
 
-Next session: I hand you a valuation model that is wrong on purpose.
+At 12:00 I hand you a valuation model that is wrong on purpose.

@@ -4,95 +4,90 @@ paginate: true
 theme: default
 ---
 
-# Session 5 · Agents, Governance, and Your Capstone
+# Session 5 · Agents, Governance, Your Capstone
 
-**So far you wrote the plan. Now the model plans. We hold the leash.**
+So far you wrote every plan. Now the model plans for itself. Under limits
+you set.
 
-Agenda: idea (10') · demo (18') · your lab (22') · capstones (20') · close (5')
-
----
-
-# Workflow versus agent
-
-| | Workflow (yesterday) | Agent (today) |
-|---|---|---|
-| Plan | fixed, yours | chosen by the model |
-| Tools | your code calls them | the model requests, your code executes |
-| Stops | script ends | model decides. Or hits YOUR limits. |
-
-Autonomy is a dial. Not a switch.
+Plan: idea 10 min · demo 18 min · lab 22 min · capstones 20 min · close 5.
 
 ---
 
-# An agent is a loop. Really.
+# What makes an agent different
+
+In a workflow, you fix the steps and the model fills one of them. In an
+agent, you give a goal and a set of tools, and the model decides which tool
+to use next, looks at the result, and decides again.
+
+That freedom is useful when the path depends on what the data says. It is
+also exactly what must be governed, because an agent can wander, loop, or
+be confidently wrong at scale. Autonomy is a dial you set, not a switch.
+
+---
+
+# The whole mystery is a loop
 
 ```python
 while steps < MAX_STEPS:
     response = claude(messages, tools=TOOLS)
     if response.wants_tool:
-        result = run_tool(...)        # your code
+        result = run_tool(...)        # your code executes
         messages += [response, result]
     else:
         break
 ```
 
-Forty lines. Read them once. Own the concept forever.
+The model proposes. Your code disposes. The conversation is the memory.
+Forty lines. Read them once today and no vendor will ever mystify you
+again.
 
 ---
 
-# Governance lives in the code
+# Governance is code you can point at
 
-- `MAX_STEPS`: no infinite loops
-- `TOKEN_BUDGET`: an agent without a budget is an incident report
-- Tool whitelist: the model never touches data or disk directly
-- Forced structured output: one recommendation, machine readable
-- Human gate: nothing saved without your yes
-- Audit trail: every tool call, logged
+A step limit, so it cannot loop forever. A token budget, because an agent
+without a budget is an incident report. A tool whitelist, so the model
+never touches data or disk directly. A forced final format, so the
+recommendation is machine readable. A human gate, so nothing is saved
+without your yes. An audit trail of every tool call.
 
-When compliance asks "why did it do that", this list is the answer.
-
----
-
-# Demo: the trap
-
-Task: compare Novo Nordisk and Eli Lilly.
-
-Novo files in **Danish kroner**. A naive agent says Novo is 5x bigger.
-
-Ours is forbidden from comparing across currencies.
-Watch the warning fire, and the agent adapt.
+When compliance asks why the agent did something, this list is the answer.
 
 ---
 
-# Your lab, then your stage
+# The demo contains a trap
 
-Lab (22'): build the currency tool and the agent's rules. Run it on YOUR
-company pair. Pass the human gate.
+The task: compare Novo Nordisk with Eli Lilly.
 
-Capstone (5 minutes, hard stop):
-the job · the live run · **the trust story** · one number · next step
+Novo Nordisk reports in Danish kroner. A naive agent compares 300 billion
+kroner with 65 billion dollars and concludes Novo is five times bigger.
 
-The trust story wins: one failure you caught, and the check that caught it.
-
----
-
-# When NOT to use an agent
-
-Repeatable task? Workflow. Cheaper, testable, auditable.
-
-Open-ended research, path depends on the data? Agent. With the leash.
-
-If a regulator will ask why, you want the workflow's answer
-or the agent's audit trail.
+Our compare tool refuses to mix currencies, and the agent's rules force it
+to compare growth and margins instead. You will build both protections
+yourself, then run your agent on a company pair you choose.
 
 ---
 
-# You leave with
+# Your lab, then your five minutes
 
-Prompts that refuse · a comps tool · a tested DCF · an earnings engine
-with a lie detector · a live SEC screener · **an agent with a leash**
+Lab: build the currency tool and the agent's rules, run your agent on your
+own pair, pass the human gate.
 
-One challenge for next week: pick one recurring task at work.
-Make it a workflow. Show a colleague.
+Capstone, five minutes, hard stop: the job your workflow does, the live
+run, the trust story, one honest number, the next step.
+
+The trust story decides the grade: one failure you caught, and the check
+that caught it. A caught failure beats a suspicious success.
+
+---
+
+# What you own now
+
+Prompts that refuse to guess. A comps tool on your GitHub. A DCF with
+tests. An earnings engine with a lie detector. A live SEC screener. An
+agent with a leash.
+
+One challenge for next week: pick one recurring task at your desk and turn
+it into a workflow. Show one colleague.
 
 ## Never ship a number you haven't verified.

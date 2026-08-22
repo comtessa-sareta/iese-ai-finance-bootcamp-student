@@ -8,78 +8,69 @@ theme: default
 
 IESE MiF · Prof. Sara Bisbe
 
-**In two days you build an AI financial analyst. Yours. Working.**
-
----
-
-# Why this course exists
-
-Finance work is changing. Analysts now work with AI that reads filings,
-writes code and drafts memos.
-
-Most people learn to *chat* with AI.
-
-You will learn to **build with** AI. That is a different skill. It pays better.
+In two days you build a working AI financial analyst. On your laptop, with
+your hands. Not slides about one.
 
 ---
 
 # What you leave with
 
-A portfolio. Not notes.
+A portfolio on your GitHub. Not notes.
 
 | Session | You build |
 |---|---|
-| 1 | Prompts that refuse to lie |
+| 1 | Prompts that refuse to guess |
 | 2 | A comparable company analysis tool |
-| 3 | A DCF you can trust, and an earnings engine that catches fabrication |
-| 4 | A screening engine on live SEC data |
-| 5 | Your own AI analyst agent, with a leash |
+| 3 | A tested DCF and an earnings engine that detects fabrication |
+| 4 | A company screener on live SEC filings |
+| 5 | Your own AI analyst agent, with limits you control |
 
 ---
 
 # How every session works
 
-One notebook per session. Same rhythm, five times:
+Each session is one notebook. The rhythm never changes.
 
-1. I explain the idea. Short.
-2. We run it together. Live.
-3. **You build.** Fill the gaps between `START CODE HERE` and `END CODE HERE`.
-4. Run the ✅ self-check. Green means done.
+First I explain the idea and we run it together. Then you build: the
+notebook gives you working code with gaps, and you fill the gaps. Under
+every exercise there is a check cell. When it prints green, you are right
+and you move on. Nobody waits for me to correct anything.
 
-Stuck? Ask the **✱ Claude panel**. Using it well IS the course.
+When you are stuck, ask the ✱ Claude panel. Learning to use it well is not
+cheating. It is the subject of this course.
 
 ---
 
-# Your two tools. Do not confuse them.
+# You have two AI tools. They are not the same one.
 
-| | ✱ Claude panel | API key in `.env` |
+| | The ✱ Claude panel | Your API key in `.env` |
 |---|---|---|
-| What | Your copilot in VS Code | Your code calling Claude |
-| Runs on | Your Pro plan | Your $5 credit |
-| Used for | Help while you build | The systems you build |
+| What it is | Your copilot inside VS Code | Claude answering YOUR code |
+| Paid by | Your Pro subscription | Your five dollars of credit |
+| You use it to | Get help while building | Power the tools you build |
 
-Chat says GPT or "credits"? Wrong panel. Find the ✱.
+If a chat panel mentions GPT, Gemini or credits, you are in the wrong tool.
+The right one always shows the ✱.
 
 ---
 
 # Agenda
 
-| | Day 1 (Mon) | Day 2 (Tue) |
+| | Monday | Tuesday |
 |---|---|---|
-| 9:00 | S1 · Prompting and financial reasoning | S4 · Workflows on live SEC data |
-| 10:30 | S2 · Claude Code as your coding copilot | S5 · Agents + your capstone |
-| 12:00 | S3 · Debugging, testing, earnings | |
+| 9:00 | 1 · Prompting and financial reasoning | 4 · Workflows on live SEC data |
+| 10:30 | 2 · Claude Code as coding copilot | 5 · Agents, then your capstone |
+| 12:00 | 3 · Debugging, testing, earnings | |
 
-Capstone: 5 minutes, Tuesday. Your AI-native workflow, working, on screen.
+The capstone is five minutes on Tuesday: your own AI workflow, running, on
+screen.
 
 ---
 
-# One rule. All five sessions.
-
-<br>
+# The one rule of this course
 
 ## Never ship a number you haven't verified.
 
-<br>
-
-Everything we build this week exists to make that rule cheap to follow.
+In finance, a wrong number delivered with confidence is a career event.
+Everything we build this week exists to make verification cheap, fast and
+automatic.
