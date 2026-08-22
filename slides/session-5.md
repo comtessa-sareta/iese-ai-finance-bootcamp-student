@@ -12,7 +12,7 @@ Plan: idea 10' · demo 18' · lab 22' · capstones 20' · close 5'
 
 ---
 
-# By 11:45 you can
+# By the end of Session 5 you can
 
 1. **Explain** what separates an agent from a workflow, and when each wins
 2. **Read** an agent loop and point at every governance lever in the code

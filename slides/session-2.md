@@ -12,7 +12,7 @@ Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 
-# By 11:45 you can
+# By the end of Session 2 you can
 
 1. **Drive** Claude Code professionally: one function at a time, reviewed
 2. **Clean** a messy financial dataset with every fix visible

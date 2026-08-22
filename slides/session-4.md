@@ -12,7 +12,7 @@ Plan: idea 15' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 
-# By 10:15 you can
+# By the end of Session 4 you can
 
 1. **Draw** the workflow pattern and defend the code-vs-model split
 2. **Pull** real fundamentals from SEC filings with one function call

@@ -12,7 +12,7 @@ Plan: idea 12' · live demo 22' · your lab 30' · debrief 8'
 
 ---
 
-# By 13:15 you can
+# By the end of Session 3 you can
 
 1. **Read** a traceback and make Claude diagnose before it fixes
 2. **Write** a financial rule as a test, including one checkable on a napkin

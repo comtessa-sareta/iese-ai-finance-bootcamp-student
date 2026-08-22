@@ -12,7 +12,7 @@ Plan: idea 10' · live demo 15' · your lab 25' · debrief 5'
 
 ---
 
-# By 10:15 you can
+# By the end of Session 1 you can
 
 1. **Explain** why a model invents numbers, and why it sounds confident doing it
 2. **Write** the two safety rules: one stops guessing, one stops hijacking
