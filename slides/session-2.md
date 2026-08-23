@@ -104,8 +104,13 @@ A **multiple** divides what you pay by what you get:
 | **EV/EBITDA** | enterprise value ÷ EBITDA | the whole business over what it earns |
 | **Price-to-earnings (P/E)** | market cap ÷ net income | the equity per unit of net profit |
 
-When earnings are **negative**, a multiple has no meaning: professionals
-write **n.m.** (not meaningful), never a negative multiple.
+- **You compute both; the valuation uses EV/EBITDA**, because it compares
+  whole businesses before financing choices distort the picture
+- **P/E is reported alongside** — it is the multiple the press quotes, and
+  it is distorted by debt and one-off items, which is why it does not anchor
+  the analysis
+- When earnings are **negative**, a multiple has no meaning: professionals
+  write **n.m.** (not meaningful), never a negative multiple
 
 ---
 
