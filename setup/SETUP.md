@@ -130,6 +130,11 @@ well *is* the course.
 - **Notebook disagrees with the terminal** — notebook outputs show the LAST
   run, and the kernel snapshots your environment at start. After installing
   anything: **Restart → Run All**.
+- **The instructor announces a course update during class** — run
+  `python setup/update_course.py` from the repo folder. It backs up every
+  notebook you have modified to `backups/<time>/` (your answers are never
+  lost), restores the originals, and pulls the update. Copy your answers
+  back from the backup where you need them.
 - **After a `git pull`, an open notebook looks unchanged** — VS Code kept the
   old version in its editor tab (a ● dot on the tab means an unsaved buffer,
   which even survives closing and reopening). The reliable fix: focus the

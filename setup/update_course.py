@@ -1,0 +1,58 @@
+"""Safely update the course while keeping your own work.
+
+Run this when the instructor announces an update:
+
+    python setup/update_course.py
+
+What it does, in order:
+1. Copies every notebook you have modified into backups/<date-time>/ —
+   your filled-in answers are preserved there, always.
+2. Restores those notebooks to their original state.
+3. Pulls the update.
+
+Your work is never deleted: after updating, open the backup copy next to the
+new notebook and copy your answers across. Nothing is ever pushed anywhere.
+"""
+from __future__ import annotations
+
+import shutil
+import subprocess
+import sys
+from datetime import datetime
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+
+
+def run(*args: str) -> str:
+    result = subprocess.run(["git", *args], cwd=REPO, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(result.stderr.strip())
+        sys.exit(f"git {' '.join(args)} failed - ask for help, nothing was lost.")
+    return result.stdout
+
+
+def main() -> None:
+    status = run("status", "--porcelain", "--", "notebooks/")
+    modified = [line[3:].strip() for line in status.splitlines() if line[:2].strip() in ("M", "AM", "MM")]
+
+    if modified:
+        stamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+        backup_dir = REPO / "backups" / stamp
+        backup_dir.mkdir(parents=True, exist_ok=True)
+        for rel in modified:
+            src = REPO / rel
+            shutil.copy2(src, backup_dir / Path(rel).name)
+        print(f"Backed up {len(modified)} notebook(s) with your work to: backups/{stamp}/")
+        run("checkout", "--", *modified)
+    else:
+        print("No modified notebooks - nothing to back up.")
+
+    print(run("pull", "--ff-only").strip() or "Already up to date.")
+    print()
+    print("Done. Your own answers are safe in the backups/ folder;")
+    print("open the backup next to the updated notebook to copy them across.")
+
+
+if __name__ == "__main__":
+    main()
