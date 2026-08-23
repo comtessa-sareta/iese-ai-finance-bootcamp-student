@@ -4,11 +4,11 @@ paginate: true
 theme: default
 ---
 
-# Session 3 · Debugging, Testing and Earnings
+# Session 3 · The Growth Rate Hidden in Apple's Price
 
-**Two skills that make AI usable on a finance desk: direct Claude to repair
-a valuation model under the discipline of tests, and machine-check an
-AI-written analysis against its source.**
+**Session 2 measured Apple's premium. Today you state precisely what believing
+it requires — with a small valuation model that Claude writes and your tests
+verify — and you build the layer that lets you trust an AI-written analysis.**
 
 Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 
@@ -16,89 +16,77 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 
 # By the end of Session 3 you can
 
-1. **Read** a traceback and have Claude diagnose the cause before it proposes a fix
-2. **Direct** Claude to repair a broken valuation, one failing test at a time
-3. **Use** tests as the contract that lets you trust AI-written code
-4. **Catch** a fabricated quote automatically, with code you wrote
+1. **Direct** Claude to build working code, function by function, accepting
+   only what the tests confirm
+2. **Explain** a discounted cash flow model in one idea, and run it backwards
+3. **State** what growth rate a market price assumes, and how the answer
+   moves with the assumptions
+4. **Catch** a fabricated quote in an AI-written analysis, with code you wrote
 
 ---
 
 # What we are doing, and why
 
-- **Session 2 ended with a measured premium and an open question**: is it
-  justified? The tool that answers it is the **discounted cash flow model (DCF)** —
-  worth computed from the company's own future cash flows. Today you work on one.
-- **Before trusting any model, make it correct.** Tests encode financial
-  rules; they are **the contract** that lets you accept AI-written fixes
-  without taking anyone's word.
-- **Before trusting any AI analysis, verify its evidence.** Every claim must
-  carry a quote your own code can find in the source. This is **the trust
-  layer**.
-- **The skill throughout is direction and review**: Claude writes, the tests
-  and checks decide, you judge.
+- **Yesterday ended with a measured premium and an open question**: the
+  market prices Apple near the top of its peer group — is that justified?
+- **A discounted cash flow model (DCF)** computes worth from a company's own
+  future cash flows. Run *backwards*, it answers a sharper question:
+  **what growth does today's price assume?** This is **the implied growth**.
+- **Claude writes the model; your tests decide.** Each check has an answer
+  known in advance — one is computable by hand — so acceptance rests on
+  verification, not on confidence. This is **the contract**.
+- **Then the second trust problem**: an AI can read an earnings call and
+  write the analysis — so your code checks every quoted claim against the
+  source. This is **the trust layer**.
 
 ---
 
 # The storyline of this session
 
 ```
- a broken DCF model              Part A · run it, read the failure
+ Apple's real free cash flow     fetched live from its SEC filing
         ↓
- seven failing tests             the specification of correctness
+ two small functions             Lab 1 · Claude writes, your tests decide
         ↓
- Claude repairs, you review      Lab 1 · one test at a time
+ the model, run backwards        what growth does the price assume?
         ↓
- an earnings-call transcript     Part C · the model extracts claims
+ the verdict                     a precise, judgeable claim about the future
+        ↓
+ an earnings-call transcript     Part C · the model extracts claims + quotes
         ↓
  every quote machine-checked     Lab 2 · the fabrication detector
-        ↓
- an evidence-verified memo       the deliverable
 ```
 
 ---
 
-# Two kinds of bugs
+# The discounted cash flow model, in one idea
+
+**Money later is worth less than money now.**
+
+```
+value today  =   cash year 1        cash year 2               cash year N + beyond
+                ─────────────  +  ──────────────  +  ...  +  ─────────────────────
+                  (1 + r)¹          (1 + r)²                      (1 + r)ᴺ
+```
+
+- `r` is the **required return**: the yearly return an investor demands for
+  holding a risky stock — an assumption, stated and varied openly
+- Forwards: assume growth, get a value. **Backwards: take the price, solve
+  for the growth it assumes** — the market's belief, made visible
+
+---
+
+# When the code breaks: the debugging protocol
 
 | | **The crash** | **The wrong number** |
 |---|---|---|
 | Announces itself | Yes, with a traceback | No: it returns a plausible figure |
-| Risk | Low, because it forces a fix | High, because it can reach a client |
-| Today | Fix in 2 minutes | The rest of the session |
+| Defense | read the traceback bottom-up | a check whose answer is known in advance |
 
-**Protocol**: read bottom up → diagnose before fixing → one change at a time
-
----
-
-# A test is finance, written as a rule
-
-```python
-def test_equity_value_subtracts_net_debt():
-    """Debt holders get paid first."""
-```
-
-- **One test encodes one financial rule**, checked automatically on every change
-- **The hand-check**: choose flat cash flows and round rates, so the correct
-  answer is computable by hand. When the code disagrees with the hand
-  computation, the code contains an error.
-
----
-
-# The broken model you will fix
-
-**Meridian Semiconductor** (fictional). The market prices it at one level;
-the broken model concludes it is worth almost twice that.
-
-The six planted errors, all real ones:
-
-1. First year's cash flow **never discounted**
-2. **Tax shield forgotten** in the cost of debt
-3. Terminal value **taken at face value** (it sits 5 years away)
-4. Net debt **added** instead of subtracted
-5. **Impossible growth accepted** (g above r means infinite value)
-6. Horizon **hardcoded**
-
-**Claude makes every fix; you review every diff.** Corrected, the model
-prints the reference value, and the investment discussion can begin.
+- **Diagnose before fixing**: make Claude explain the cause first, then
+  change one thing at a time
+- One check in this lab is **exact by hand**: two flat flows of 100 at a 10%
+  return are worth precisely 1000.00 — if the code disagrees, the code is wrong
 
 ---
 
@@ -121,7 +109,7 @@ transcript → model extracts claims → every claim carries a verbatim quote
 
 | Library | Role here | Standing |
 |---|---|---|
-| `pytest` | your financial rules, run as tests | the standard Python test runner |
+| `pytest`-style checks | your acceptance tests for AI-written code | the standard verification practice |
 | `pydantic` | declares and validates output schemas | the industry standard for validation |
 | `anthropic` | schema-forced calls to Claude | the official Claude SDK |
 
@@ -133,7 +121,7 @@ Every exercise sits between two markers. **You fill the gaps. Nothing else chang
 
 ```python
 ### START CODE HERE ###
-item["verified"] = bool(quote) and None in haystack   # the NORMALIZED quote
+pv_flows = sum(f / (1 + r) ** t for t, f in enumerate(flows, start=None))
 ### END CODE HERE ###
 ```
 
@@ -149,17 +137,19 @@ and ask the ✱ panel.
 
 # Your lab · notebook 03 · 30 minutes
 
-- **Lab 1**: direct the ✱ panel to repair `broken_dcf.py`, one failing test
-  at a time, reading every diff before accepting
-- **Milestone A**: all 7 tests pass and the model prints the reference value
-- **Lab 2**: build `verify_evidence`, the fabrication detector
-- **Milestone B**: the engine flags **exactly one** fabricated quote
+- **The opening cell** fetches Apple's real cash flows live from its filing
+- **Exercises 1–2**: Claude writes the two DCF functions; your checks decide
+- **The payoff cell**: the growth rate hidden in the price, at three
+  different required returns — then last year's actual, for contrast
+- **Lab 2 · Exercise 3**: build `verify_evidence`, the fabrication detector
+- **Milestone**: the engine flags **exactly one** planted fabricated quote
 
 ---
 
 # Key takeaway
 
-**A correct model requires both: green tests and a plausible result.**
+**A market price is a growth assumption in disguise. A small model makes the
+assumption visible; whether it is plausible remains the analyst's judgment.**
 
-Next session: retrieving filings programmatically from the U.S. Securities
-and Exchange Commission.
+Next session: the by-hand steps of these two days become one automated
+workflow over live filings from the U.S. Securities and Exchange Commission.
