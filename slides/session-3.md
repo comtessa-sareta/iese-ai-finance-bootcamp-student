@@ -69,9 +69,9 @@ The six planted errors, all real ones:
 # Part 2: an engine that demands evidence
 
 ```
-transcript → model extracts claims → EVERY claim carries a verbatim quote
-           → YOUR code checks each quote against the document
-           → quote not found = FABRICATION, flagged ⚠️
+transcript → model extracts claims → every claim carries a verbatim quote
+           → your code checks each quote against the document
+           → an unmatched quote is flagged as unverified
 ```
 
 - **The company is fictional by design**: the model has no memory to lean

@@ -56,7 +56,7 @@ same discipline in **PydanticAI** and maps every lever to **LangGraph**.
 
 | Lever | Failure it prevents |
 |---|---|
-| **MAX_STEPS** | looping forever |
+| **MAX_STEPS** | the agent looping indefinitely |
 | **TOKEN_BUDGET** | unbounded spend |
 | **Tool whitelist** | doing anything you gave no tool for |
 | **Forced output schema** | an essay instead of a decision |
@@ -70,9 +70,9 @@ same discipline in **PydanticAI** and maps every lever to **LangGraph**.
 **Task: compare Novo Nordisk with Eli Lilly.**
 
 ```
-naive agent:  DKK 300bn  vs  USD 65bn  →  "Novo is 5x bigger"  ✗
+naive agent:  DKK 300bn  vs  USD 65bn  →  "Novo is 5x bigger"        (wrong)
 our agent:    tool detects mixed units → warning → compares
-              growth and margins only                           ✓
+              growth and margins only                            (correct)
 ```
 
 - **Defense in depth**: a rule in the prompt AND a check in the tool
@@ -88,7 +88,7 @@ our agent:    tool detects mixed units → warning → compares
 | **PydanticAI** | the agent loop, packaged (live demo) | state-of-the-art agent framework, by the Pydantic team |
 | **LangGraph** | graph agents (mapped, not built) | the other leading agent framework |
 
-You read the raw loop first, so these are recognition, not magic.
+You read the raw loop first, so both frameworks are recognition, not new concepts.
 
 ---
 
