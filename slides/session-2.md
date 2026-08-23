@@ -18,15 +18,14 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 2. **Clean** a messy financial dataset with every fix visible
 3. **Compute** growth, margins and the three multiples in pandas
 4. **Simulate** a valuation range per company with Monte Carlo sampling
-5. **Verify** a multiple by hand, then publish to your own GitHub
+5. **Publish** the finished tool to your own GitHub
 
 ---
 
-# You are the analyst in charge: four habits
+# You are the analyst in charge: three habits
 
 - **Ask small**: request one function at a time, so every change is reviewable
 - **Read before you run**: accept only changes you can explain
-- **Verify one number by hand**: for every table, confirm one cell on a calculator
 - **Commit at every green moment**: small commits make each step reversible
 
 ---
