@@ -4,11 +4,12 @@ paginate: true
 theme: default
 ---
 
-# Session 3 · The Growth Rate Hidden in Apple's Price
+# Session 3 · Debugging, Testing & Financial Analytics
 
-**Session 2 measured Apple's premium. Today you state precisely what believing
-it requires — with a small valuation model that Claude writes and your tests
-verify — and you build the layer that lets you trust an AI-written analysis.**
+**The difference between code that runs and code you can trust. You repair a
+broken version of yesterday's Apple valuation with Claude's help, protect it
+with sanity checks, and finish with an investment-memo draft produced by your
+own engine — every claim machine-verified.**
 
 Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 
@@ -16,81 +17,70 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 
 # By the end of Session 3 you can
 
-1. **Direct** Claude to build working code, function by function, accepting
-   only what the tests confirm
-2. **Explain** a discounted cash flow model in one idea, and run it backwards
-3. **State** what growth rate a market price assumes, and how the answer
-   moves with the assumptions
-4. **Catch** a fabricated quote in an AI-written analysis, with code you wrote
+1. **Diagnose** an error with Claude: reproduce, explain the cause, fix, verify
+2. **Write** sanity checks for financial calculations: magnitudes, units, tie-outs
+3. **Build** an engine that turns a whole earnings call into structured analysis
+4. **Verify** every quoted claim automatically, and produce a memo draft
 
 ---
 
 # What we are doing, and why
 
-- **Yesterday ended with a measured premium and an open question**: the
-  market prices Apple near the top of its peer group — is that justified?
-- **We do not forecast anything.** We take one real number — Apple's current
-  free cash flow — imagine it growing at a rate `g`, convert the future cash
-  into today's money, and **find the `g` that makes the total equal today's
-  price**. That `g` is **the implied growth**: the story you must believe to
-  pay the price.
-- **Claude writes the model; your tests decide.** Each check has an answer
-  known in advance — one is computable by hand — so acceptance rests on
-  verification, not on confidence. This is **the contract**.
-- **Then the second trust problem**: an AI can read an earnings call and
-  write the analysis — so your code checks every quoted claim against the
-  source. This is **the trust layer**.
+- **Code that runs is not code you can trust.** All three of today's planted
+  defects run without any error — and produce absurd numbers.
+- **Trust comes from checks, not from confidence**: order-of-magnitude limits,
+  unit consistency, and **tie-outs** against publicly known figures. Apple's
+  market value is about $4.5 trillion; a result of $4.5 billion convicts the code.
+- **The debugging discipline is the same with AI as without**: reproduce,
+  isolate, **make Claude explain the cause before fixing**, change one line,
+  verify with a check.
+- **Then the same discipline for AI-written analysis**: an engine reads an
+  earnings call, and your code verifies every quoted claim before the memo
+  goes anywhere. This is **the trust layer**.
 
 ---
 
 # The storyline of this session
 
 ```
- Apple's real free cash flow     fetched live from its SEC filing
+ yesterday's Apple valuation     broken: three planted defects
         ↓
- two small functions             Lab 1 · Claude writes, your tests decide
+ defect · check · Claude · fix   Lab 1 · the debugging checklist, three times
         ↓
- the model, run backwards        what growth does the price assume?
+ the repaired pipeline           reproduces Session 2's finding — a tie-out
         ↓
- the verdict                     a precise, judgeable claim about the future
-        ↓
- an earnings-call transcript     loaded visibly; real ones come from
-                                 investor-relations pages, not EDGAR
+ an earnings-call transcript     loaded visibly; the evidence source
         ↓
  every quote machine-checked     Lab 2 · the fabrication detector
+        ↓
+ an investment-memo draft        the deliverable, every claim marked
 ```
 
 ---
 
-# The discounted cash flow model, in one idea
+# The four sanity checks of financial code
 
-**Money later is worth less than money now.**
-
-```
-value today  =   cash year 1        cash year 2               cash year N + beyond
-                ─────────────  +  ──────────────  +  ...  +  ─────────────────────
-                  (1 + r)¹          (1 + r)²                      (1 + r)ᴺ
-```
-
-- `r` is the **required return**: the yearly return an investor demands for
-  holding a risky stock — an assumption, stated and varied openly
-- Forwards: assume a growth rate, get a value. **Backwards: take the price,
-  solve for the growth it assumes** — nothing is predicted; the price is
-  *translated* into its assumption
-
----
-
-# When the code breaks: the debugging protocol
-
-| | **The crash** | **The wrong number** |
+| Check | Question it asks | Today's example |
 |---|---|---|
-| Announces itself | Yes, with a traceback | No: it returns a plausible figure |
-| Defense | read the traceback bottom-up | a check whose answer is known in advance |
+| **Order of magnitude** | can this number exist? | a 119% operating margin cannot |
+| **Unit consistency** | millions, billions, or units? | market value off by a factor of 1,000 |
+| **Tie-out** | does it match a known figure? | Apple ≈ $4.5 trillion, publicly known |
+| **Loud failure** | did bad data stop the pipeline? | a merge that silently produces missing values |
 
-- **Diagnose before fixing**: make Claude explain the cause first, then
-  change one thing at a time
-- One check in this lab is **exact by hand**: two flat flows of 100 at a 10%
-  return are worth precisely 1000.00 — if the code disagrees, the code is wrong
+Every check is one `assert` with a message that names the fix.
+
+---
+
+# The demonstration: three defects, one checklist
+
+| Defect | Symptom | The check that catches it |
+|---|---|---|
+| Wrong formula | margin divided by the wrong base | order of magnitude |
+| Silent data problem | one dirty ticker, missing values after a merge | loud failure at the boundary |
+| Unit error | share count "converted" wrongly | tie-out against the known figure |
+
+For each: run it, read the absurd output aloud, ask Claude to **explain the
+cause before proposing a fix**, repair one line, and let the check decide.
 
 ---
 
@@ -103,7 +93,8 @@ transcript → model extracts claims → every claim carries a verbatim quote
 ```
 
 - **The company is fictional by design**: the model has no memory to lean
-  on, only the document
+  on, only the document — real transcripts come from investor-relations
+  pages and provider APIs, and the engine runs unchanged on them
 - **One quote in today's data is planted**: your engine is complete when it
   catches it
 
@@ -113,7 +104,7 @@ transcript → model extracts claims → every claim carries a verbatim quote
 
 | Library | Role here | Standing |
 |---|---|---|
-| `pytest`-style checks | your acceptance tests for AI-written code | the standard verification practice |
+| `pandas` | the pipeline under repair | the industry standard for data work |
 | `pydantic` | declares and validates output schemas | the industry standard for validation |
 | `anthropic` | schema-forced calls to Claude | the official Claude SDK |
 
@@ -125,7 +116,7 @@ Every exercise sits between two markers. **You fill the gaps. Nothing else chang
 
 ```python
 ### START CODE HERE ###
-value_today = value_today + flow / (1 + r) ** None   # compounded how many times?
+df["op_margin"] = df["operating_income_m"] / df[None]   # a margin divides profit by what?
 ### END CODE HERE ###
 ```
 
@@ -141,19 +132,19 @@ and ask the ✱ panel.
 
 # Your lab · notebook 03 · 30 minutes
 
-- **The opening cell** fetches Apple's real cash flows live from its filing
-- **Exercises 1–2**: Claude writes the two DCF functions; your checks decide
-- **The payoff cell**: the growth rate hidden in the price, at three
-  different required returns — then last year's actual, for contrast
-- **Lab 2 · Exercise 3**: build `verify_evidence`, the fabrication detector
+- **Lab 1**: three defects in yesterday's Apple valuation — for each, read the
+  symptom, make Claude explain the cause, fix one line, pass the check
+- **The tie-out**: the repaired pipeline reproduces Session 2's finding
+- **Lab 2**: build `verify_evidence`, the fabrication detector, and generate
+  your memo draft — every claim marked verified or not found
 - **Milestone**: the engine flags **exactly one** planted fabricated quote
 
 ---
 
 # Key takeaway
 
-**A market price is a growth assumption in disguise. A small model makes the
-assumption visible; whether it is plausible remains the analyst's judgment.**
+**Professionals are distinguished not by writing perfect code, but by knowing
+how to prove their numbers are right.**
 
-Next session: the by-hand steps of these two days become one automated
-workflow over live filings from the U.S. Securities and Exchange Commission.
+Next session: retrieving filings programmatically from the U.S. Securities
+and Exchange Commission.
