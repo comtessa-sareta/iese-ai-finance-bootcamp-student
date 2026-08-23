@@ -6,9 +6,9 @@ theme: default
 
 # Session 2 · Claude Code as Your Coding Copilot
 
-**One question, answered with code: what is Apple worth? You will compute
-what its peers' prices imply, compare that with what the market charges,
-and publish the tool that does it.**
+**One question, answered with code: what is Apple worth? You will fetch the
+peers' filings live from the SEC, compute what their prices imply, compare
+that with what the market charges, and publish the tool that does it.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -17,9 +17,9 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 # By the end of Session 2 you can
 
 1. **Drive** Claude Code professionally: one function at a time, reviewed
-2. **Compute** what the market charges per unit of earnings, across a peer group
-3. **Value** Apple at its peers' multiples, end to end
-4. **Extend** the point to a range by applying every peer rating
+2. **Fetch** company fundamentals live from SEC EDGAR
+3. **Compute** what the market charges per unit of earnings, across a peer group
+4. **Value** Apple at its peers' ratings — as a point, then as a range
 5. **Publish** the finished tool to your own GitHub
 
 ---
@@ -55,7 +55,7 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 ```
 DataFrame  =  your spreadsheet, driven by commands
 
-df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
+df["ev_m"] / df["ebitda_m"]   →   the multiple for all companies at once
 ```
 
 - **Operations apply to entire columns at once**, which is why the lab
@@ -69,7 +69,7 @@ df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
 # The storyline of this session
 
 ```
- the peers' SEC filings          real companies, latest annual filings
+ the peers' SEC filings          fetched live from EDGAR as the notebook opens
         ↓
  growth and margins              Exercise 1 · know the peer group
         ↓
@@ -100,9 +100,9 @@ pillar, *intrinsic* valuation, from the company's own cash flows.)
 
 # The two multiples we use
 
-A **multiple is a rating, not a price** — like pricing flats per square
-meter: it becomes a price estimate only when applied to a company's own
-earnings. It divides what you pay by what you get:
+A **multiple is a rating, not a price**: it becomes a price estimate only
+when applied to a company's own earnings. It divides what you pay by what
+you get:
 
 | Term | Formula | What it measures |
 |---|---|---|
@@ -172,6 +172,7 @@ and ask the ✱ panel.
 
 # Your lab · notebook 02 · 30 minutes
 
+- **The opening cell** fetches the eight companies live from SEC EDGAR
 - **Exercise 1**: know the peer group — growth and margins
 - **Exercise 2**: the EV bridge and the multiples
 - **Exercise 3**: the summary table whose **median** anchors the valuation
