@@ -84,19 +84,20 @@ cause before proposing a fix**, repair one line, and let the check decide.
 
 ---
 
-# The earnings engine: every claim verified
+# The earnings engine: find the fabricated quote
 
 ```
 transcript → model extracts claims → every claim carries a verbatim quote
            → your code checks each quote against the document
-           → an unmatched quote is flagged as unverified
+           → a memo, every claim marked verified or not
 ```
 
-- **The company is fictional by design**: the model has no memory to lean
-  on, only the document — real transcripts come from investor-relations
-  pages and provider APIs, and the engine runs unchanged on them
-- **One quote in today's data is planted**: your engine is complete when it
-  catches it
+- **The game**: the analysis you will see contains eleven quoted claims, and
+  exactly one quote is fabricated — fluent, plausible, in the transcript's
+  own style. Reading rarely finds it; ten lines of Python do.
+- **The company is fictional by design**: only a fictional call proves the
+  claims come from the *document*, not the model's memory — the engine runs
+  unchanged on any real transcript
 
 ---
 
@@ -135,8 +136,8 @@ and ask the ✱ panel.
 - **Lab 1**: three defects in Session 2's Apple valuation — for each, read the
   symptom, make Claude explain the cause, fix one line, pass the check
 - **The tie-out**: the repaired pipeline reproduces Session 2's finding
-- **Lab 2**: build `verify_evidence`, the fabrication detector, and generate
-  your memo draft — every claim marked verified or not found
+- **Lab 2**: the analysis holds eleven quoted claims; one quote is a lie —
+  build the detector that finds it, then generate your memo draft
 - **Milestone**: the engine flags **exactly one** planted fabricated quote
 
 ---
