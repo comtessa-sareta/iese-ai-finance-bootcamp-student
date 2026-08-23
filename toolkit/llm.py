@@ -77,6 +77,25 @@ def client():
     return _client
 
 
+def _friendly(exc: Exception) -> Exception:
+    """Translate the most common API errors into instructions students can act on."""
+    msg = str(exc)
+    if "credit balance is too low" in msg:
+        return LLMError(
+            "Your Anthropic Console account has no credit, so the API refused the "
+            "call. Fix (1 minute): console.anthropic.com -> Billing -> add $5 "
+            "(the whole course uses about 1-2 euros). If you have another key with "
+            "credit, put that one in .env instead. Then re-run this cell."
+        )
+    if "authentication" in msg.lower() or "invalid x-api-key" in msg.lower():
+        return LLMError(
+            "The API key in your .env was rejected. Create a fresh key at "
+            "console.anthropic.com -> API Keys (30 seconds, free), paste it into "
+            ".env, save, and re-run this cell."
+        )
+    return exc
+
+
 def _record_usage(resp) -> None:
     try:
         USAGE["input_tokens"] += resp.usage.input_tokens
@@ -112,7 +131,10 @@ def ask(
     }
     if system:
         kwargs["system"] = system
-    resp = client().messages.create(**kwargs)
+    try:
+        resp = client().messages.create(**kwargs)
+    except Exception as exc:  # noqa: BLE001 - translate, then re-raise
+        raise _friendly(exc) from exc
     _record_usage(resp)
     text = "".join(b.text for b in resp.content if b.type == "text")
     if not text.strip():
@@ -209,7 +231,10 @@ def ask_json(
         }
         if system:
             call["system"] = system
-        resp = client().messages.create(**call)
+        try:
+            resp = client().messages.create(**call)
+        except Exception as exc:  # noqa: BLE001
+            raise _friendly(exc) from exc
         _record_usage(resp)
         text = "".join(b.text for b in resp.content if b.type == "text")
         try:
@@ -278,7 +303,10 @@ def ask_structured(
         }
         if system:
             kwargs["system"] = system
-        resp = client().messages.create(**kwargs)
+        try:
+            resp = client().messages.create(**kwargs)
+        except Exception as exc:  # noqa: BLE001
+            raise _friendly(exc) from exc
         _record_usage(resp)
         blocks = [b for b in resp.content if b.type == "tool_use"]
         if not blocks:
