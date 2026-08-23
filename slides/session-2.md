@@ -94,11 +94,12 @@ The chain from a peer multiple to a share price:
 3. implied equity value ÷ shares                =  implied share price
 ```
 
-- **Deterministic version**: apply one multiple (the peer median) → one price
+- **Each multiple prices its own denominator**: EV/EBITDA × EBITDA;
+  EV/Sales × revenue (the fallback when EBITDA is negative)
+- **Deterministic version**: one multiple, the peer *median* → one price.
+  Today's data: 25.1× × Apple's 144.7bn EBITDA → **$246 implied vs $255 actual**
 - **Monte Carlo version (Exercise 4)**: sample *all* peer multiples, 10,000
-  times → a **range** of prices, compared with the actual market price
-- The two versions share the same chain; they differ only in whether you
-  pretend to know which multiple is right
+  times → a **range** of prices around that same answer
 
 ---
 
