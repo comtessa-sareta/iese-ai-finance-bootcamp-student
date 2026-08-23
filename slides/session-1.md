@@ -24,6 +24,10 @@ Plan: concepts 10' · live demonstration 15' · lab 25' · debrief 5'
 
 # The architecture you work in all week
 
+Three names in the schema: the **SEC** (the U.S. Securities and Exchange
+Commission) and its **EDGAR** filing database, and the **API** (application
+programming interface) — the channel your own code calls Claude through.
+
 ```
 YOUR LAPTOP · VS Code
 ┌─────────────────────────────────────────────┐

@@ -6,7 +6,8 @@ theme: default
 
 # Session 4 · Workflows on Live SEC Data
 
-**Yesterday you pasted data by hand. Today your code fetches it from the SEC.**
+**Yesterday you pasted data by hand. Today your code fetches it from the
+U.S. Securities and Exchange Commission (SEC).**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 

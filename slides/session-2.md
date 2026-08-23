@@ -17,7 +17,7 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 # By the end of Session 2 you can
 
 1. **Drive** Claude Code professionally: one function at a time, reviewed
-2. **Fetch** company fundamentals live from SEC EDGAR
+2. **Fetch** company fundamentals live from EDGAR, the SEC's public filing database
 3. **Compute** what the market charges per unit of earnings, across a peer group
 4. **Value** Apple at its peers' ratings — as a point, then as a range
 5. **Publish** the finished tool to your own GitHub
