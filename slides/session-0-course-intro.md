@@ -39,7 +39,7 @@ supplies the course's data. Every term is defined in full when its session begin
 |---|---|---|
 | 9:00 | **1 · Prompting** and financial reasoning | **4 · Workflows** on live SEC data |
 | 10:30 | **2 · Claude Code** as coding copilot | **5 · Agents** + your capstone |
-| 12:00 | **3 · Debugging**, testing, earnings | |
+| 12:00 | **3 · Valuation** and evidence | |
 
 - **Capstone**: 5 minutes per person, Tuesday. Your workflow, running, on screen.
 

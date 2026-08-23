@@ -29,9 +29,11 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 
 - **Yesterday ended with a measured premium and an open question**: the
   market prices Apple near the top of its peer group — is that justified?
-- **A discounted cash flow model (DCF)** computes worth from a company's own
-  future cash flows. Run *backwards*, it answers a sharper question:
-  **what growth does today's price assume?** This is **the implied growth**.
+- **We do not forecast anything.** We take one real number — Apple's current
+  free cash flow — imagine it growing at a rate `g`, convert the future cash
+  into today's money, and **find the `g` that makes the total equal today's
+  price**. That `g` is **the implied growth**: the story you must believe to
+  pay the price.
 - **Claude writes the model; your tests decide.** Each check has an answer
   known in advance — one is computable by hand — so acceptance rests on
   verification, not on confidence. This is **the contract**.
@@ -52,7 +54,8 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
         ↓
  the verdict                     a precise, judgeable claim about the future
         ↓
- an earnings-call transcript     Part C · the model extracts claims + quotes
+ an earnings-call transcript     loaded visibly; real ones come from
+                                 investor-relations pages, not EDGAR
         ↓
  every quote machine-checked     Lab 2 · the fabrication detector
 ```
@@ -71,8 +74,9 @@ value today  =   cash year 1        cash year 2               cash year N + beyo
 
 - `r` is the **required return**: the yearly return an investor demands for
   holding a risky stock — an assumption, stated and varied openly
-- Forwards: assume growth, get a value. **Backwards: take the price, solve
-  for the growth it assumes** — the market's belief, made visible
+- Forwards: assume a growth rate, get a value. **Backwards: take the price,
+  solve for the growth it assumes** — nothing is predicted; the price is
+  *translated* into its assumption
 
 ---
 
@@ -121,7 +125,7 @@ Every exercise sits between two markers. **You fill the gaps. Nothing else chang
 
 ```python
 ### START CODE HERE ###
-pv_flows = sum(f / (1 + r) ** t for t, f in enumerate(flows, start=None))
+value_today = value_today + flow / (1 + r) ** None   # compounded how many times?
 ### END CODE HERE ###
 ```
 

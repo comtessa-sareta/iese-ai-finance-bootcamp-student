@@ -109,7 +109,7 @@ hand-check matches the table.
 
 ## Session 3 — Debugging & earnings engine (target: 60–75 min)
 
-**Open `notebooks/03-debugging-earnings.ipynb`** — you build the DCF function
+**Open `notebooks/03-valuation-evidence.ipynb`** — you build the DCF function
 by function (each with its test below, ending at $75.61 vs $62), then the
 earnings engine's trust layer. Notes:
 
