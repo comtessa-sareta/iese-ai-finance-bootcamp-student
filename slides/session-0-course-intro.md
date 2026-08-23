@@ -24,9 +24,12 @@ IESE MiF · Prof. Sara Bisbe
 |---|---|---|
 | **1 · Prompting** | reliably grounded prompts | make a model refuse rather than guess |
 | **2 · Coding copilot** | a comparable-company analysis tool with a peer-implied valuation range | direct Claude Code; verify its work |
-| **3 · Debugging & evidence** | a repaired DCF + an earnings engine | tests as the contract; machine-checked quotes |
-| **4 · Workflows** | a screener on live SEC data + a trained forecaster | code decides; the model explains; you approve |
+| **3 · Debugging & evidence** | a repaired discounted-cash-flow model + an earnings engine | tests as the contract; machine-checked quotes |
+| **4 · Workflows** | a screener on live SEC filings + a trained forecaster | code decides; the model explains; you approve |
 | **5 · Agents** | a governed agent + your capstone | the model plans, within limits you define |
+
+SEC = the U.S. Securities and Exchange Commission; its public filing database
+supplies the course's data. Every term is defined in full when its session begins.
 
 ---
 
@@ -101,7 +104,8 @@ df["revenue_growth_1y"] = df[None] / df[None] - 1
 | Paid by | Pro subscription | Your $5 credit |
 | Used for | Help while building | The tools you build |
 
-If a chat panel mentions GPT, Gemini or credits, it is VS Code's built-in
+API stands for application programming interface: the channel through which
+your own code calls Claude. If a chat panel mentions GPT, Gemini or credits, it is VS Code's built-in
 assistant, not the course tool. The course tool is always the **✱** panel.
 
 ---

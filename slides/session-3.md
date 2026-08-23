@@ -26,8 +26,8 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 # What we are doing, and why
 
 - **Session 2 ended with a measured premium and an open question**: is it
-  justified? The tool that answers it is the **DCF** — worth computed from
-  the company's own future cash flows. Today you work on one.
+  justified? The tool that answers it is the **discounted cash flow model (DCF)** —
+  worth computed from the company's own future cash flows. Today you work on one.
 - **Before trusting any model, make it correct.** Tests encode financial
   rules; they are **the contract** that lets you accept AI-written fixes
   without taking anyone's word.
@@ -161,4 +161,5 @@ and ask the ✱ panel.
 
 **A correct model requires both: green tests and a plausible result.**
 
-Next session: retrieving live SEC filings programmatically.
+Next session: retrieving filings programmatically from the U.S. Securities
+and Exchange Commission.

@@ -35,10 +35,12 @@ YOUR LAPTOP · VS Code
 └─────────────────────────────────────────────┘
 ```
 
-- **Everything runs locally** except two calls: filings from the SEC,
+- **Everything runs locally** except two calls: filings from the SEC (the
+  U.S. Securities and Exchange Commission; EDGAR is its public database),
   reasoning from Claude
-- **Two separate channels to Claude**: your code uses the API key, your
-  copilot uses the Pro plan
+- **Two separate channels to Claude**: your code uses the API key (an API,
+  application programming interface, is the channel code calls a service
+  through); your copilot uses the Pro plan
 - The same architecture carries all five sessions. Only your code grows.
 
 ---

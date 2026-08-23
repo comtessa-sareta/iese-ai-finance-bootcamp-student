@@ -7,7 +7,7 @@ theme: default
 # Session 2 · Claude Code as Your Coding Copilot
 
 **One question, answered with code: what is Apple worth? You will fetch the
-peers' filings live from the SEC, compute what their prices imply, compare
+peers' filings live from the U.S. Securities and Exchange Commission (SEC), compute what their prices imply, compare
 that with what the market charges, and publish the tool that does it.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
@@ -30,8 +30,8 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
   it tells you what buyers pay, not whether they should.
   This is **the market price** — the latest close.
 - **We compute an independent estimate of worth** from public SEC filings.
-  This is **the implied price**: the peers' EV/EBITDA ratings, applied to
-  the company's own earnings.
+  This is **the implied price**: the peers' ratings — price per unit of
+  earnings — applied to the company's own earnings.
 - **The difference between the two is the product.** It does not say "buy"
   or "sell"; it identifies the question to investigate next.
   This is **the premium** (or discount) — measured, not judged.
@@ -69,7 +69,7 @@ df["ev_m"] / df["ebitda_m"]   →   the multiple for all companies at once
 # The storyline of this session
 
 ```
- the peers' SEC filings          fetched live from EDGAR as the notebook opens
+ the peers' SEC filings          fetched live from EDGAR, the SEC's database
         ↓
  growth and margins              Exercise 1 · know the peer group
         ↓

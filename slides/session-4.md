@@ -38,6 +38,8 @@ INPUT → RETRIEVE → STRUCTURE → REASON → VALIDATE → HUMAN
 
 # EDGAR: every filing, free, no key
 
+- **EDGAR** (Electronic Data Gathering, Analysis and Retrieval) is the U.S.
+  Securities and Exchange Commission's public filing database
 - **What it contains**: every 10-K, 10-Q and 8-K since the nineties,
   machine readable
 - **What it does not contain**: market prices and analyst estimates —
