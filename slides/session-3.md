@@ -6,7 +6,9 @@ theme: default
 
 # Session 3 · Debugging, Testing and Earnings
 
-**An error that stops execution is visible. An error that returns a wrong number is costly.**
+**Two skills that make AI usable on a finance desk: direct Claude to repair
+a valuation model under the discipline of tests, and machine-check an
+AI-written analysis against its source.**
 
 Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 
@@ -18,6 +20,40 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 2. **Direct** Claude to repair a broken valuation, one failing test at a time
 3. **Use** tests as the contract that lets you trust AI-written code
 4. **Catch** a fabricated quote automatically, with code you wrote
+
+---
+
+# What we are doing, and why
+
+- **Session 2 ended with a measured premium and an open question**: is it
+  justified? The tool that answers it is the **DCF** — worth computed from
+  the company's own future cash flows. Today you work on one.
+- **Before trusting any model, make it correct.** Tests encode financial
+  rules; they are **the contract** that lets you accept AI-written fixes
+  without taking anyone's word.
+- **Before trusting any AI analysis, verify its evidence.** Every claim must
+  carry a quote your own code can find in the source. This is **the trust
+  layer**.
+- **The skill throughout is direction and review**: Claude writes, the tests
+  and checks decide, you judge.
+
+---
+
+# The storyline of this session
+
+```
+ a broken DCF model              Part A · run it, read the failure
+        ↓
+ seven failing tests             the specification of correctness
+        ↓
+ Claude repairs, you review      Lab 1 · one test at a time
+        ↓
+ an earnings-call transcript     Part C · the model extracts claims
+        ↓
+ every quote machine-checked     Lab 2 · the fabrication detector
+        ↓
+ an evidence-verified memo       the deliverable
+```
 
 ---
 
@@ -49,8 +85,8 @@ def test_equity_value_subtracts_net_debt():
 
 # The broken model you will fix
 
-**Meridian Semiconductor** (fictional) · trades at **$62** · the broken model
-says over **$115**
+**Meridian Semiconductor** (fictional). The market prices it at one level;
+the broken model concludes it is worth almost twice that.
 
 The six planted errors, all real ones:
 
@@ -61,12 +97,12 @@ The six planted errors, all real ones:
 5. **Impossible growth accepted** (g above r means infinite value)
 6. Horizon **hardcoded**
 
-**Claude makes every fix; you review every diff.** Corrected, the model gives
-**$75.61**, and the investment discussion can begin.
+**Claude makes every fix; you review every diff.** Corrected, the model
+prints the reference value, and the investment discussion can begin.
 
 ---
 
-# Part 2: an engine that demands evidence
+# The earnings engine: every claim verified
 
 ```
 transcript → model extracts claims → every claim carries a verbatim quote
@@ -115,7 +151,7 @@ and ask the ✱ panel.
 
 - **Lab 1**: direct the ✱ panel to repair `broken_dcf.py`, one failing test
   at a time, reading every diff before accepting
-- **Milestone A**: all 7 tests pass; Meridian is valued at **$75.61 per share**
+- **Milestone A**: all 7 tests pass and the model prints the reference value
 - **Lab 2**: build `verify_evidence`, the fabrication detector
 - **Milestone B**: the engine flags **exactly one** fabricated quote
 
