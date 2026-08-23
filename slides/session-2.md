@@ -6,7 +6,9 @@ theme: default
 
 # Session 2 · Claude Code as Your Coding Copilot
 
-**Objective: build and publish your first finance tool to GitHub within this session.**
+**One question, answered with code: what is Apple worth? The market says
+$309 — you will compute what its peers' prices imply, publish the tool, and
+treat the gap as the finding.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -15,8 +17,8 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 # By the end of Session 2 you can
 
 1. **Drive** Claude Code professionally: one function at a time, reviewed
-2. **Clean** a messy financial dataset with every fix visible
-3. **Compute** growth, margins and the three multiples in pandas
+2. **Compute** what the market charges per unit of earnings, across a peer group
+3. **Value** Apple at its peers' multiples, end to end
 4. **Simulate** a valuation range per company with Monte Carlo sampling
 5. **Publish** the finished tool to your own GitHub
 
@@ -45,20 +47,22 @@ df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
 
 ---
 
-# Why we clean data explicitly
 
-Today's file: **10 real companies** from real SEC filings + **8 planted defects**
-
-- Text where numbers should be
-- A duplicate row, missing values, a junk TOTAL row
-- **The dangerous defect**: a single company reported in **billions**
+# The storyline of this session
 
 ```
-missed unit trap  →  every ratio off by 1000x  →  no error raised
+ the peers' SEC filings          10 companies, latest annual filings
+        ↓
+ growth and margins              Exercise 1 · know the peer group
+        ↓
+ the multiples                   Exercise 2 · what the market charges
+        ↓
+ Apple valued at the median      Part B · $207 implied vs $309 actual
+        ↓
+ the Monte Carlo range           Exercise 4 · honest uncertainty
+        ↓
+ your GitHub                     Part C · the tool, published
 ```
-
-Every cleaning step we write prints what it changed, so no correction
-happens silently.
 
 ---
 
@@ -145,11 +149,11 @@ and ask the ✱ panel.
 
 # Your lab · notebook 02 · 30 minutes
 
-- **Exercise 1**: growth and margins
-- **Exercise 2**: market cap, EV, the three multiples
-- **Exercise 3**: summary table with a MEDIAN row, then an interactive chart
-- **Exercise 4**: Monte Carlo — 10,000 sampled peer multiples put a value
-  range around every company, next to its actual price
+- **Exercise 1**: know the peer group — growth and margins
+- **Exercise 2**: the EV bridge and the multiples (Intel must print n.m.)
+- **Exercise 3**: the summary table whose **median** anchors the valuation
+- **Part B**: read Apple valued end to end, then **Exercise 4**: the
+  Monte Carlo range around it
 - **To finish**: publish the tool to your own GitHub repository
 
 ---

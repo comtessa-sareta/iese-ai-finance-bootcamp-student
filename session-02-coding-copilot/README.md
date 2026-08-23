@@ -18,8 +18,9 @@ junior. The loop that works:
 ## Live demo — Financial Data Pipeline in 30 minutes
 
 The instructor builds `demo/financial_data_pipeline.py` live from an empty
-file: load `data/tech_financials_messy.csv` (real SEC-filed fundamentals with
-8 realistic defects — see `data/README.md`), clean every defect *explicitly*,
+file: load `data/tech_financials.csv` (real SEC-filed fundamentals; a messy
+variant with 8 planted defects exists as an optional exercise — see
+`data/README.md`),
 compute KPIs, chart them. Watch for:
 
 - how each defect is discovered (inspect first, fix second),
