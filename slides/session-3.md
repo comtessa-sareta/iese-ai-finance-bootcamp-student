@@ -7,7 +7,7 @@ theme: default
 # Session 3 · Debugging, Testing & Financial Analytics
 
 **The difference between code that runs and code you can trust. You repair a
-broken version of yesterday's Apple valuation with Claude's help, protect it
+broken version of Session 2's Apple valuation with Claude's help, protect it
 with sanity checks, and finish with an investment-memo draft produced by your
 own engine — every claim machine-verified.**
 
@@ -30,7 +30,7 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
   defects run without any error — and produce absurd numbers.
 - **Trust comes from checks, not from confidence**: order-of-magnitude limits,
   unit consistency, and **tie-outs** against publicly known figures. Apple's
-  market value is about $4.5 trillion; a result of $4.5 billion convicts the code.
+  market value is about $4.5 trillion; a result of $4.5 billion is enough to reject the code.
 - **The debugging discipline is the same with AI as without**: reproduce,
   isolate, **make Claude explain the cause before fixing**, change one line,
   verify with a check.
@@ -43,7 +43,7 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
 # The storyline of this session
 
 ```
- yesterday's Apple valuation     broken: three planted defects
+ Session 2's Apple valuation     broken: three planted defects
         ↓
  defect · check · Claude · fix   Lab 1 · the debugging checklist, three times
         ↓
@@ -79,7 +79,7 @@ Every check is one `assert` with a message that names the fix.
 | Silent data problem | one dirty ticker, missing values after a merge | loud failure at the boundary |
 | Unit error | share count "converted" wrongly | tie-out against the known figure |
 
-For each: run it, read the absurd output aloud, ask Claude to **explain the
+For each: run it, read the implausible output aloud, ask Claude to **explain the
 cause before proposing a fix**, repair one line, and let the check decide.
 
 ---
@@ -132,7 +132,7 @@ and ask the ✱ panel.
 
 # Your lab · notebook 03 · 30 minutes
 
-- **Lab 1**: three defects in yesterday's Apple valuation — for each, read the
+- **Lab 1**: three defects in Session 2's Apple valuation — for each, read the
   symptom, make Claude explain the cause, fix one line, pass the check
 - **The tie-out**: the repaired pipeline reproduces Session 2's finding
 - **Lab 2**: build `verify_evidence`, the fabrication detector, and generate

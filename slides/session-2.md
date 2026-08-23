@@ -87,8 +87,7 @@ df["ev_m"] / df["ebitda_m"]   →   the multiple for all companies at once
 # The vocabulary of comparable-company analysis
 
 **Comparable-company analysis** values a company *relative to its peers*:
-what do their prices imply this one is worth? (Session 3 builds the other
-pillar, *intrinsic* valuation, from the company's own cash flows.)
+what do their prices imply this one is worth?
 
 | Term | Formula | What it measures |
 |---|---|---|

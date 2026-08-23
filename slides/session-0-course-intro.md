@@ -24,7 +24,7 @@ IESE MiF · Prof. Sara Bisbe
 |---|---|---|
 | **1 · Prompting** | reliably grounded prompts | make a model refuse rather than guess |
 | **2 · Coding copilot** | a comparable-company analysis tool with a peer-implied valuation range | direct Claude Code; verify its work |
-| **3 · Debugging & analytics** | yesterday's valuation, repaired and protected + an earnings engine | prove a number is right; machine-checked quotes |
+| **3 · Debugging & analytics** | Session 2's valuation, repaired and protected + an earnings engine | prove a number is right; machine-checked quotes |
 | **4 · Workflows** | a screener on live SEC filings + a trained forecaster | code decides; the model explains; you approve |
 | **5 · Agents** | a governed agent + your capstone | the model plans, within limits you define |
 

@@ -23,7 +23,7 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 
 # Workflow vs agent
 
-| | **Workflow** (yesterday) | **Agent** (today) |
+| | **Workflow** (Session 4) | **Agent** (now) |
 |---|---|---|
 | The plan | fixed, written by you | **chosen by the model**, step by step |
 | Tools | your code calls them | the model requests, **your code executes** |
