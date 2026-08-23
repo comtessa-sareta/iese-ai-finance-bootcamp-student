@@ -17,7 +17,8 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 1. **Drive** Claude Code professionally: one function at a time, reviewed
 2. **Clean** a messy financial dataset with every fix visible
 3. **Compute** growth, margins and the three multiples in pandas
-4. **Verify** a multiple by hand, then **ship** to your own GitHub
+4. **Simulate** a valuation range per company with Monte Carlo sampling
+5. **Verify** a multiple by hand, then publish to your own GitHub
 
 ---
 
@@ -87,7 +88,8 @@ EV          = market cap + debt − cash   the price of the whole business,
 | Library | Role here | Standing |
 |---|---|---|
 | `pandas` | tables, cleaning, ratios | **the** industry standard for data work |
-| `plotly` | the interactive chart | best in class for interactive visuals |
+| `plotly` | the interactive charts | best in class for interactive visuals |
+| `numpy` | Monte Carlo sampling | the numerical foundation of Python |
 | `matplotlib` / `seaborn` | static charts | the long-standing defaults |
 | `git` + GitHub | version and publish | universal in professional work |
 
@@ -118,6 +120,8 @@ and ask the ✱ panel.
 - **Exercise 1**: growth and margins
 - **Exercise 2**: market cap, EV, the three multiples
 - **Exercise 3**: summary table with a MEDIAN row, then an interactive chart
+- **Exercise 4**: Monte Carlo — 10,000 sampled peer multiples put a value
+  range around every company, next to its actual price
 - **Verification**: confirm Apple's EV/EBITDA on a calculator, from the raw file
 - **To finish**: publish the tool to your own GitHub repository
 
@@ -125,6 +129,7 @@ and ask the ✱ panel.
 
 # Key takeaway
 
-**Intel shows n.m. today. That is correct behavior, not a defect.**
+**A comps table gives every company a peer-implied value range. Analysis
+begins where the market price and that range disagree.**
 
 Next session: debugging a valuation model with deliberate errors.
