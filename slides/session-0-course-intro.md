@@ -14,29 +14,80 @@ IESE MiF · Prof. Sara Bisbe
 
 ---
 
-# What you leave with
-
-| Session | You build |
-|---|---|
-| 1 | **Reliably grounded prompts** with verifiable answers |
-| 2 | **A comps tool** on your own GitHub |
-| 3 | **A tested DCF** and an earnings engine with **fabrication detection** |
-| 4 | **A company screener** on live SEC filings |
-| 5 | **A governed AI agent**, with limits you define |
+# Part 1 · Course overview
 
 ---
 
-# How every session works
+# Five sessions, one system
+
+| Session | You build | The skill |
+|---|---|---|
+| **1 · Prompting** | reliably grounded prompts | make a model refuse rather than guess |
+| **2 · Coding copilot** | a comps tool with a Monte Carlo valuation range | direct Claude Code; verify its work |
+| **3 · Debugging & evidence** | a repaired DCF + an earnings engine | tests as the contract; machine-checked quotes |
+| **4 · Workflows** | a screener on live SEC data + a trained forecaster | code decides; the model explains; you approve |
+| **5 · Agents** | a governed agent + your capstone | the model plans, within limits you define |
+
+---
+
+# Agenda
+
+| | Monday | Tuesday |
+|---|---|---|
+| 9:00 | **1 · Prompting** and financial reasoning | **4 · Workflows** on live SEC data |
+| 10:30 | **2 · Claude Code** as coding copilot | **5 · Agents** + your capstone |
+| 12:00 | **3 · Debugging**, testing, earnings | |
+
+- **Capstone**: 5 minutes per person, Tuesday. Your workflow, running, on screen.
+
+---
+
+# The libraries you will use
+
+| | Library | Standing |
+|---|---|---|
+| Data | `pandas` · `numpy` | the industry standards for data and numerical work |
+| Charts | `plotly` | best in class for interactive visuals |
+| Testing & validation | `pytest` · `pydantic` | the standard test runner; the standard validation library |
+| Claude | `anthropic` · **PydanticAI** | the official SDK; a state-of-the-art agent framework |
+
+Each appears exactly when its job appears — nothing is used before it is explained.
+
+---
+
+# Part 2 · How every session works
+
+---
+
+# The session rhythm, identical all five times
 
 ```
   I explain  →  we run it  →  you build  →  a check confirms it is right
-   (short)      (live)       (fill gaps)     (green means continue)
+  (concepts)     (live)       (the lab)      (green means continue)
 ```
 
-- **The gaps**: code between `START CODE HERE` and `END CODE HERE`, with
-  `None` and `[BLANKS]` for you to fill
-- **The check**: a cell under each exercise; green means correct, and you
-  continue at your own pace
+| Segment | Minutes |
+|---|---|
+| Concepts, with runnable demonstrations | 10–15 |
+| Live demonstration | 15–22 |
+| **Your lab** — the largest block | 25–30 |
+| Debrief and bridge to the next session | 5–8 |
+
+---
+
+# How the labs work
+
+Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**
+
+```python
+### START CODE HERE ###
+df["revenue_growth_1y"] = df[None] / df[None] - 1
+### END CODE HERE ###
+```
+
+- **`None`** → replace with the correct column, value or variable
+- **`[QUESTION IN CAPITALS]`** → replace with the text the bracket asks for
+- Run the **✅ check cell** below each exercise; green means correct, continue
 - **When you are stuck**: ask the **✱ Claude panel** — using it well is part
   of what this course teaches
 
@@ -55,15 +106,36 @@ assistant, not the course tool. The course tool is always the **✱** panel.
 
 ---
 
-# Agenda
+# Part 3 · Setup — first 15 minutes, in class
 
-| | Monday | Tuesday |
+---
+
+# Setup: one link, six steps
+
+**The link is in the Zoom chat and on the Virtual Campus:**
+
+`github.com/comtessa-sareta/iese-ai-finance-bootcamp-student` → `setup/SETUP.md`
+
+| Step | What | You already have |
 |---|---|---|
-| 9:00 | **1 · Prompting** and financial reasoning | **4 · Workflows** on live SEC data |
-| 10:30 | **2 · Claude Code** as coding copilot | **5 · Agents** + your capstone |
-| 12:00 | **3 · Debugging**, testing, earnings | |
+| 0 | Accounts: Claude **Pro** + Anthropic **API key** ($5 credit) | Pro ✓ — a lost key is re-created in 30 seconds |
+| 1 | Clone the course repository | Git, from the tools pre-course |
+| 2 | Create the `aifinance` Python environment | Anaconda, from the pre-course |
+| 3 | Put your keys in `.env` | — |
+| 4 | Sign in to the **✱** Claude panel in VS Code | — |
+| 5–6 | Verify: checker all `[ OK ]`, then notebook `00` all green | — |
 
-- **Capstone**: 5 minutes, Tuesday. Your workflow, running, on screen.
+**Copy-paste every command; never retype.**
+
+---
+
+# Setup: the finish line, and helping each other
+
+- **Finished and green?** Raise your hand — then help a neighbor
+- **Stuck more than 3 minutes?** Work on your neighbor's laptop; we repair
+  yours at the break — nobody sits out
+- Every failure message in the checker includes its own fix; the
+  Troubleshooting section of `SETUP.md` covers the rest
 
 ---
 
