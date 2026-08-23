@@ -62,27 +62,27 @@ happens silently.
 
 ---
 
-# The vocabulary of comps
+# The vocabulary of comparable-company analysis
 
-**Comparable-company analysis ("comps")** values a company *relative to its
-peers*: what do their prices imply this one is worth? (Session 3 builds the
-other pillar, *intrinsic* valuation: what the company's own cash flows imply.)
-
-A **multiple** divides what you pay by what you get:
+**Comparable-company analysis** values a company *relative to its peers*:
+what do their prices imply this one is worth? (Session 3 builds the other
+pillar, *intrinsic* valuation, from the company's own cash flows.)
 
 | Term | Formula | What it measures |
 |---|---|---|
-| **EBITDA** — earnings before interest, taxes, depreciation & amortization | operating income + D&A | what the operations earn, before financing and accounting choices |
-| **Market capitalization** | shares × share price | the price of the equity alone |
-| **Enterprise value (EV)** | market cap + debt − cash | the price of the whole business, debt included |
+| **EBITDA** — earnings before interest, taxes, depreciation & amortization | operating income + D&A | operating earnings, before financing and accounting choices |
+| **Market capitalization** | shares × share price | the price of the equity |
+| **Enterprise value (EV)** | market cap + debt − cash | the price of the whole business |
 
 ---
 
 # The two multiples we use
 
+A **multiple** divides what you pay by what you get:
+
 | Term | Formula | What it measures |
 |---|---|---|
-| **EV/EBITDA** | enterprise value ÷ EBITDA | the standard multiple: whole business over what it earns |
+| **EV/EBITDA** | enterprise value ÷ EBITDA | the whole business over what it earns |
 | **Price-to-earnings (P/E)** | market cap ÷ net income | the equity per unit of net profit |
 
 When earnings are **negative**, a multiple has no meaning: professionals
@@ -90,7 +90,7 @@ write **n.m.** (not meaningful), never a negative multiple.
 
 ---
 
-# Pricing a company with comps
+# Pricing a company with peer multiples
 
 The chain from a peer multiple to a share price:
 
@@ -156,7 +156,7 @@ and ask the ✱ panel.
 
 # Key takeaway
 
-**A comps table gives every company a peer-implied value range. Analysis
+**Comparable-company analysis gives every company a peer-implied value range. Analysis
 begins where the market price and that range disagree.**
 
 Next session: debugging a valuation model with deliberate errors.

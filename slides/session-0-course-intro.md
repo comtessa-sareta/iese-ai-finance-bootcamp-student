@@ -23,7 +23,7 @@ IESE MiF · Prof. Sara Bisbe
 | Session | You build | The skill |
 |---|---|---|
 | **1 · Prompting** | reliably grounded prompts | make a model refuse rather than guess |
-| **2 · Coding copilot** | a comps tool with a Monte Carlo valuation range | direct Claude Code; verify its work |
+| **2 · Coding copilot** | a comparable-company analysis tool with a Monte Carlo valuation range | direct Claude Code; verify its work |
 | **3 · Debugging & evidence** | a repaired DCF + an earnings engine | tests as the contract; machine-checked quotes |
 | **4 · Workflows** | a screener on live SEC data + a trained forecaster | code decides; the model explains; you approve |
 | **5 · Agents** | a governed agent + your capstone | the model plans, within limits you define |

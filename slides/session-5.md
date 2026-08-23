@@ -127,7 +127,7 @@ caught failure is stronger evidence than an unexamined success.
 
 # What you own now
 
-**Grounded prompts · a comps tool · a tested DCF · an earnings engine with
+**Grounded prompts · a comparable-company analysis tool · a tested DCF · an earnings engine with
 fabrication detection · a live SEC screener · a governed agent**
 
 - **A challenge for the coming week**: choose one recurring task at your
