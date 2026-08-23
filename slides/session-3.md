@@ -35,8 +35,9 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
   isolate, **make Claude explain the cause before fixing**, change one line,
   verify with a check.
 - **Then the same discipline for AI-written analysis**: an engine reads an
-  earnings call, and your code verifies every quoted claim before the memo
-  goes anywhere. This is **the trust layer**.
+  earnings call, and three gates guard its output — sanity checks catch wrong
+  *numbers*, Pydantic catches wrong *shapes*, and your quote-checker catches
+  wrong *evidence*. Together they are **the trust layer**.
 
 ---
 
@@ -53,7 +54,7 @@ Plan: concepts 12' · live demo 22' · your lab 30' · debrief 8'
         ↓
  every quote machine-checked     Lab 2 · the fabrication detector
         ↓
- an investment-memo draft        the deliverable, every claim marked
+ an investment-memo draft        typed, and every claim marked
 ```
 
 ---
@@ -89,6 +90,7 @@ cause before proposing a fix**, repair one line, and let the check decide.
 ```
 transcript → model extracts claims → every claim carries a verbatim quote
            → your code checks each quote against the document
+           → Pydantic validates the shape (typed fields, precise rejections)
            → a memo, every claim marked verified or not
 ```
 
@@ -106,7 +108,7 @@ transcript → model extracts claims → every claim carries a verbatim quote
 | Library | Role here | Standing |
 |---|---|---|
 | `pandas` | the pipeline under repair | the industry standard for data work |
-| `pydantic` | declares and validates output schemas | the industry standard for validation |
+| `pydantic` | the shape gate: typed models, addressed rejections | the industry standard for validation |
 | `anthropic` | schema-forced calls to Claude | the official Claude SDK |
 
 ---
