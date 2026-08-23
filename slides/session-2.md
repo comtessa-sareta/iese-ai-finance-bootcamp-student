@@ -24,11 +24,9 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 # You are the analyst in charge: four habits
 
 - **Ask small**: request one function at a time, so every change is reviewable
-- **Read before you run**: code you cannot explain is code you cannot defend
+- **Read before you run**: accept only changes you can explain
 - **Verify one number by hand**: for every table, confirm one cell on a calculator
 - **Commit at every green moment**: small commits make each step reversible
-
-Claude generates quickly. **The judgment remains yours.**
 
 ---
 
@@ -59,8 +57,8 @@ Today's file: **10 real companies** from real SEC filings + **8 planted defects*
 missed unit trap  →  every ratio off by 1000x  →  no error raised
 ```
 
-**Silent corrections are the danger**: every cleaning step we write
-therefore prints what it changed.
+Every cleaning step we write prints what it changed, so no correction
+happens silently.
 
 ---
 

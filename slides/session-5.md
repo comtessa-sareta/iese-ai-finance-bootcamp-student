@@ -30,8 +30,6 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 | Stops when | the script ends | when it decides, or at **the limits you set** |
 | Use for | repeatable work | paths that **depend on the data** |
 
-**Autonomy is a dial, not a switch.**
-
 ---
 
 # The agent mechanism is a loop
@@ -87,8 +85,6 @@ our agent:    tool detects mixed units → warning → compares
 | `pydantic` | the typed recommendation | the industry standard for validation |
 | **PydanticAI** | the agent loop, packaged (live demo) | state-of-the-art agent framework, by the Pydantic team |
 | **LangGraph** | graph agents (mapped, not built) | the other leading agent framework |
-
-You read the raw loop first, so both frameworks are recognition, not new concepts.
 
 ---
 

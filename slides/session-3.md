@@ -42,8 +42,8 @@ def test_equity_value_subtracts_net_debt():
 
 - **One test encodes one financial rule**, checked automatically on every change
 - **The hand-check**: choose flat cash flows and round rates, so the correct
-  answer is computable by hand. If the model disagrees with the algebra,
-  **the model is wrong.**
+  answer is computable by hand. When the code disagrees with the hand
+  computation, the code contains an error.
 
 ---
 
