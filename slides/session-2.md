@@ -26,16 +26,19 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
 # What we are doing, and why
 
-- **The market gives every company a price** — but a price is not a
-  judgment. It tells you what buyers pay, not whether they should.
-- **We compute an independent estimate of worth**, from public SEC filings,
-  by asking what the prices of comparable companies imply.
-- **The gap between price and estimate is the product.** It does not say
-  "buy" or "sell"; it says exactly which question to investigate next.
-- **We build it as a tool, with Claude Code, and publish it** — because an
-  analysis that can be rerun tomorrow is worth more than one performed once,
-  and because directing and verifying AI-written code is the working skill
-  this course trains.
+- **The market gives every company a price**, but a price is not a judgment:
+  it tells you what buyers pay, not whether they should.
+  This is **the market price** — the latest close.
+- **We compute an independent estimate of worth** from public SEC filings.
+  This is **the implied price**: the peers' EV/EBITDA ratings, applied to
+  the company's own earnings.
+- **The difference between the two is the product.** It does not say "buy"
+  or "sell"; it identifies the question to investigate next.
+  This is **the premium** (or discount) — measured, not judged.
+- **We build the analysis as a tool, with Claude Code, and publish it.**
+  A reproducible analysis can be rerun, audited and extended; and directing
+  and reviewing AI-generated code with discipline is a core professional
+  capability this course develops.
 
 ---
 
