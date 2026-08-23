@@ -47,7 +47,8 @@ while steps < MAX_STEPS:
 ```
 
 **About forty lines.** Once you have read them, you can evaluate any
-vendor's agent claims from first principles.
+vendor's agent claims from first principles — the notebook then shows the
+same discipline in **PydanticAI** and maps every lever to **LangGraph**.
 
 ---
 

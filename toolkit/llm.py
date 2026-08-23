@@ -232,6 +232,21 @@ def ask_json(
     raise LLMError(f"Model output failed validation after {retries + 1} attempts: {errors}")
 
 
+def ask_pydantic(prompt: str, model_cls, **kwargs):
+    """Tool-forced structured output, validated into a Pydantic model.
+
+    Pydantic is the industry-standard validation library (the anthropic SDK
+    itself is built on it). This helper derives the JSON schema from your
+    model class, forces the tool call through ask_structured, then parses the
+    result into a typed instance - so downstream code gets attributes, types
+    and validation errors instead of a raw dict.
+    """
+    schema = model_cls.model_json_schema()
+    name = kwargs.pop("name", model_cls.__name__.lower())
+    raw = ask_structured(prompt, name=name, schema=schema, **kwargs)
+    return model_cls.model_validate(raw)
+
+
 def ask_structured(
     prompt: str,
     name: str,

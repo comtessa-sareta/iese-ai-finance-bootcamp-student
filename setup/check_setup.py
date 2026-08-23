@@ -35,7 +35,7 @@ def main() -> int:
     report(v >= (3, 10), f"Python {v.major}.{v.minor}.{v.micro}", "need 3.10+")
 
     # 2. Packages
-    for pkg in ["pandas", "requests", "matplotlib", "seaborn", "plotly", "anthropic", "dotenv", "pytest", "tabulate"]:
+    for pkg in ["pandas", "requests", "matplotlib", "seaborn", "plotly", "anthropic", "pydantic", "pydantic_ai", "dotenv", "pytest", "tabulate"]:
         try:
             importlib.import_module(pkg)
             report(True, f"package: {pkg}")
