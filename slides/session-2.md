@@ -6,9 +6,9 @@ theme: default
 
 # Session 2 · Claude Code as Your Coding Copilot
 
-**One question, answered with code: what is Apple worth? The market says
-$309 — you will compute what its peers' prices imply, publish the tool, and
-treat the gap as the finding.**
+**One question, answered with code: what is Apple worth? You will compute
+what its peers' prices imply, compare that with what the market charges,
+and publish the tool that does it.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -21,6 +21,21 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 3. **Value** Apple at its peers' multiples, end to end
 4. **Simulate** a valuation range per company with Monte Carlo sampling
 5. **Publish** the finished tool to your own GitHub
+
+---
+
+# What we are doing, and why
+
+- **The market gives every company a price** — but a price is not a
+  judgment. It tells you what buyers pay, not whether they should.
+- **We compute an independent estimate of worth**, from public SEC filings,
+  by asking what the prices of comparable companies imply.
+- **The gap between price and estimate is the product.** It does not say
+  "buy" or "sell"; it says exactly which question to investigate next.
+- **We build it as a tool, with Claude Code, and publish it** — because an
+  analysis that can be rerun tomorrow is worth more than one performed once,
+  and because directing and verifying AI-written code is the working skill
+  this course trains.
 
 ---
 
@@ -51,13 +66,13 @@ df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
 # The storyline of this session
 
 ```
- the peers' SEC filings          10 companies, latest annual filings
+ the peers' SEC filings          real companies, latest annual filings
         ↓
  growth and margins              Exercise 1 · know the peer group
         ↓
  the multiples                   Exercise 2 · what the market charges
         ↓
- Apple valued at the median      Part B · $191 implied vs $309 actual
+ Apple valued at the median      Part B · the implied price vs the market's
         ↓
  the Monte Carlo range           Exercise 4 · honest uncertainty
         ↓
@@ -104,15 +119,12 @@ The chain from a peer multiple to a share price:
 3. implied equity value ÷ shares                =  implied share price
 ```
 
-- **Each multiple prices its own denominator**: EV/EBITDA × EBITDA;
-  EV/Sales × revenue (the fallback when EBITDA is negative)
-- **Peers are a choice**: two companies with abnormal trailing earnings
-  (Intel's turnaround, AMD at 183×) are excluded — the notebook states why
-- **Deterministic version**: the seven peers' *median* rating, 19.5×, values
-  Apple at **$191 against an actual $309**
-- **Monte Carlo version (Exercise 4)**: all seven ratings, 10,000 samples →
-  only NVIDIA's rating implies more than $309. Apple is **priced for
-  near-best-in-group performance**, and that finding is the session's product
+- **Peers are a choice**: companies whose current earnings are abnormal are
+  excluded, and the notebook states why — the choice is part of the analysis
+- **The deterministic version** applies one rating, the peer *median*, and
+  produces one implied price to set against the market's
+- **The Monte Carlo version** applies *every* peer rating and produces a
+  range — where the market price sits inside that range is the finding
 
 ---
 
