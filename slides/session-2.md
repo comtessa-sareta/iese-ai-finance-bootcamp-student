@@ -57,7 +57,7 @@ df["ev_m"] / df["ebitda_m"]   →   the multiple for ALL companies at once
         ↓
  the multiples                   Exercise 2 · what the market charges
         ↓
- Apple valued at the median      Part B · $207 implied vs $309 actual
+ Apple valued at the median      Part B · $191 implied vs $309 actual
         ↓
  the Monte Carlo range           Exercise 4 · honest uncertainty
         ↓
@@ -106,12 +106,13 @@ The chain from a peer multiple to a share price:
 
 - **Each multiple prices its own denominator**: EV/EBITDA × EBITDA;
   EV/Sales × revenue (the fallback when EBITDA is negative)
-- **Deterministic version**: one multiple, the peer *median* → one price.
-  At Friday's close: 21.2× × Apple's 144.7bn EBITDA → **$207 implied vs $309 actual**
-- The gap is the question, never the answer: the market pays a large premium
-  over Apple's peer group — the analysis asks what justifies it
-- **Monte Carlo version (Exercise 4)**: sample *all* peer multiples, 10,000
-  times → a **range** of prices around that same answer
+- **Peers are a choice**: two companies with abnormal trailing earnings
+  (Intel's turnaround, AMD at 183×) are excluded — the notebook states why
+- **Deterministic version**: the seven peers' *median* rating, 19.5×, values
+  Apple at **$191 against an actual $309**
+- **Monte Carlo version (Exercise 4)**: all seven ratings, 10,000 samples →
+  only NVIDIA's rating implies more than $309. Apple is **priced for
+  near-best-in-group performance**, and that finding is the session's product
 
 ---
 
