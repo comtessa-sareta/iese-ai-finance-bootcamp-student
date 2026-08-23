@@ -97,7 +97,9 @@ pillar, *intrinsic* valuation, from the company's own cash flows.)
 
 # The two multiples we use
 
-A **multiple** divides what you pay by what you get:
+A **multiple is a rating, not a price** — like pricing flats per square
+meter: it becomes a price estimate only when applied to a company's own
+earnings. It divides what you pay by what you get:
 
 | Term | Formula | What it measures |
 |---|---|---|
