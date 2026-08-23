@@ -65,21 +65,40 @@ happens silently.
 
 # The vocabulary of comps
 
-**Comparable-company analysis**: value a company by pricing it against its peers.
-A **multiple** divides what you pay by what you get.
+**Comparable-company analysis ("comps")** values a company *relative to its
+peers*: what do their prices imply this one is worth? (Session 3 builds the
+other pillar, *intrinsic* valuation: what the company's own cash flows imply.)
+
+A **multiple** divides what you pay by what you get:
+
+| Term | Formula | What it measures |
+|---|---|---|
+| **EBITDA** — earnings before interest, taxes, depreciation & amortization | operating income + D&A | what the operations earn, before financing and accounting choices |
+| **Market capitalization** | shares × share price | the price of the equity alone |
+| **Enterprise value (EV)** | market cap + debt − cash | the price of the whole business, debt included |
+| **EV/EBITDA** | enterprise value ÷ EBITDA | the standard multiple: whole business over what it earns |
+| **Price-to-earnings (P/E)** | market cap ÷ net income | the equity per unit of net profit |
+
+When earnings are **negative**, a multiple has no meaning: professionals
+write **n.m.** (not meaningful), never a negative multiple.
+
+---
+
+# Pricing a company with comps
+
+The chain from a peer multiple to a share price:
 
 ```
-EBITDA      = operating income + D&A     what the operations earn, before
-                                         financing and accounting choices
-Market cap  = shares × share price       the price of the equity alone
-EV          = market cap + debt − cash   the price of the whole business,
-                                         debt included
+1. peer EV/EBITDA multiple × company's EBITDA   =  implied enterprise value
+2. implied EV − debt + cash                     =  implied equity value
+3. implied equity value ÷ shares                =  implied share price
 ```
 
-- **EV/EBITDA** is the standard pairing: the whole business over what the
-  whole business earns. **P/E** prices the equity per unit of net profit.
-- When earnings are **negative**, price-per-unit-of-earnings has no meaning:
-  professionals write **n.m.** (not meaningful) instead of a negative multiple.
+- **Deterministic version**: apply one multiple (the peer median) → one price
+- **Monte Carlo version (Exercise 4)**: sample *all* peer multiples, 10,000
+  times → a **range** of prices, compared with the actual market price
+- The two versions share the same chain; they differ only in whether you
+  pretend to know which multiple is right
 
 ---
 
