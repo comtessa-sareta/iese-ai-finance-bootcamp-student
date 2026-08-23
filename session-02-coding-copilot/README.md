@@ -41,7 +41,7 @@ Suggested prompts to Claude Code, one at a time:
 - "Now add_multiples — note the rule about negative denominators."
 - "Explain why Intel shows n.m. for P/E and what n.m. means in a comps table."
 
-Then **verify**: compute Apple's EV/EBITDA on a calculator from the CSV row.
+Then run the deterministic valuation cell and read each printed step.
 Does it match your table? Now — and only now — trust the rest.
 
 ### Git & GitHub (last 10 minutes of the lab)

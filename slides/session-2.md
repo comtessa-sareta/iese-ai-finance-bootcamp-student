@@ -76,6 +76,13 @@ A **multiple** divides what you pay by what you get:
 | **EBITDA** — earnings before interest, taxes, depreciation & amortization | operating income + D&A | what the operations earn, before financing and accounting choices |
 | **Market capitalization** | shares × share price | the price of the equity alone |
 | **Enterprise value (EV)** | market cap + debt − cash | the price of the whole business, debt included |
+
+---
+
+# The two multiples we use
+
+| Term | Formula | What it measures |
+|---|---|---|
 | **EV/EBITDA** | enterprise value ÷ EBITDA | the standard multiple: whole business over what it earns |
 | **Price-to-earnings (P/E)** | market cap ÷ net income | the equity per unit of net profit |
 
@@ -97,7 +104,9 @@ The chain from a peer multiple to a share price:
 - **Each multiple prices its own denominator**: EV/EBITDA × EBITDA;
   EV/Sales × revenue (the fallback when EBITDA is negative)
 - **Deterministic version**: one multiple, the peer *median* → one price.
-  Today's data: 25.1× × Apple's 144.7bn EBITDA → **$246 implied vs $255 actual**
+  At Friday's close: 21.2× × Apple's 144.7bn EBITDA → **$207 implied vs $309 actual**
+- The gap is the question, never the answer: the market pays a large premium
+  over Apple's peer group — the analysis asks what justifies it
 - **Monte Carlo version (Exercise 4)**: sample *all* peer multiples, 10,000
   times → a **range** of prices around that same answer
 
@@ -142,7 +151,6 @@ and ask the ✱ panel.
 - **Exercise 3**: summary table with a MEDIAN row, then an interactive chart
 - **Exercise 4**: Monte Carlo — 10,000 sampled peer multiples put a value
   range around every company, next to its actual price
-- **Verification**: confirm Apple's EV/EBITDA on a calculator, from the raw file
 - **To finish**: publish the tool to your own GitHub repository
 
 ---
