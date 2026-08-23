@@ -84,6 +84,17 @@ EV          = market cap + debt − cash   the price of the whole business,
 
 ---
 
+# The libraries in this session
+
+| Library | Role here | Standing |
+|---|---|---|
+| `pandas` | tables, cleaning, ratios | **the** industry standard for data work |
+| `plotly` | the interactive chart | best in class for interactive visuals |
+| `matplotlib` / `seaborn` | static charts | the long-standing defaults |
+| `git` + GitHub | version and publish | universal in professional work |
+
+---
+
 # How the labs work
 
 Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**

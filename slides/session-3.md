@@ -81,6 +81,16 @@ transcript → model extracts claims → EVERY claim carries a verbatim quote
 
 ---
 
+# The libraries in this session
+
+| Library | Role here | Standing |
+|---|---|---|
+| `pytest` | your financial rules, run as tests | the standard Python test runner |
+| `pydantic` | declares and validates output schemas | the industry standard for validation |
+| `anthropic` | schema-forced calls to Claude | the official Claude SDK |
+
+---
+
 # How the labs work
 
 Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**

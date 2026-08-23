@@ -67,6 +67,17 @@ audit: every figure in the prose  →  checked against inputs  →  the altered
 
 ---
 
+# The libraries in this session
+
+| Library | Role here | Standing |
+|---|---|---|
+| `requests` | fetches SEC filings over HTTP | the standard HTTP library |
+| `pandas` | the deterministic screen | the industry standard for data work |
+| `numpy` | trains the least-squares forecaster | the numerical foundation of Python |
+| `pydantic` | typed, validated model output | the industry standard for validation |
+
+---
+
 # How the labs work
 
 Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**

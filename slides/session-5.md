@@ -80,6 +80,18 @@ our agent:    tool detects mixed units → warning → compares
 
 ---
 
+# The libraries in this session
+
+| Library | Role here | Standing |
+|---|---|---|
+| `pydantic` | the typed recommendation | the industry standard for validation |
+| **PydanticAI** | the agent loop, packaged (live demo) | state-of-the-art agent framework, by the Pydantic team |
+| **LangGraph** | graph agents (mapped, not built) | the other leading agent framework |
+
+You read the raw loop first, so these are recognition, not magic.
+
+---
+
 # How the labs work
 
 Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**

@@ -125,6 +125,17 @@ answers what looks answerable, with two-year-old data and no warning label.
 
 ---
 
+# The libraries in this session
+
+| Library | Role here | Standing |
+|---|---|---|
+| `anthropic` | your code calls Claude | the **official Claude SDK** |
+| `python-dotenv` | loads keys from `.env` | the standard practice for secrets |
+
+Nothing exotic: two small, standard tools. The discipline is yours, not the library's.
+
+---
+
 # How the labs work
 
 Every exercise sits between two markers. **You fill the gaps. Nothing else changes.**
