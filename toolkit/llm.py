@@ -80,6 +80,13 @@ def client():
 def _friendly(exc: Exception) -> Exception:
     """Translate the most common API errors into instructions students can act on."""
     msg = str(exc)
+    if "reached your specified API usage limits" in msg:
+        return LLMError(
+            "Your Anthropic Console account has hit its configured monthly usage "
+            "limit, so the API refused the call. Fix: console.anthropic.com -> "
+            "Settings -> Limits -> raise the monthly limit (or wait for the reset "
+            "date in the original message). Then re-run this cell."
+        )
     if "credit balance is too low" in msg:
         return LLMError(
             "Your Anthropic Console account has no credit, so the API refused the "

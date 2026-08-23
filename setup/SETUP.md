@@ -123,6 +123,9 @@ well *is* the course.
   installs into the active Python). In notebooks, confirm the kernel says
   **aifinance** — or just run the **rescue cell** in `00-setup.ipynb`, which
   installs into whatever kernel you selected.
+- **`You have reached your specified API usage limits`** — your account has a
+  monthly spend limit set: console.anthropic.com → Settings → Limits → raise
+  it (or wait for the reset date the error names).
 - **`Your credit balance is too low` (or `BadRequestError` mentioning
   credit)** — your key works but its Console account has no money on it:
   console.anthropic.com → Billing → add $5 (the whole course uses €1–2).
