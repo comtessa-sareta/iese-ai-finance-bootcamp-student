@@ -96,6 +96,25 @@ df["revenue_growth_1y"] = df[None] / df[None] - 1
 
 ---
 
+# Asking Claude about specific code
+
+**`Option+K`** (Mac) / **`Alt+K`** (Windows) — the one shortcut to learn today.
+
+```
+1. highlight the lines you are asking about
+2. press Option+K   →  the selection lands in the ✱ panel with its
+                       address: file, cell, exact line numbers
+3. type your question next to it, press Enter
+```
+
+- The answer is about **exactly those lines**, not about code in general
+- Ask for the **cause before the fix**: *"explain why this fails before
+  proposing a change"* — you learn the diagnosis, not just the patch
+- Claude's edits arrive as a **diff**: read it, then accept or reject
+- Shortcut not working? Copy the lines into the panel by hand — same result
+
+---
+
 # Your two AI tools, and how to tell them apart
 
 | | **✱ Claude panel** | **API key in `.env`** |
