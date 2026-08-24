@@ -1,7 +1,7 @@
 """Session 5 demo — Mini Investment Analyst Agent.
 
     python session-05-agents/demo/mini_analyst_agent.py \
-        "Analyze Novo Nordisk (NVO) and compare it with Eli Lilly (LLY)."
+        "Analyze Apple (AAPL) and compare it with Sony (SONY)."
 
     python session-05-agents/demo/mini_analyst_agent.py --preflight   # no API key:
                                                         # show system prompt + tools
@@ -18,8 +18,8 @@ The loop below IS the agent. Everything else is tools and guardrails:
     - it must finish by calling record_recommendation (machine-readable output)
     - a human approves before anything is written to disk
 
-Watch the trace when it runs on NVO vs LLY: Novo Nordisk files in DANISH
-KRONER. A naive agent compares 309bn to 65bn and calls it 5x bigger.
+Watch the trace when it runs on AAPL vs SONY: Sony files in JAPANESE YEN.
+A naive agent compares 13 trillion to 416 billion and calls Sony 30x bigger.
 The system prompt forces a currency check — that's governance in one line.
 """
 from __future__ import annotations
@@ -50,7 +50,7 @@ Operating rules:
 1. PLAN first: say briefly which tools you will call and why.
 2. Gather financials for EVERY company involved before comparing anything.
 3. ALWAYS check the 'unit' field. Foreign filers report in local currency
-   (DKK, EUR...). Never compare absolute amounts across different currencies —
+   (JPY, DKK, EUR...). Never compare absolute amounts across different currencies —
    compare unitless measures (growth, margins) and say so explicitly.
 4. Use compare_metrics for arithmetic. Do not compute numbers yourself.
 5. Every figure you state must come from a tool result in this conversation.
@@ -87,7 +87,7 @@ TOOLS = [
         "input_schema": {
             "type": "object",
             "required": ["ticker"],
-            "properties": {"ticker": {"type": "string", "description": "e.g. NVO"}},
+            "properties": {"ticker": {"type": "string", "description": "e.g. SONY"}},
         },
     },
     {
@@ -283,8 +283,8 @@ def render_memo(task: str, rec: dict, trace: list[str]) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("task", nargs="?", default=(
-        "Analyze Novo Nordisk (ticker NVO) and compare it with Eli Lilly "
-        "(ticker LLY): which is better positioned on growth and profitability?"
+        "Analyze Apple (ticker AAPL) and compare it with Sony (ticker SONY): "
+        "which is better positioned on growth and profitability?"
     ))
     ap.add_argument("--preflight", "--dry-run", action="store_true",
                     help="print the agent's system prompt and tool catalog, then exit")

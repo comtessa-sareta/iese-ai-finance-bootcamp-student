@@ -1,34 +1,54 @@
 {
-  "_note": "Canned memo used by --dry-run (no API key needed). Figures match the NVDA/AMD/INTC EDGAR data as of Aug 2026 so the numeric validator passes; if a company restates, rerun live instead.",
-  "executive_summary": "The target extended an extraordinary run: revenue reached 215.9 billion in the latest fiscal year, up 65.5 percent, while operating margin held around 60.4 percent. The nearest challenger grew 34.3 percent from a base roughly six times smaller and is still climbing the margin curve at 10.7 percent, while the third player's revenue slipped 0.5 percent with a negative operating margin of 4.2 percent. The data supports a picture of one firm capturing the economics of the AI buildout, one credible fast-follower, and one incumbent in turnaround.",
-  "kpi_read": [
-    {
-      "metric": "Revenue growth (latest FY)",
-      "reading": "Target 65.5 percent versus 34.3 percent for the fast-follower and negative 0.5 percent for the incumbent — the growth gap is narrowing at the second player but remains enormous in absolute dollars."
-    },
-    {
-      "metric": "Operating margin (latest FY)",
-      "reading": "Target 60.4 percent, fast-follower 10.7 percent, incumbent negative 4.2 percent. The margin spread implies the target monetizes scarcity while peers price to win share."
-    },
-    {
-      "metric": "Scale",
-      "reading": "At 215.9 billion in revenue the target is now larger than both peers combined by a wide multiple, which compounds its R&D and supply-chain advantages."
-    }
-  ],
-  "competitive_position": "On this data the target holds both the growth and the profitability crown simultaneously, which is rare late in a product cycle. The fast-follower's improving margin trend (from 7.4 percent to 10.7 percent) is the metric to watch: if it sustains growth near the current 34.3 percent pace while margins expand, the duopoly scenario strengthens. The incumbent's negative operating margin two years running suggests its challenge is now financial capacity to fund a comeback, not just product.",
-  "risks": [
-    "Concentration: growth of this magnitude usually depends on a small number of very large buyers whose capex plans can change faster than supply chains.",
-    "The margin gap itself is a risk: 60.4 percent operating margins invite customer in-sourcing, competitor pricing aggression and regulatory attention.",
-    "The incumbent's losses may trigger strategic moves (subsidies, partnerships, capacity deals) that change industry pricing in ways backward-looking filings cannot show."
-  ],
-  "questions_for_management": [
-    "How much of the latest fiscal year's 65.5 percent growth is unit volume versus pricing, and what does the order book imply for the coming year?",
-    "What share of revenue comes from the top three customers, and how has it moved over the three fiscal years shown?",
-    "At a 60.4 percent operating margin, where is the reinvestment going — capacity commitments, software, or buybacks?"
-  ],
-  "data_gaps": [
-    "No segment or geographic split in the data block — cannot attribute growth to data center versus other lines.",
-    "No balance-sheet or cash-flow items — leverage and capex intensity are not assessable here.",
-    "No market prices — nothing here supports a valuation judgment, only an operating one."
-  ]
+ "_note": "Canned memo used by --dry-run (no API key needed). Figures match the AAPL/MSFT/GOOGL EDGAR data as of Aug 2026 so the numeric validator passes; if a company restates, rerun live instead.",
+ "executive_summary": "Apple (AAPL) grew revenue from $383.3B (FY23) to $416.2B (FY25), with growth accelerating from 2.0% (FY24) to 6.4% (FY25). Operating margin expanded each year, from 29.8% (FY23) to 31.5% (FY24) to 32.0% (FY25). Despite this improvement, Apple's FY25 margin (32.0%) trails both Microsoft (46.8% in FY26) and, more narrowly, sits above Alphabet (32.0% in FY25 — effectively tied). Microsoft shows both higher margins and faster, accelerating revenue growth (14.9% to 17.8%) than Apple. Alphabet's growth also outpaces Apple (13.9% to 15.1%) though its margin is roughly on par with Apple's. Note peers report on different fiscal calendars (MSFT: June FYE; GOOGL: Dec FYE; AAPL: Sept FYE), so year-over-year comparisons are not perfectly synchronized in calendar time.",
+ "kpi_read": [
+  {
+   "metric": "Apple revenue growth",
+   "reading": "Accelerated from 2.0% (FY24) to 6.4% (FY25), per Apple data."
+  },
+  {
+   "metric": "Apple operating margin",
+   "reading": "Expanded three straight years: 29.8% (FY23) -> 31.5% (FY24) -> 32.0% (FY25), per Apple data."
+  },
+  {
+   "metric": "Microsoft operating margin",
+   "reading": "Highest of the three companies and rising: 44.6% (FY24) -> 45.6% (FY25) -> 46.8% (FY26), per Microsoft data."
+  },
+  {
+   "metric": "Microsoft revenue growth",
+   "reading": "Accelerating and outpacing Apple: 14.9% (FY25) -> 17.8% (FY26), per Microsoft data."
+  },
+  {
+   "metric": "Alphabet operating margin",
+   "reading": "Improved from 27.4% (FY23) to 32.1% (FY24), then roughly flat at 32.0% (FY25), per Alphabet data — now essentially in line with Apple's FY25 margin of 32.0%."
+  },
+  {
+   "metric": "Alphabet revenue growth",
+   "reading": "13.9% (FY24) then 15.1% (FY25), per Alphabet data — faster than Apple's FY25 growth of 6.4%."
+  }
+ ],
+ "competitive_position": "Based solely on the data given, Apple's operating margin (32.0% FY25) has converged with Alphabet's (32.0% FY25) but remains well below Microsoft's (46.8% FY26). On growth, Apple (6.4% FY25) lags both Microsoft (17.8% FY26) and Alphabet (15.1% FY25) by a wide margin. Apple's margin trend is positive (three consecutive years of expansion), but so are Microsoft's and Alphabet's (with Alphabet's flattening in the most recent year). On the two metrics provided — revenue growth and operating margin — Apple is the slowest-growing of the three and no longer differentiated on margin versus Alphabet, while Microsoft leads on both dimensions.",
+ "risks": [
+  "Apple's revenue growth (6.4% FY25), while improved, is less than half of Microsoft's (17.8% FY26) and Alphabet's (15.1% FY25); if this gap persists, Apple's relative market position could erode over time.",
+  "Fiscal year-end mismatches (Apple: Sept; Microsoft: June; Alphabet: Dec) mean the growth/margin figures compared here are not for identical calendar periods, which could distort like-for-like comparisons.",
+  "Alphabet's operating margin growth stalled between FY24 (32.1%) and FY25 (32.0%), which could signal margin pressure ahead for Apple's peer set generally — a dynamic not explained in the data.",
+  "No revenue growth figure is provided for Apple's FY23, Microsoft's FY24, or Alphabet's FY23, limiting the ability to assess longer-term trend consistency."
+ ],
+ "questions_for_management": [
+  "What is driving the acceleration in Apple's revenue growth from 2.0% (FY24) to 6.4% (FY25), and is this expected to continue or was it a one-time factor?",
+  "Given Microsoft's operating margin (46.8% FY26) is roughly 15 points above Apple's (32.0% FY25), what structural or business-mix differences explain this gap, and does Apple see room to close it?",
+  "Alphabet's operating margin growth flattened in FY25 (32.1% to 32.0%) after strong FY24 improvement — does Apple see a similar risk of margin plateauing after three years of expansion?",
+  "The recent filings list shows multiple 8-Ks and 10-Qs through mid-2026 — do any of these disclose updated guidance or one-time items that would affect comparability with the FY25 annual figures cited here?"
+ ],
+ "data_gaps": [
+  "Apple FY23 revenue growth rate not provided.",
+  "Microsoft FY24 revenue growth rate not provided.",
+  "Alphabet FY23 revenue growth rate not provided.",
+  "No net income, EPS, cash flow, or balance sheet data provided for any company.",
+  "No segment-level (e.g., iPhone, Services, Cloud, Search, Ads) revenue breakdown provided.",
+  "No stock price, valuation multiples, or market cap data provided.",
+  "Content of the recent 8-K and 10-Q filings (2026) is not detailed — only form type and dates are given, not what was disclosed.",
+  "No peer data beyond Microsoft and Alphabet (e.g., no Amazon, Meta) provided for broader competitive context.",
+  "No guidance or forward-looking statements from any company included in the data block."
+ ]
 }

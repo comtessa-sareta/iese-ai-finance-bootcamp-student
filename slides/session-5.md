@@ -6,7 +6,8 @@ theme: default
 
 # Session 5 · Agents, Governance, Your Capstone
 
-**Until now you wrote every plan. Now the model plans its own steps, within limits you define.**
+**Until now you wrote every plan. Now the model plans its own steps, within
+limits you define — and your finished tool goes public on GitHub.**
 
 Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 
@@ -17,7 +18,40 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 1. **Explain** what separates an agent from a workflow, and when each wins
 2. **Read** an agent loop and point at every governance lever in the code
 3. **Run** a governed agent on your own company pair, and pass its human gate
-4. **Present** your AI workflow in five minutes, with a trust story
+4. **Publish** your finance tool on GitHub, with a README that tells the truth
+5. **Present** your AI workflow in five minutes, with a trust story
+
+---
+
+# What we are doing, and why
+
+- **An agent is autonomy**: the model chooses which tool to call next, in a
+  loop, until it judges the goal met — or hits limits you set.
+- **Autonomy is granted like a mandate**: explicit rules, hard limits, a
+  human signature at the end. You write all three today, in code.
+- **The whole mechanism is about forty lines.** Once you have read them, no
+  vendor can mystify you with the word *agent* again.
+- **Then the industry frameworks**: the same discipline through PydanticAI —
+  running your own tool — and mapped onto LangGraph, whose workflow half you
+  already built in Session 4.
+
+---
+
+# The storyline of this session
+
+```
+ the agent's anatomy            forty lines, every governance lever visible
+        ↓
+ Apple vs Sony                  the task — and Sony files in Japanese yen
+        ↓
+ the currency trap, armed       your tool detects mixed units and warns loudly
+        ↓
+ your rules, your run           the agent plans, fetches, compares — governed
+        ↓
+ the same agent in PydanticAI   your tool, unchanged, in an industry framework
+        ↓
+ publish on GitHub              the finished tool, public under your name
+```
 
 ---
 
@@ -45,7 +79,7 @@ while steps < MAX_STEPS:
 ```
 
 **About forty lines.** Once you have read them, you can evaluate any
-vendor's agent claims from first principles — the notebook then shows the
+vendor's agent claims from first principles — the notebook then runs the
 same discipline in **PydanticAI** and maps every lever to **LangGraph**.
 
 ---
@@ -65,10 +99,10 @@ same discipline in **PydanticAI** and maps every lever to **LangGraph**.
 
 # The demonstration: a currency trap
 
-**Task: compare Novo Nordisk with Eli Lilly.**
+**Task: compare Apple with Sony — its oldest consumer-electronics rival.**
 
 ```
-naive agent:  DKK 300bn  vs  USD 65bn  →  "Novo is 5x bigger"        (wrong)
+naive agent:  JPY 13tn  vs  USD 416bn  →  "Sony is 30x bigger"       (wrong)
 our agent:    tool detects mixed units → warning → compares
               growth and margins only                            (correct)
 ```
@@ -83,8 +117,8 @@ our agent:    tool detects mixed units → warning → compares
 | Library | Role here | Standing |
 |---|---|---|
 | `pydantic` | the typed recommendation | the industry standard for validation |
-| **PydanticAI** | the agent loop, packaged (live demo) | state-of-the-art agent framework, by the Pydantic team |
-| **LangGraph** | graph agents (mapped, not built) | the other leading agent framework |
+| **PydanticAI** | the agent loop, packaged — runs live, with YOUR tool | state-of-the-art agent framework, by the Pydantic team |
+| **LangGraph** | agents as graphs (you built its workflow half in Session 4) | the other leading agent framework |
 
 ---
 
@@ -110,7 +144,8 @@ and ask the ✱ panel.
 
 # Your lab, then your five minutes
 
-**Lab (22')**: build the currency tool + the agent's rules → run YOUR pair → pass the gate
+**Lab (22')**: build the currency tool + the agent's rules → run YOUR pair →
+pass the gate → **publish your repository with its README**
 
 **Capstone (5', hard stop)**:
 
@@ -125,13 +160,17 @@ caught failure is stronger evidence than an unexamined success.
 
 ---
 
-# What you own now
+# What you own now — public, under your name
 
-**Grounded prompts · a comparable-company analysis tool · a tested
-discounted-cash-flow model · an earnings engine with
-fabrication detection · a screener on live regulatory filings · a governed agent**
+One tool, on your GitHub:
 
-- **A challenge for the coming week**: choose one recurring task at your
-  desk, build it as a workflow, and show a colleague
+- **Grounded prompts** that refuse rather than guess
+- **A comparable-company valuation** of Apple, from live SEC data
+- **Sanity checks and an evidence verifier** for everything a model writes
+- **A screening workflow** on live filings, in LangGraph
+- **A governed agent**, with every limit in code
+
+**A challenge for the coming week**: choose one recurring task at your
+desk, build it as a workflow, and show a colleague.
 
 ## Never ship a number you haven't verified.

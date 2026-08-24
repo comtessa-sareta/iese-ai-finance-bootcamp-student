@@ -58,6 +58,6 @@ facts = edgar.get_company_facts("MSFT")        # big raw JSON
 edgar.annual_values(facts, edgar.REVENUE_TAGS, n=4)
 edgar.latest_instant(facts, edgar.CASH_TAGS)
 edgar.total_debt(facts)                        # staleness-aware
-edgar.annual_financials("NVO", n=3)            # one-call summary (note unit: DKK!)
+edgar.annual_financials("SONY", n=3)           # one-call summary (note unit: JPY!)
 text = edgar.fetch_filing_text(edgar.recent_filings("AAPL", ["10-K"], 1)[0])
 ```

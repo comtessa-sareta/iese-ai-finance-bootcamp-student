@@ -25,8 +25,8 @@ IESE MiF · Prof. Sara Bisbe
 | **1 · Prompting** | grounded prompts | a model that refuses rather than guesses |
 | **2 · Coding copilot** | Apple valued against its peers | direct Claude Code; verify its work |
 | **3 · Debugging & analytics** | that valuation, repaired + an earnings engine | prove a number is right |
-| **4 · Workflows** | a screener on live SEC filings | code decides; the model explains |
-| **5 · Agents** | a governed agent + your capstone | the model plans, within your limits |
+| **4 · Workflows** | a screening workflow on live SEC filings | code decides; the model explains |
+| **5 · Agents** | a governed agent, published on GitHub + capstone | the model plans, within your limits |
 
 SEC = the U.S. Securities and Exchange Commission, whose public filing
 database supplies the course's data.
@@ -53,6 +53,7 @@ database supplies the course's data.
 | Charts | `plotly` | best in class for interactive visuals |
 | Testing & validation | `pytest` · `pydantic` | the standard test runner; the standard validation library |
 | Claude | `anthropic` · **PydanticAI** | the official SDK; a state-of-the-art agent framework |
+| Workflows | **LangGraph** | the industry standard for AI pipelines, from the LangChain ecosystem |
 
 Each appears exactly when its job appears — nothing is used before it is explained.
 

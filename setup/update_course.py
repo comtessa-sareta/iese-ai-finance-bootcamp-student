@@ -9,6 +9,7 @@ What it does, in order:
    your filled-in answers are preserved there, always.
 2. Restores those notebooks to their original state.
 3. Pulls the update.
+4. Installs any packages the update added to requirements.txt.
 
 Your work is never deleted: after updating, open the backup copy next to the
 new notebook and copy your answers across. Nothing is ever pushed anywhere.
@@ -49,6 +50,13 @@ def main() -> None:
         print("No modified notebooks - nothing to back up.")
 
     print(run("pull", "--ff-only").strip() or "Already up to date.")
+
+    # New sessions can add packages; installing is fast when nothing changed.
+    print()
+    print("Updating packages from requirements.txt ...")
+    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r",
+                    str(REPO / "requirements.txt")], check=False)
+
     print()
     print("Done. Your own answers are safe in the backups/ folder;")
     print("open the backup next to the updated notebook to copy them across.")

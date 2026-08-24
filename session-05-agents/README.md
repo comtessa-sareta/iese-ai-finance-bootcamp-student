@@ -34,11 +34,11 @@ Every guardrail in the demo is a line you can point at:
 
 ```bash
 python session-05-agents/demo/mini_analyst_agent.py \
-  "Analyze Novo Nordisk (NVO) and compare it with Eli Lilly (LLY)."
+  "Analyze Apple (AAPL) and compare it with Sony (SONY)."
 ```
 
 Watch the trace: the agent plans, pulls both companies, compares — and hits
-the trap we set: **Novo Nordisk files in Danish kroner.** The compare tool
+the trap we set: **Sony files in Japanese yen.** The compare tool
 warns; the system prompt forbids cross-currency absolute comparisons; the
 recommendation must reason in growth and margins. That's governance working.
 

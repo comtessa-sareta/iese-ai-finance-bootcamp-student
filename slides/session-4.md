@@ -6,8 +6,9 @@ theme: default
 
 # Session 4 · Workflows on Live SEC Data
 
-**Yesterday you pasted data by hand. Today your code fetches it from the
-U.S. Securities and Exchange Commission (SEC).**
+**Yesterday you pasted Apple's data by hand. Today your code fetches it from
+the U.S. Securities and Exchange Commission (SEC) — and screens the whole
+peer universe.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -20,6 +21,40 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 3. **Build** a screen you can rerun tomorrow, criteria as dials
 4. **Audit** the model's own prose: every number traced to an input
 5. **Train** a forecasting model and measure its error before trusting it
+6. **Express** the whole pipeline as a LangGraph workflow graph
+
+---
+
+# What we are doing, and why
+
+- **Yesterday's valuation was one analysis, done once.** Today it becomes a
+  **tool**: code that rebuilds the data, applies your criteria, and can be
+  rerun any morning.
+- **A workflow is a plan the model cannot change.** Code retrieves and
+  filters; the model reasons once, in the middle, about a table it is given;
+  code audits the prose; a human approves.
+- **The data is primary-source**: audited filings from the SEC, fetched
+  live — with the messiness of real data as part of the curriculum.
+- **The finished pipeline gets the industry's name for it**: a LangGraph
+  workflow graph, the standard way professional teams write these systems.
+
+---
+
+# The storyline of this session
+
+```
+ Apple, live from its filings      the Session 2 company, now from the source
+        ↓
+ 16 companies fetched              Apple's peer group + pharma + industrials
+        ↓
+ the deterministic screen          criteria as dials — does Apple pass?
+        ↓
+ grounded rationales, audited      the model writes; code traces every number
+        ↓
+ a trained forecaster              its measured error is the product
+        ↓
+ the pipeline as a graph           LangGraph: the same steps, made explicit
+```
 
 ---
 
@@ -56,7 +91,7 @@ Three traps you will meet, because **companies tag their own accounts**:
 
 # Demo: a memo with two moments to watch
 
-**NVIDIA vs AMD vs Intel, live from the filings.**
+**A company memo built live from the filings.**
 
 - **First, the data gaps**: the memo lists what it could *not* know from
   its inputs — the blind spots are declared, not hidden
@@ -78,6 +113,7 @@ audit: every figure in the prose  →  checked against inputs  →  the altered
 | `pandas` | the deterministic screen | the industry standard for data work |
 | `numpy` | trains the least-squares forecaster | the numerical foundation of Python |
 | `pydantic` | typed, validated model output | the industry standard for validation |
+| **LangGraph** | the pipeline as an explicit graph | the industry standard for AI workflows, from the LangChain ecosystem |
 
 ---
 
@@ -103,15 +139,18 @@ and ask the ✱ panel.
 
 # Your lab · notebook 04 · 30 minutes
 
-**A screening engine: 16 real industrials and pharma, live from EDGAR**
+**A screening engine: Apple's peer universe + pharma + industrials, live from EDGAR**
 
-- **Exercise 1**: fetch 3 years of fundamentals, tolerating failed tickers
+- **Exercise 1**: fetch 3 years of fundamentals for 16 companies, tolerating
+  failed tickers
 - **Exercise 2**: the filter — **pandas decides which companies pass, never
-  the model**
+  the model**. Watch for what happens to Apple
 - **Exercise 3**: one grounded rationale per survivor + numeric audit
 - **Exercise 4**: train a revenue forecaster; the measured error is the product
+- **Exercise 5**: wire the same pipeline as a LangGraph graph — it draws itself
 
-**Question to answer before the debrief**: why net margin, not operating margin?
+**Two questions for the debrief**: why net margin, not operating margin?
+And: does Apple pass its own screen — and what does the answer mean?
 
 ---
 
@@ -119,4 +158,5 @@ and ask the ✱ panel.
 
 **A screen you can rerun tomorrow is worth more than ten analyses performed once.**
 
-Next session: the model plans its own steps, under controls you define.
+Next session: the model plans its own steps, under controls you define —
+and your finished tool goes on GitHub.

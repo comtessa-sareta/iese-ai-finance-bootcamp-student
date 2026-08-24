@@ -21,7 +21,9 @@ def numbers_in_text(text: str) -> list[float]:
     """Every numeric literal in a piece of prose ('58.3%', '-11.7bn', '2,410')."""
     text = _FY_LABEL.sub(" ", _ISO_DATE.sub(" ", text))
     out = []
-    for m in re.findall(r"-?\d[\d,]*(?:\.\d+)?", text):
+    # (?<!\w) keeps a hyphen glued to a word from reading as a minus sign:
+    # 'mid-2026' and the '2026' in '2025-2026' are years, not negative numbers.
+    for m in re.findall(r"(?<!\w)-?\d[\d,]*(?:\.\d+)?", text):
         try:
             out.append(float(m.replace(",", "")))
         except ValueError:

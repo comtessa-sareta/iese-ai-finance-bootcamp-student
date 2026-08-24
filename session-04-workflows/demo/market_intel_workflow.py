@@ -12,7 +12,7 @@ signs off:
 
 Run from the repo root:
 
-    python session-04-workflows/demo/market_intel_workflow.py NVDA --peers AMD INTC
+    python session-04-workflows/demo/market_intel_workflow.py AAPL --peers MSFT GOOGL
     python session-04-workflows/demo/market_intel_workflow.py --dry-run   # no API key
 """
 from __future__ import annotations
@@ -176,8 +176,8 @@ def render(memo: dict, data: dict, offenders: list[float]) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("ticker", nargs="?", default="NVDA")
-    ap.add_argument("--peers", nargs="*", default=["AMD", "INTC"])
+    ap.add_argument("ticker", nargs="?", default="AAPL")
+    ap.add_argument("--peers", nargs="*", default=["MSFT", "GOOGL"])
     ap.add_argument("--dry-run", action="store_true", help="canned memo; no API call")
     ap.add_argument("--yes", action="store_true", help="skip the human approval gate")
     args = ap.parse_args()

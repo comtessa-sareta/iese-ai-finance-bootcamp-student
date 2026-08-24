@@ -24,7 +24,7 @@ designated steps. Three design rules carry the whole session:
 ## Live demo — AI Market Intelligence Workflow
 
 ```bash
-python session-04-workflows/demo/market_intel_workflow.py NVDA --peers AMD INTC
+python session-04-workflows/demo/market_intel_workflow.py AAPL --peers MSFT GOOGL
 ```
 
 Five numbered steps print as they run — retrieval from EDGAR, metrics in code,
