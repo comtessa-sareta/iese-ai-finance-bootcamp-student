@@ -22,14 +22,14 @@ IESE MiF · Prof. Sara Bisbe
 
 | Session | You build | The skill |
 |---|---|---|
-| **1 · Prompting** | reliably grounded prompts | make a model refuse rather than guess |
-| **2 · Coding copilot** | a comparable-company analysis tool with a peer-implied valuation range | direct Claude Code; verify its work |
-| **3 · Debugging & analytics** | Session 2's valuation, repaired and protected + an earnings engine | prove a number is right; machine-checked quotes |
-| **4 · Workflows** | a screener on live SEC filings + a trained forecaster | code decides; the model explains; you approve |
-| **5 · Agents** | a governed agent + your capstone | the model plans, within limits you define |
+| **1 · Prompting** | grounded prompts | a model that refuses rather than guesses |
+| **2 · Coding copilot** | Apple valued against its peers | direct Claude Code; verify its work |
+| **3 · Debugging & analytics** | that valuation, repaired + an earnings engine | prove a number is right |
+| **4 · Workflows** | a screener on live SEC filings | code decides; the model explains |
+| **5 · Agents** | a governed agent + your capstone | the model plans, within your limits |
 
-SEC = the U.S. Securities and Exchange Commission; its public filing database
-supplies the course's data. Every term is defined in full when its session begins.
+SEC = the U.S. Securities and Exchange Commission, whose public filing
+database supplies the course's data.
 
 ---
 
@@ -126,8 +126,7 @@ Then: **File → Open Folder** → choose `iese-ai-finance-bootcamp-student`,
 open **`setup/SETUP.md`**, and follow it top to bottom — it contains every
 remaining command, in order.
 
-- The link is also in the **Zoom chat** and on the **Virtual Campus**: click
-  it there instead of typing
+- The link is also in the **Zoom chat**: click it there instead of typing
 - `git` not found? `SETUP.md` step 0b covers installing it
 
 ---
