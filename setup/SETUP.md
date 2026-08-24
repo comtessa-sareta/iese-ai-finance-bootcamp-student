@@ -39,10 +39,22 @@ bottom). Every command below goes there.
 
 ```bash
 git clone https://github.com/comtessa-sareta/iese-ai-finance-bootcamp-student.git
+cd iese-ai-finance-bootcamp-student
 ```
 
+**The `cd` line matters**: `git clone` leaves your terminal *outside* the new
+folder, and every command after this one must run *inside* it. Check with:
+
+```bash
+ls
+```
+
+You should see `requirements.txt`, `notebooks`, `setup`. If you do not, you
+are in the wrong folder — run the `cd` line above.
+
 Then **File → Open Folder** → choose the `iese-ai-finance-bootcamp-student`
-folder, and open a **new** terminal (so it starts inside the folder).
+folder (so the notebooks and the ✱ panel see the project). If you open a new
+terminal after that, it starts inside the folder already.
 
 ## Step 2 — create the Python environment
 
@@ -104,6 +116,10 @@ well *is* the course.
 
 ## Troubleshooting
 
+- **`Could not open requirements file: ... No such file or directory`** — your
+  terminal is not inside the course folder. Run `cd iese-ai-finance-bootcamp-student`
+  (then `ls` should list `requirements.txt`) and repeat the command. Same cause
+  if any later command says a course file is missing.
 - **`command not found: conda`** — either run `conda init zsh` (Mac) from the
   Anaconda app / use the *Anaconda Prompt* profile (Windows) and open a NEW
   terminal, or Anaconda isn't installed: use the no-conda line instead —

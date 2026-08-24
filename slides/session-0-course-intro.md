@@ -139,12 +139,15 @@ Open VS Code → **Terminal → New Terminal**, and run:
 
 ```
 git clone https://github.com/comtessa-sareta/iese-ai-finance-bootcamp-student.git
+cd iese-ai-finance-bootcamp-student
 ```
 
 Then: **File → Open Folder** → choose `iese-ai-finance-bootcamp-student`,
 open **`setup/SETUP.md`**, and follow it top to bottom — it contains every
 remaining command, in order.
 
+- **Both lines matter**: `clone` downloads the folder, `cd` moves you *into*
+  it. Every later command runs from inside — `ls` should show `requirements.txt`
 - The link is also in the **Zoom chat**: click it there instead of typing
 - `git` not found? `SETUP.md` step 0b covers installing it
 
