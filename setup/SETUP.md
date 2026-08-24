@@ -145,6 +145,11 @@ well *is* the course.
 
 ## Troubleshooting
 
+- **Notebook `00` says "No API key found"** — run that cell and read its
+  diagnosis: it tells you which of the four causes applies (no `.env` where the
+  notebook looks · Windows saved it as `.env.txt` · the key line is empty or
+  quoted · the file is fine but the kernel started before you saved it). The
+  last one is the most common, and the fix is **Restart → Run All**.
 - **`Could not open requirements file: ... No such file or directory`** — your
   terminal is not inside the course folder. Run `cd iese-ai-finance-bootcamp-student`
   (then `ls` should list `requirements.txt`) and repeat the command. Same cause
