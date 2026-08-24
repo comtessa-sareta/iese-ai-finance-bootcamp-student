@@ -7,7 +7,7 @@ theme: default
 # Session 4 · Building a Company Screening Engine
 
 **A program that screens 16 companies on live SEC filings
-and explains every company that passes.**
+and explains every company that passes the screen.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -31,7 +31,7 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 - **The machinery is the point**: you assemble the fetch, the filter and
   the audit — reusable on any companies, any criteria.
 - **A workflow is a plan the model cannot change**: code fetches and
-  filters; the model only explains; code checks; you approve.
+  filters; the model explains; code checks the explanations; you approve.
 - **The finished pipeline is a LangGraph graph** — the professional form
   for workflows like this.
 
