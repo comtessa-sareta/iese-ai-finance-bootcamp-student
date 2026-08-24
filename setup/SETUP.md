@@ -77,6 +77,10 @@ Then tell VS Code to use it: `Cmd+Shift+P` (Windows: `Ctrl+Shift+P`) →
 cp .env.example .env
 ```
 
+VS Code may pop up a notice about "terminal environment injection" the moment
+this file appears — **dismiss it**, it changes nothing: the course reads `.env`
+from inside the code.
+
 Open the new `.env` file in VS Code and fill in two lines:
 your name+email in `SEC_EDGAR_USER_AGENT`, and your API key from Step 0 in
 `ANTHROPIC_API_KEY`. **Never share or commit this file.**
@@ -120,6 +124,12 @@ well *is* the course.
   terminal is not inside the course folder. Run `cd iese-ai-finance-bootcamp-student`
   (then `ls` should list `requirements.txt`) and repeat the command. Same cause
   if any later command says a course file is missing.
+- **VS Code says "An environment file is configured but terminal environment
+  injection is disabled… Enable `python.terminal.useEnvFile`"** — harmless,
+  dismiss it. That notification appears the moment a `.env` file exists. The
+  course reads `.env` **inside the code** (every notebook and script calls
+  `load_dotenv`), so the setting changes nothing here. Your `cp` command
+  worked; continue with Step 3.
 - **`command not found: conda`** — either run `conda init zsh` (Mac) from the
   Anaconda app / use the *Anaconda Prompt* profile (Windows) and open a NEW
   terminal, or Anaconda isn't installed: use the no-conda line instead —
