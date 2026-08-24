@@ -41,7 +41,8 @@ database supplies the course's data.
 | 10:30 | **2 · Claude Code** as coding copilot | **5 · Agents** + your capstone |
 | 12:00 | **3 · Debugging**, testing, analytics | |
 
-- **Capstone**: 5 minutes per person, Tuesday. Your workflow, running, on screen.
+- **Capstone**: submitted Tuesday — your repository URL plus a one-page memo
+  of your workflow.
 
 ---
 

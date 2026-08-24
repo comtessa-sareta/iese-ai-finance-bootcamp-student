@@ -9,7 +9,7 @@ theme: default
 **Until now you wrote every plan. Now the model plans its own steps,
 within limits you define.**
 
-Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
+Plan: concepts 10' · demo 18' · lab 30' · course wrap-up 12' · close 5'
 
 ---
 
@@ -142,15 +142,18 @@ and ask the ✱ panel.
 
 ---
 
-# Your lab, then your five minutes
+# Your lab, then your capstone submission
 
-**Lab (22')**: build the currency tool + the agent's rules → run your own pair →
+**Lab (30')**: build the currency tool + the agent's rules → run your own pair →
 pass the gate → **publish your repository with its README**
 
-**Capstone (5', hard stop)**:
+**Stretch**: give the agent a second real tool — your revenue forecaster
+
+**Capstone — a submission, not a presentation**: your repository URL + a
+one-page memo inside the repository:
 
 1. The **job** your workflow does
-2. The **live run**
+2. A **real run** on your own company pair
 3. The **trust story**: one failure you caught + the check that caught it
 4. One honest **number**
 5. The **next step**
