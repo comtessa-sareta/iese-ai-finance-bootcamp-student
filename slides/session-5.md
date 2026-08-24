@@ -6,8 +6,8 @@ theme: default
 
 # Session 5 · Agents, Governance, Your Capstone
 
-**Until now you wrote every plan. Now the model plans its own steps, within
-limits you define — and your finished tool goes public on GitHub.**
+**Until now you wrote every plan. Now the model plans its own steps,
+within limits you define.**
 
 Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 
@@ -20,7 +20,6 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 3. **Run** a governed agent on your own company pair, and pass its human gate
 4. **Publish** your finance tool on GitHub, with a README that claims only
    what the tool does
-5. **Present** your AI workflow in five minutes, with a trust story
 
 ---
 
@@ -70,13 +69,13 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 # The agent mechanism is a loop
 
 ```python
-while steps < MAX_STEPS:
+while steps < MAX_STEPS:                # the safety limit — never the goal
     response = claude(messages, tools=TOOLS)
     if response.wants_tool:
         result = run_tool(...)          # your code executes
         messages += [response, result]  # the conversation is the memory
     else:
-        break
+        break                           # the model judges the goal met
 ```
 
 **About forty lines.** Once you have read them, you can evaluate any
