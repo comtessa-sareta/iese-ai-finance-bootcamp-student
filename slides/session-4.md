@@ -6,9 +6,10 @@ theme: default
 
 # Session 4 · Workflows on Live SEC Data
 
-**Yesterday you pasted Apple's data by hand. Today your code fetches it from
-the U.S. Securities and Exchange Commission (SEC) — and screens the whole
-peer universe.**
+**In Session 2, a loader the course built for you fetched Apple's peer table
+from the U.S. Securities and Exchange Commission (SEC). Today you assemble
+that machinery yourself — and turn it into a screening engine over 16
+companies, with criteria you control.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -17,43 +18,46 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 # By the end of Session 4 you can
 
 1. **Draw** the workflow pattern and defend the code-vs-model split
-2. **Pull** real fundamentals from SEC filings with one function call
-3. **Build** a screen you can rerun tomorrow, with criteria you control
-4. **Audit** the model's own prose: every number traced to an input
-5. **Train** a forecasting model and measure its error before trusting it
+2. **Write** the code that pulls three years of revenue and profit for any
+   ticker from its SEC filings
+3. **Screen** 16 companies on two explicit tests — revenue growth of at
+   least 8%, net margin of at least 10% — then rerun with your own thresholds
+4. **Have the model explain** each surviving company in two sentences, and
+   trace every number in those sentences back to your data
+5. **Train** a model that forecasts next year's revenue, and measure its
+   error before trusting it
 6. **Express** the whole pipeline as a LangGraph workflow graph
 
 ---
 
 # What we are doing, and why
 
-- **Yesterday's valuation was one analysis, done once.** Today it becomes a
-  **tool**: code that rebuilds the data, applies your criteria, and can be
-  rerun any morning.
-- **A workflow is a plan the model cannot change.** Code retrieves and
-  filters; the model reasons once, in the middle, about a table it is given;
-  code audits the prose; a human approves.
-- **The data is primary-source**: audited filings from the SEC, fetched
-  live — with the messiness of real data as part of the curriculum.
-- **The finished pipeline gets the industry's name for it**: a LangGraph
-  workflow graph, the standard way professional teams write these systems.
+- **We are building a company screening engine**: fetch fundamentals for
+  16 companies, keep those passing two tests — revenue growth ≥ 8%, net
+  margin ≥ 10% — and explain each survivor in audited prose.
+- **New today is not the data — it is the machinery.** Session 2's loader
+  was built for you, for one fixed peer list. Today you assemble the fetch,
+  the filter and the audit yourself — reusable on any companies, any criteria.
+- **A workflow is a plan the model cannot change**: code fetches and
+  filters; the model only explains; code checks the explanations; you approve.
+- **The finished pipeline gets its industry name**: a LangGraph workflow graph.
 
 ---
 
 # The storyline of this session
 
 ```
- Apple, live from its filings      the Session 2 company, now from the source
+ Apple's raw filing record       revenue and profit, straight from EDGAR
         ↓
- 16 companies fetched              Apple's peer group + pharma + industrials
+ a fetcher for any ticker        you assemble it; 16 companies pass through
         ↓
- the deterministic screen          criteria as dials — does Apple pass?
+ the screen                      growth ≥ 8%, margin ≥ 10% — does Apple pass?
         ↓
- grounded rationales, audited      the model writes; code traces every number
+ rationales, audited             2 sentences per survivor, every number traced
         ↓
- a trained forecaster              its measured error is the product
+ a revenue forecaster            next year's revenue, with its measured error
         ↓
- the pipeline as a graph           LangGraph: the same steps, made explicit
+ the pipeline as a graph         LangGraph: the same steps, drawn and run
 ```
 
 ---
@@ -144,8 +148,8 @@ and ask the ✱ panel.
 
 - **Exercise 1**: fetch 3 years of fundamentals for 16 companies, tolerating
   failed tickers
-- **Exercise 2**: the filter — **pandas decides which companies pass, never
-  the model**. Note what happens to Apple
+- **Exercise 2**: the filter — growth ≥ 8% and margin ≥ 10%, **pandas
+  decides which companies pass, never the model**. Note what happens to Apple
 - **Exercise 3**: one grounded rationale per survivor + numeric audit
 - **Exercise 4**: train a revenue forecaster; the measured error is the product
 - **Exercise 5**: wire the same pipeline as a LangGraph graph — the graph
