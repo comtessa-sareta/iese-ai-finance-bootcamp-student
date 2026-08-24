@@ -77,13 +77,25 @@ Then tell VS Code to use it: `Cmd+Shift+P` (Windows: `Ctrl+Shift+P`) →
 cp .env.example .env
 ```
 
-VS Code may pop up a notice about "terminal environment injection" the moment
-this file appears — **dismiss it**, it changes nothing: the course reads `.env`
-from inside the code.
+This command **copies the file silently — nothing opens**. It succeeded if no
+error appeared. (VS Code may pop up a notice about "terminal environment
+injection"; dismiss it, it changes nothing: the course reads `.env` from
+inside the code.)
 
-Open the new `.env` file in VS Code and fill in two lines:
-your name+email in `SEC_EDGAR_USER_AGENT`, and your API key from Step 0 in
-`ANTHROPIC_API_KEY`. **Never share or commit this file.**
+**Now open the file to edit it.** Any of these works:
+
+- `Cmd+P` (Windows: `Ctrl+P`) → type `.env` → Enter — the most reliable way
+- or click **`.env`** in the Explorer sidebar on the left (dotfiles sit near
+  the top of the file list)
+
+**Fill in two lines and save** (`Cmd+S` / `Ctrl+S`):
+
+```
+ANTHROPIC_API_KEY=sk-ant-...            ← your key from Step 0
+SEC_EDGAR_USER_AGENT=Ada Lovelace ada@example.com   ← your real name + email
+```
+
+Leave `ANTHROPIC_MODEL` as it is. **Never share or commit this file.**
 
 ## Step 4 — the Claude panel
 
