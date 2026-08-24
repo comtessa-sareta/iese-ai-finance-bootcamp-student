@@ -6,8 +6,9 @@ theme: default
 
 # Session 4 · Building a Company Screening Engine
 
-**A program that screens 16 companies on live SEC filings
-and explains every company that passes the screen.**
+**Turn live SEC filings into an investment shortlist:
+your criteria pick the companies, a model drafts the case for each,
+your code audits every number.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -15,7 +16,8 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
 # By the end of Session 4 you can
 
-1. **Draw** the workflow pattern and defend the code-vs-model split
+1. **Sketch** an AI workflow and say which steps belong to code, which to
+   the model, and why
 2. **Fetch** three years of revenue and profit for any ticker from its filings
 3. **Screen** 16 companies on criteria you control
 4. **Audit** the model's explanations: every number traced to your data
@@ -26,8 +28,8 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
 # What we are doing, and why
 
-- **We are building a company screening engine**: fetch fundamentals,
-  apply tests you control, explain each survivor in audited prose.
+- **We are building a company screening engine**: it turns raw filings
+  into a shortlist, with an audited case for every name on it.
 - **The machinery is the point**: you assemble the fetch, the filter and
   the audit — reusable on any companies, any criteria.
 - **A workflow is a plan the model cannot change**: code fetches and
