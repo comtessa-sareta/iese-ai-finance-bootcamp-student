@@ -156,10 +156,13 @@ well *is* the course.
   if any later command says a course file is missing.
 - **VS Code says "An environment file is configured but terminal environment
   injection is disabled… Enable `python.terminal.useEnvFile`"** — harmless,
-  dismiss it. That notification appears the moment a `.env` file exists. The
-  course reads `.env` **inside the code** (every notebook and script calls
-  `load_dotenv`), so the setting changes nothing here. Your `cp` command
-  worked; continue with Step 3.
+  dismiss it, and it is **not** the reason a key fails to load. That
+  notification appears whenever a `.env` file exists. The course reads `.env`
+  **inside the code** (every notebook and script calls `load_dotenv`), so the
+  setting changes nothing here. If your key is not being picked up, run the
+  API-key cell in `notebooks/00-setup.ipynb` and read its diagnosis — the
+  usual cause is a kernel that started before you saved the file
+  (**Restart → Run All**).
 - **`command not found: conda`** — either run `conda init zsh` (Mac) from the
   Anaconda app / use the *Anaconda Prompt* profile (Windows) and open a NEW
   terminal, or Anaconda isn't installed: use the no-conda line instead —
