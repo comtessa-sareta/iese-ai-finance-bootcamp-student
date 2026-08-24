@@ -18,7 +18,7 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
 1. **Draw** the workflow pattern and defend the code-vs-model split
 2. **Pull** real fundamentals from SEC filings with one function call
-3. **Build** a screen you can rerun tomorrow, criteria as dials
+3. **Build** a screen you can rerun tomorrow, with criteria you control
 4. **Audit** the model's own prose: every number traced to an input
 5. **Train** a forecasting model and measure its error before trusting it
 6. **Express** the whole pipeline as a LangGraph workflow graph
@@ -72,16 +72,17 @@ INPUT → RETRIEVE → STRUCTURE → REASON → VALIDATE → HUMAN
 
 ---
 
-# EDGAR: every filing, free, no key
+# The data source: SEC EDGAR
 
 - **EDGAR** (Electronic Data Gathering, Analysis and Retrieval) is the U.S.
   Securities and Exchange Commission's public filing database
 - **What it contains**: every 10-K, 10-Q and 8-K since the nineties,
-  machine readable
+  machine readable, free of charge, no license required
 - **What it does not contain**: market prices and analyst estimates —
   filings are not market data
 
-Three traps you will meet, because **companies tag their own accounts**:
+Three complications you will meet in the lab, because **companies tag
+their own accounts**:
 
 1. The same item **changes names** across years
 2. Foreign filers report in **local currency**
@@ -89,13 +90,13 @@ Three traps you will meet, because **companies tag their own accounts**:
 
 ---
 
-# Demo: a memo with two moments to watch
+# Demo: the workflow end to end
 
-**A company memo built live from the filings.**
+**A company memo built live from the filings. Two things to observe:**
 
-- **First, the data gaps**: the memo lists what it could *not* know from
+- **The data gaps**: the memo lists what it could *not* know from
   its inputs — the blind spots are declared, not hidden
-- **Second, a planted error**: one figure in the memo is altered by hand,
+- **A planted error**: one figure in the memo is altered by hand,
   and the audit finds it
 
 ```
@@ -144,10 +145,11 @@ and ask the ✱ panel.
 - **Exercise 1**: fetch 3 years of fundamentals for 16 companies, tolerating
   failed tickers
 - **Exercise 2**: the filter — **pandas decides which companies pass, never
-  the model**. Watch for what happens to Apple
+  the model**. Note what happens to Apple
 - **Exercise 3**: one grounded rationale per survivor + numeric audit
 - **Exercise 4**: train a revenue forecaster; the measured error is the product
-- **Exercise 5**: wire the same pipeline as a LangGraph graph — it draws itself
+- **Exercise 5**: wire the same pipeline as a LangGraph graph — the graph
+  prints its own diagram
 
 **Two questions for the debrief**: why net margin, not operating margin?
 And: does Apple pass its own screen — and what does the answer mean?
@@ -156,7 +158,8 @@ And: does Apple pass its own screen — and what does the answer mean?
 
 # Key takeaway
 
-**A screen you can rerun tomorrow is worth more than ten analyses performed once.**
+**The value of this session is repeatability**: a screen you can rerun any
+morning, with criteria you control and prose your code audits.
 
 Next session: the model plans its own steps, under controls you define —
 and your finished tool goes on GitHub.

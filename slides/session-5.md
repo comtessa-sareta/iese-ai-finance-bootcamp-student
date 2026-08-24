@@ -29,8 +29,8 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
   loop, until it judges the goal met — or hits limits you set.
 - **Autonomy is granted like a mandate**: explicit rules, hard limits, a
   human signature at the end. You write all three today, in code.
-- **The whole mechanism is about forty lines.** Once you have read them, no
-  vendor can mystify you with the word *agent* again.
+- **The whole mechanism is about forty lines**, and you will read every one
+  of them before granting the model any autonomy.
 - **Then the industry frameworks**: the same discipline through PydanticAI —
   running your own tool — and mapped onto LangGraph, whose workflow half you
   already built in Session 4.
@@ -44,9 +44,9 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
         ↓
  Apple vs Sony                  the task — and Sony files in Japanese yen
         ↓
- the currency trap, armed       your tool detects mixed units and warns loudly
+ the currency check, in code    your tool detects mixed units and warns loudly
         ↓
- your rules, your run           the agent plans, fetches, compares — governed
+ your rules govern the run      the agent plans, fetches, compares — governed
         ↓
  the same agent in PydanticAI   your tool, unchanged, in an industry framework
         ↓
@@ -72,8 +72,8 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 while steps < MAX_STEPS:
     response = claude(messages, tools=TOOLS)
     if response.wants_tool:
-        result = run_tool(...)        # YOUR code executes
-        messages += [response, result]  # the conversation IS the memory
+        result = run_tool(...)          # your code executes
+        messages += [response, result]  # the conversation is the memory
     else:
         break
 ```
@@ -92,7 +92,7 @@ same discipline in **PydanticAI** and maps every lever to **LangGraph**.
 | **TOKEN_BUDGET** | unbounded spend |
 | **Tool whitelist** | doing anything you gave no tool for |
 | **Forced output schema** | an essay instead of a decision |
-| **Human gate** | anything saved without your yes |
+| **Human gate** | anything saved without explicit approval |
 | **Audit trail** | "why did it do that?" with no answer |
 
 ---
@@ -107,7 +107,7 @@ our agent:    tool detects mixed units → warning → compares
               growth and margins only                            (correct)
 ```
 
-- **Defense in depth**: a rule in the prompt AND a check in the tool
+- **Defense in depth**: a rule in the prompt *and* a check in the tool
 - You build both protections yourself, then run your own pair
 
 ---
@@ -117,7 +117,7 @@ our agent:    tool detects mixed units → warning → compares
 | Library | Role here | Standing |
 |---|---|---|
 | `pydantic` | the typed recommendation | the industry standard for validation |
-| **PydanticAI** | the agent loop, packaged — runs live, with YOUR tool | state-of-the-art agent framework, by the Pydantic team |
+| **PydanticAI** | the agent loop, packaged — runs live, using your own tool | state-of-the-art agent framework, by the Pydantic team |
 | **LangGraph** | agents as graphs (you built its workflow half in Session 4) | the other leading agent framework |
 
 ---
@@ -144,7 +144,7 @@ and ask the ✱ panel.
 
 # Your lab, then your five minutes
 
-**Lab (22')**: build the currency tool + the agent's rules → run YOUR pair →
+**Lab (22')**: build the currency tool + the agent's rules → run your own pair →
 pass the gate → **publish your repository with its README**
 
 **Capstone (5', hard stop)**:
