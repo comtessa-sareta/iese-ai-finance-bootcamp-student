@@ -57,6 +57,7 @@ Each session produced a working artifact; together they are one tool.
 | Pydantic | typed contracts at the model boundary | 3–5 |
 | LangGraph | workflows and agents as explicit graphs | 4–5 |
 | PydanticAI | the governed agent loop, packaged | 5 |
+| Skills (`SKILL.md`) | procedures the agent loads on demand | 5 |
 | git · GitHub | your work, versioned and public | 2–5 |
 
 ---

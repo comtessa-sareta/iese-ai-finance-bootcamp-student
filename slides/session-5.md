@@ -97,6 +97,21 @@ same discipline in **PydanticAI** and maps every lever to **LangGraph**.
 
 ---
 
+# Tools give actions; skills give knowledge
+
+| | **Tool** | **Skill** |
+|---|---|---|
+| What it is | a function the agent may call | a file of know-how the agent may load |
+| It carries | an action: fetch, compute, compare | a procedure: house style, checklist, method |
+| Advertised by | name + description + schema | name + one-line description |
+| When chosen | your code executes it | its full text enters the context |
+| In your lab | `compare_metrics`, `forecast_revenue` | `memo-style` — the desk's memo rules |
+
+Both work by **progressive disclosure**: the description is always visible;
+the cost arrives only when the agent decides it needs the rest.
+
+---
+
 # The demonstration: a currency trap
 
 **Task: compare Apple with Sony — its oldest consumer-electronics rival.**
@@ -147,7 +162,8 @@ and ask the ✱ panel.
 **Lab (30')**: build the currency tool + the agent's rules → run your own pair →
 pass the gate → **publish your repository with its README**
 
-**Stretch**: give the agent a second real tool — your revenue forecaster
+**Stretch**: a second real tool — your revenue forecaster — then a skill:
+the desk's memo style, loaded on demand
 
 **Capstone — a submission, not a presentation**: your repository URL + a
 one-page memo inside the repository:
