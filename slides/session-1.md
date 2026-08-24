@@ -127,11 +127,15 @@ data and no warning label.
 | A naive request answering fluently, with figures it cannot date or source | **A1** |
 | The same request with a role and rules: better structure, **still stale** | **A2** |
 | The current figures, side by side with what the model said | **the fact sheet** |
+| You writing both safety rules — including the anti-injection one | **Exercise 1** |
 | Your grounded prompt **declining** to state an unsourced number | **Exercise 3** |
 | The model **holding a sourced figure** against someone asserting otherwise | **the closer** |
 
-Tonight's optional homework (`red-team-exercises.md`) attacks it further:
-a fabricated metric, an invented company, a hidden instruction in a document.
+**The closer is prompt injection's near relative**: text arriving in the
+conversation that tries to override your rules. Injection hides that text
+inside the *document* instead of the message. You write the rule against it in
+Exercise 1; **tonight's optional homework attacks it** (`red-team-exercises.md`),
+along with a fabricated metric and an invented company.
 
 ---
 
