@@ -18,22 +18,23 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
 1. **Explain** what separates an agent from a workflow, and when each wins
 2. **Read** an agent loop and point at every governance lever in the code
 3. **Run** a governed agent on your own company pair, and pass its human gate
-4. **Publish** your finance tool on GitHub, with a README that tells the truth
+4. **Publish** your finance tool on GitHub, with a README that claims only
+   what the tool does
 5. **Present** your AI workflow in five minutes, with a trust story
 
 ---
 
 # What we are doing, and why
 
-- **An agent is autonomy**: the model chooses which tool to call next, in a
-  loop, until it judges the goal met — or hits limits you set.
+- **An agent is a model granted autonomy**: it chooses which tool to call
+  next, in a loop, until it judges the goal met — or reaches limits you set.
 - **Autonomy is granted like a mandate**: explicit rules, hard limits, a
   human signature at the end. You write all three today, in code.
 - **The whole mechanism is about forty lines**, and you will read every one
   of them before granting the model any autonomy.
-- **Then the industry frameworks**: the same discipline through PydanticAI —
-  running your own tool — and mapped onto LangGraph, whose workflow half you
-  already built in Session 4.
+- **The industry frameworks come last**: PydanticAI runs the same discipline
+  with your own tool, and a mapping table places every lever in LangGraph,
+  whose workflow half you built in Session 4.
 
 ---
 
@@ -44,7 +45,7 @@ Plan: concepts 10' · demo 18' · lab 22' · capstones 20' · close 5'
         ↓
  Apple vs Sony                  the task — and Sony files in Japanese yen
         ↓
- the currency check, in code    your tool detects mixed units and warns loudly
+ the currency check, in code    your tool detects mixed units and raises a warning
         ↓
  your rules govern the run      the agent plans, fetches, compares — governed
         ↓
@@ -93,7 +94,7 @@ same discipline in **PydanticAI** and maps every lever to **LangGraph**.
 | **Tool whitelist** | doing anything you gave no tool for |
 | **Forced output schema** | an essay instead of a decision |
 | **Human gate** | anything saved without explicit approval |
-| **Audit trail** | "why did it do that?" with no answer |
+| **Audit trail** | decisions that cannot be reconstructed afterwards |
 
 ---
 
@@ -117,7 +118,7 @@ our agent:    tool detects mixed units → warning → compares
 | Library | Role here | Standing |
 |---|---|---|
 | `pydantic` | the typed recommendation | the industry standard for validation |
-| **PydanticAI** | the agent loop, packaged — runs live, using your own tool | state-of-the-art agent framework, by the Pydantic team |
+| **PydanticAI** | the agent loop, packaged — runs live, using your own tool | a leading agent framework, from the Pydantic team |
 | **LangGraph** | agents as graphs (you built its workflow half in Session 4) | the other leading agent framework |
 
 ---

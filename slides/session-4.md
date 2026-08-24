@@ -43,7 +43,8 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
   the filter and the audit yourself — reusable on any companies, any criteria.
 - **A workflow is a plan the model cannot change**: code fetches and
   filters; the model only explains; code checks the explanations; you approve.
-- **The finished pipeline gets its industry name**: a LangGraph workflow graph.
+- **The finished pipeline is then rewritten as a LangGraph graph** — the
+  form professional teams use for workflows like this.
 
 ---
 
@@ -83,7 +84,7 @@ INPUT → RETRIEVE → STRUCTURE → REASON → VALIDATE → HUMAN
 
 - **EDGAR** (Electronic Data Gathering, Analysis and Retrieval) is the U.S.
   Securities and Exchange Commission's public filing database
-- **What it contains**: every 10-K, 10-Q and 8-K since the nineties,
+- **What it contains**: every 10-K, 10-Q and 8-K since the mid-1990s,
   machine readable, free of charge, no license required
 - **What it does not contain**: market prices and analyst estimates —
   filings are not market data
@@ -121,7 +122,7 @@ audit: every figure in the prose  →  checked against inputs  →  the altered
 | `pandas` | the deterministic screen | the industry standard for data work |
 | `numpy` | trains the least-squares forecaster | the numerical foundation of Python |
 | `pydantic` | typed, validated model output | the industry standard for validation |
-| **LangGraph** | the pipeline as an explicit graph | the industry standard for AI workflows, from the LangChain ecosystem |
+| **LangGraph** | the pipeline as an explicit graph | a leading framework for AI workflows, from the LangChain ecosystem |
 
 ---
 
@@ -154,7 +155,8 @@ and ask the ✱ panel.
 - **Exercise 2**: the filter — growth ≥ 8% and margin ≥ 10%, **pandas
   decides which companies pass, never the model**. Note what happens to Apple
 - **Exercise 3**: one grounded rationale per survivor + numeric audit
-- **Exercise 4**: train a revenue forecaster; the measured error is the product
+- **Exercise 4**: train a revenue forecaster and measure its error on a
+  held-out year
 - **Exercise 5**: wire the same pipeline as a LangGraph graph — the graph
   prints its own diagram
 
