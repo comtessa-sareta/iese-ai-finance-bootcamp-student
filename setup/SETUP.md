@@ -28,7 +28,7 @@ If you took the Python/tools pre-course, you have all three — skip ahead.
 |---|---|---|
 | **VS Code** | it opens | code.visualstudio.com |
 | **Git** | `git --version` in a terminal | git-scm.com (Mac: running that check offers the install) |
-| **Python** | `python3 --version` shows 3.10+ | Anaconda: anaconda.com/download (or any Python 3.10+) |
+| **Python** | `python3 --version` shows **3.10 or newer** | Anaconda: anaconda.com/download (or python.org). ⚠️ macOS's built-in `python3` is 3.9 — too old |
 
 **Windows, installing Git:** download from git-scm.com/download/win, run the
 installer accepting every default, then **close and reopen VS Code
@@ -165,9 +165,17 @@ well *is* the course.
   (**Restart → Run All**).
 - **`command not found: conda`** — either run `conda init zsh` (Mac) from the
   Anaconda app / use the *Anaconda Prompt* profile (Windows) and open a NEW
-  terminal, or Anaconda isn't installed: use the no-conda line instead —
-  `python3 -m venv .venv && source .venv/bin/activate && python -m pip install -r requirements.txt`
-  — the course is equally happy with it. **Note:** on this path your
+  terminal, or Anaconda isn't installed: use the no-conda route instead —
+  but **check the version first**, because the course needs Python 3.10+:
+  ```bash
+  python3 --version        # must be 3.10 or newer
+  python3 -m venv .venv
+  source .venv/bin/activate    # Windows: .venv\Scripts\activate
+  python -m pip install -r requirements.txt
+  ```
+  ⚠️ **macOS ships Python 3.9**, which is too old — if `python3 --version`
+  says 3.9, install a newer Python from python.org (or use Anaconda) and
+  build the environment with that one, e.g. `python3.12 -m venv .venv`. **Note:** on this path your
   environment shows up in VS Code as **`.venv`**, not `aifinance` — same
   thing; pick `.venv` wherever this guide says `aifinance`.
 - **conda demands Terms-of-Service acceptance** — this happens when
@@ -176,6 +184,12 @@ well *is* the course.
   accept Anaconda's repo ToS with the two `conda tos accept ...` commands it
   prints — note their terms restrict commercial use at larger organizations,
   which is why the course defaults to conda-forge instead.)
+- **`No matching distribution found for pydantic-ai-slim[anthropic]`** — your
+  Python is older than 3.10 (most often macOS's built-in `python3`, which is
+  3.9). Upgrading pip does not help: no compatible version exists. Check with
+  `python --version`, then rebuild the environment on Python 3.10+ — install
+  one from python.org and run `python3.12 -m venv .venv`, or use the conda
+  line from Step 2. The course code itself also needs 3.10+.
 - **`No module named 'requests'` (or pandas...)** — your packages landed in a
   different environment than the one running. `conda activate aifinance`,
   then `python -m pip install -r requirements.txt` (`python -m pip` always

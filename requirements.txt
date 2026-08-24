@@ -1,4 +1,6 @@
 # AI-Augmented Productivity for Finance — IESE MiF
+# REQUIRES PYTHON 3.10 OR NEWER. On macOS the built-in `python3` is 3.9 and
+# will fail on pydantic-ai-slim; check with `python --version` first.
 # Install:  pip install -r requirements.txt
 pandas>=2.0
 requests>=2.31
