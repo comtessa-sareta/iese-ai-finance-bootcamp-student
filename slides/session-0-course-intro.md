@@ -114,11 +114,25 @@ assistant, not the course tool. The course tool is always the **✱** panel.
 
 ---
 
-# Setup: one link, six steps
+# Setup: your first commands
 
-**The link is in the Zoom chat and on the Virtual Campus:**
+Open VS Code → **Terminal → New Terminal**, and run:
 
-`github.com/comtessa-sareta/iese-ai-finance-bootcamp-student` → `setup/SETUP.md`
+```
+git clone https://github.com/comtessa-sareta/iese-ai-finance-bootcamp-student.git
+```
+
+Then: **File → Open Folder** → choose `iese-ai-finance-bootcamp-student`,
+open **`setup/SETUP.md`**, and follow it top to bottom — it contains every
+remaining command, in order.
+
+- The link is also in the **Zoom chat** and on the **Virtual Campus**: click
+  it there instead of typing
+- `git` not found? `SETUP.md` step 0b covers installing it
+
+---
+
+# What SETUP.md walks you through
 
 | Step | What | You already have |
 |---|---|---|
