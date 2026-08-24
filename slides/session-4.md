@@ -152,9 +152,6 @@ and ask the ✱ panel.
 - **Exercise 5**: wire the same pipeline as a LangGraph graph — the graph
   prints its own diagram
 
-**Two questions for the debrief**: why net margin, not operating margin?
-And: does Apple pass its own screen — and what does the answer mean?
-
 ---
 
 # Key takeaway
