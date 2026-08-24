@@ -30,6 +30,19 @@ If you took the Python/tools pre-course, you have all three — skip ahead.
 | **Git** | `git --version` in a terminal | git-scm.com (Mac: running that check offers the install) |
 | **Python** | `python3 --version` shows 3.10+ | Anaconda: anaconda.com/download (or any Python 3.10+) |
 
+**Windows, installing Git:** download from git-scm.com/download/win, run the
+installer accepting every default, then **close and reopen VS Code
+completely** (not just the terminal — the whole app) so it picks up the new
+PATH. Then open a **new** terminal and re-check `git --version`.
+
+**In a hurry and Git will not install in time?** Skip cloning entirely:
+1. Open github.com/comtessa-sareta/iese-ai-finance-bootcamp-student in a
+   browser → green **Code** button → **Download ZIP**
+2. Unzip it, then **File → Open Folder** in VS Code on the unzipped folder
+3. Continue at Step 2 below — everything else works the same
+   (only difference: no `git pull` later if the instructor pushes an update —
+   ask a neighbor to `cd` you into a fresh copy if that happens)
+
 ## Where do I type the commands?
 
 In VS Code's built-in terminal: **Terminal → New Terminal** (opens at the
