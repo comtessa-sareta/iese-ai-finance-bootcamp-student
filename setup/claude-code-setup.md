@@ -49,8 +49,12 @@ curl -fsSL https://claude.ai/install.sh | bash
 irm https://claude.ai/install.ps1 | iex
 ```
 
-(Alternatives: `brew install --cask claude-code`, `winget install
-Anthropic.ClaudeCode`, or `npm install -g @anthropic-ai/claude-code`.
+(Alternatives, pick the one for YOUR system — do not try the others:
+macOS with Homebrew already installed → `brew install --cask claude-code`;
+Windows → `winget install Anthropic.ClaudeCode`; any OS with Node.js
+installed → `npm install -g @anthropic-ai/claude-code`. `brew` and `winget`
+are each tied to one operating system — running the wrong one always fails
+with a "not recognized" error, which does not mean anything is broken.
 Full options: https://code.claude.com/docs/en/setup)
 
 Then run `claude` and log in.
