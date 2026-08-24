@@ -48,7 +48,7 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
         ↓
  the screen                      two tests you control — does Apple pass?
         ↓
- rationales, audited             2 sentences per survivor, every number traced
+ rationales, audited             the case for each pick, every number traced
         ↓
  a revenue forecaster            next year's revenue, with its measured error
         ↓
@@ -145,7 +145,8 @@ and ask the ✱ panel.
   failed tickers
 - **Exercise 2**: the filter — growth ≥ 8% and margin ≥ 10%, **pandas
   decides which companies pass, never the model**. Note what happens to Apple
-- **Exercise 3**: one grounded rationale per survivor + numeric audit
+- **Exercise 3**: a grounded rationale for each shortlisted company,
+  every number checked against your table
 - **Exercise 4**: train a revenue forecaster and measure its error on a
   held-out year
 - **Exercise 5**: wire the same pipeline as a LangGraph graph — the graph
