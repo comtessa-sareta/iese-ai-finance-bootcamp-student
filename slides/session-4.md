@@ -4,12 +4,15 @@ paginate: true
 theme: default
 ---
 
-# Session 4 · Workflows on Live SEC Data
+# Session 4 · Building a Company Screening Engine
 
-**In Session 2, a loader the course built for you fetched Apple's peer table
-from the U.S. Securities and Exchange Commission (SEC). Today you assemble
-that machinery yourself — and turn it into a screening engine over 16
-companies, with criteria you control.**
+**A workflow on live data from the U.S. Securities and Exchange Commission
+(SEC): your program pulls the fundamentals of 16 companies from their
+filings, applies two tests you control — revenue growth ≥ 8%, net margin
+≥ 10% — and explains every company that passes.**
+
+In Session 2 a course-built loader fetched the data for you. Today you
+assemble the machinery yourself.
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 

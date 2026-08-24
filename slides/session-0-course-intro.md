@@ -25,7 +25,7 @@ IESE MiF · Prof. Sara Bisbe
 | **1 · Prompting** | grounded prompts | a model that refuses rather than guesses |
 | **2 · Coding copilot** | Apple valued against its peers | direct Claude Code; verify its work |
 | **3 · Debugging & analytics** | that valuation, repaired + an earnings engine | prove a number is right |
-| **4 · Workflows** | a screening workflow on live SEC filings | code decides; the model explains |
+| **4 · Workflows** | a company screening engine on live SEC filings | code decides; the model explains |
 | **5 · Agents** | a governed agent, published on GitHub + capstone | the model plans, within your limits |
 
 SEC = the U.S. Securities and Exchange Commission, whose public filing
