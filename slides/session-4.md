@@ -6,13 +6,8 @@ theme: default
 
 # Session 4 · Building a Company Screening Engine
 
-**A workflow on live data from the U.S. Securities and Exchange Commission
-(SEC): your program pulls the fundamentals of 16 companies from their
-filings, applies two tests you control — revenue growth ≥ 8%, net margin
-≥ 10% — and explains every company that passes.**
-
-In Session 2 a course-built loader fetched the data for you. Today you
-assemble the machinery yourself.
+**A program that screens 16 companies on live SEC filings
+and explains every company that passes.**
 
 Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 
@@ -21,30 +16,24 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
 # By the end of Session 4 you can
 
 1. **Draw** the workflow pattern and defend the code-vs-model split
-2. **Write** the code that pulls three years of revenue and profit for any
-   ticker from its SEC filings
-3. **Screen** 16 companies on two explicit tests — revenue growth of at
-   least 8%, net margin of at least 10% — then rerun with your own thresholds
-4. **Have the model explain** each surviving company in two sentences, and
-   trace every number in those sentences back to your data
-5. **Train** a model that forecasts next year's revenue, and measure its
-   error before trusting it
-6. **Express** the whole pipeline as a LangGraph workflow graph
+2. **Fetch** three years of revenue and profit for any ticker from its filings
+3. **Screen** 16 companies on criteria you control
+4. **Audit** the model's explanations: every number traced to your data
+5. **Train** a revenue forecaster and measure its error before trusting it
+6. **Express** the whole pipeline as a LangGraph graph
 
 ---
 
 # What we are doing, and why
 
-- **We are building a company screening engine**: fetch fundamentals for
-  16 companies, keep those passing two tests — revenue growth ≥ 8%, net
-  margin ≥ 10% — and explain each survivor in audited prose.
-- **New today is not the data — it is the machinery.** Session 2's loader
-  was built for you, for one fixed peer list. Today you assemble the fetch,
-  the filter and the audit yourself — reusable on any companies, any criteria.
+- **We are building a company screening engine**: fetch fundamentals,
+  apply tests you control, explain each survivor in audited prose.
+- **The machinery is the point**: you assemble the fetch, the filter and
+  the audit — reusable on any companies, any criteria.
 - **A workflow is a plan the model cannot change**: code fetches and
-  filters; the model only explains; code checks the explanations; you approve.
-- **The finished pipeline is then rewritten as a LangGraph graph** — the
-  form professional teams use for workflows like this.
+  filters; the model only explains; code checks; you approve.
+- **The finished pipeline is a LangGraph graph** — the professional form
+  for workflows like this.
 
 ---
 
@@ -55,7 +44,7 @@ Plan: concepts 15' · live demo 22' · your lab 30' · debrief 8'
         ↓
  a fetcher for any ticker        you assemble it; 16 companies pass through
         ↓
- the screen                      growth ≥ 8%, margin ≥ 10% — does Apple pass?
+ the screen                      two tests you control — does Apple pass?
         ↓
  rationales, audited             2 sentences per survivor, every number traced
         ↓
